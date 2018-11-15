@@ -167,7 +167,8 @@ function add_ctr_user(){
     $sql = "SELECT * FROM " . $table_name;
 	$result = $wpdb->get_results($sql);
 	foreach($result as $print) {
-		echo $print, '<br>';
+		$new = var_dump((string) $print);
+		echo $new;
 	}
 
 
