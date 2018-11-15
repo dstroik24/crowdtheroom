@@ -162,7 +162,13 @@ function add_ctr_user(){
 	//wp_redirect('http://104.248.4.174/success-page/');
 	$user_ID = get_current_user_id();
 	echo $user_ID;
-	get_ctr_users();
+	
+	$table_name = $wpdb->prefix . 'ctr_users';
+    $sql = "SELECT * FROM" . $table_name;
+	$result = $wpdb->get_results($sql);
+	foreach($data as $result) {
+		echo $result, '<br>';
+	}
 
 
 	/*
