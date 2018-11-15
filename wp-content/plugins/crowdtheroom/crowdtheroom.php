@@ -162,14 +162,7 @@ function add_ctr_user(){
 	//wp_redirect('http://104.248.4.174/success-page/');
 	$user_ID = get_current_user_id();
 	echo $user_ID;
-	
-	$table_name = $wpdb->prefix . 'ctr_users';
-    $sql = "SELECT * FROM " . $table_name;
-	echo $sql;
-	$result = $wpdb->get_results($sql);
-	foreach($result as $print) {
-		echo $print->user_fname;
-	}
+	get_ctr_users();
 
 
 	/*
@@ -183,10 +176,11 @@ function add_ctr_user(){
 function get_ctr_users(){
 	global $wpdb;
 	$table_name = $wpdb->prefix . 'ctr_users';
-    $sql = "SELECT * FROM" . $table_name;
+    $sql = "SELECT * FROM " . $table_name;
+	echo $sql;
 	$result = $wpdb->get_results($sql);
-	foreach($data as $result) {
-		echo $result, '<br>';
+	foreach($result as $print) {
+		echo $print->user_fname;
 	}
 }
 
