@@ -161,7 +161,7 @@ function add_ctr_user(){
 	$pagename = 'success page';
 	//wp_redirect('http://104.248.4.174/success-page/');
 	$user_ID = get_current_user_id();
-	echo $user_ID
+	echo $user_ID;
 
 
 	/*
