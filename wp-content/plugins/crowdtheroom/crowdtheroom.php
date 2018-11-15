@@ -159,7 +159,7 @@ function add_ctr_user(){
 	
 
 	$pagename = 'success page';
-	wp_redirect('http://104.248.4.174/success-page/');
+	//wp_redirect('http://104.248.4.174/success-page/');
 	echo "Hmm no way this works";
 
 	/*
