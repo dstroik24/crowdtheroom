@@ -178,7 +178,9 @@ function get_ctr_users(){
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM" . $table_name;
 	$result = $wpdb->get_results($sql);
-	echo $result;
+	foreach($data as $result) {
+		echo $result, '<br>';
+	}
 }
 
 
