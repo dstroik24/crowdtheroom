@@ -1,4 +1,5 @@
 <?php
+  global $wpdb;
   function get_ctr_users(){
     global $wpdb;
     $table_name = $wpdb->prefix . 'ctr_users';
