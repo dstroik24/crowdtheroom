@@ -165,10 +165,10 @@ function add_ctr_user(){
 	
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM " . $table_name;
+	echo $sql;
 	$result = $wpdb->get_results($sql);
 	foreach($result as $print) {
-		$new = var_dump((string) $print);
-		echo $new;
+		echo $print->user_fname;
 	}
 
 
