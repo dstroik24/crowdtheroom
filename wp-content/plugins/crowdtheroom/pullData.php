@@ -1,9 +1,4 @@
-<table border="1">
-<tr>
- <th>user_fname</th>
- <th>user_lname</th>
-</tr>
-  
+
 <?php
   global $wpdb;
   $result = $wpdb->get_results ( "SELECT * FROM wordpress.wp_ctr_users" );
