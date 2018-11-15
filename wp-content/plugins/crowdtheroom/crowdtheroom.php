@@ -177,10 +177,10 @@ function get_ctr_users(){
 	global $wpdb;
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM" . $table_name;
-	$result = $wpdb->get_results ($sql);
+	$result = $wpdb->get_results($sql);
 	echo $result;
-  }
 }
+
 
 add_action('admin_post_basic_info', 'add_ctr_user');
 add_action('admin_post_nopriv_basic_info', 'add_ctr_user');
