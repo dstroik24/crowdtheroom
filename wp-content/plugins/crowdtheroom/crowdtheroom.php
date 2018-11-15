@@ -180,7 +180,7 @@ function get_ctr_users(){
 	echo $sql;
 	$result = $wpdb->get_results($sql);
 	foreach($result as $print) {
-		echo $print->user_fname;
+		echo $print->user_fname, '<br>';
 	}
 }
 
