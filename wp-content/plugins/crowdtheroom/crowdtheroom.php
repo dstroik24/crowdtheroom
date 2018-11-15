@@ -160,7 +160,7 @@ function add_ctr_user(){
 
 	$pagename = 'success page';
 	wp_redirect('http://crowdtheroom.org/success-page/');
-	echo "Hmm no way this works"
+	echo "Hmm no way this works";
 
 	/*
 	//run python shit
