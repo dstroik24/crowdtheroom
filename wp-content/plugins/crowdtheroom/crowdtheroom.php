@@ -162,6 +162,7 @@ function add_ctr_user(){
 	//wp_redirect('http://104.248.4.174/success-page/');
 	$user_ID = get_current_user_id();
 	echo $user_ID;
+	get_ctr_users();
 
 
 	/*
@@ -170,6 +171,15 @@ function add_ctr_user(){
 	$output = shell_exec($command);
 	echo $output;
 	*/
+}
+
+function get_ctr_users(){
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'ctr_users';
+    $sql = "SELECT * FROM" . $table_name;
+	$result = $wpdb->get_results ($sql);
+	echo $result;
+  }
 }
 
 add_action('admin_post_basic_info', 'add_ctr_user');
