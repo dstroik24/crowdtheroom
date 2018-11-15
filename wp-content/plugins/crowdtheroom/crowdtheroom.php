@@ -159,13 +159,15 @@ function add_ctr_user(){
 	
 
 	$pagename = 'success page';
-	#wp_redirect('http://crowdtheroom.org/success-page/');
+	wp_redirect('http://crowdtheroom.org/success-page/');
+	echo "Hmm no way this works"
 
-
+	/*
 	//run python shit
 	$command = escapeshellcmd('./test');
 	$output = shell_exec($command);
 	echo $output;
+	*/
 }
 
 add_action('admin_post_basic_info', 'add_ctr_user');
