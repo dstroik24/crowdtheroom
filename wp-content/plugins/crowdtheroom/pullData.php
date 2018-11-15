@@ -5,7 +5,7 @@
 </tr>
   <?php
     global $wpdb;
-    $result = $wpdb->get_results ( "SELECT * FROM wp_ctr_users" );
+    $result = $wpdb->get_results ( "SELECT * FROM wordpress.wp_ctr_users" );
     foreach ( $result as $print )   {
     ?>
     <tr>
