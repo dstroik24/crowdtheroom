@@ -125,10 +125,6 @@ function basic_form(){
 	$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 }
 
-
-add_shortcode('basic-form', 'basic_form');
-
-
 function add_ctr_user(){
 	global $wpdb;
 	
@@ -159,7 +155,7 @@ function add_ctr_user(){
 	
 
 	$pagename = 'success page';
-	//wp_redirect('http://104.248.4.174/success-page/');
+	wp_redirect('http://104.248.4.174/success-page/');
 	$user_ID = get_current_user_id();
 	echo $user_ID;
 	get_ctr_users();
@@ -184,7 +180,8 @@ function get_ctr_users(){
 	}
 }
 
-
+add_shortcode('basic-form', 'basic_form');
+add_shortcode('get-users', 'get_ctr_users');
 add_action('admin_post_basic_info', 'add_ctr_user');
 add_action('admin_post_nopriv_basic_info', 'add_ctr_user');
 
