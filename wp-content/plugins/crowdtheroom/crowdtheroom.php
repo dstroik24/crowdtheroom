@@ -150,7 +150,7 @@ function add_ctr_user(){
 	$wpdb->insert($table,$data);
 	
 	// Takes user to next page after filling out form
-	wp_redirect('http://104.248.4.174/success-page/');
+	//wp_redirect('http://104.248.4.174/success-page/');
 }
 
 // Function to get new user id
