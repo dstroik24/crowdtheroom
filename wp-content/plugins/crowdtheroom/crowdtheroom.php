@@ -125,6 +125,7 @@ function basic_form(){
 	$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 }
 
+// Used on the application/basic form page, redirects to next steps page
 function add_ctr_user(){
 	global $wpdb;
 	
@@ -150,7 +151,7 @@ function add_ctr_user(){
 	$wpdb->insert($table,$data);
 	
 	// Takes user to next page after filling out form
-	//wp_redirect('http://104.248.4.174/success-page/');
+	wp_redirect( 'http://104.248.4.174/success-page/?user_id='.$user_id);
 }
 
 // Function to get new user id
@@ -168,6 +169,19 @@ function new_user_id() {
 	exec($command, $out, $status);
  }
 
+function next_steps_page(){
+	global $wpdb;
+	$user_id = $_GET['user_id'];
+	$table_name = $wpdb->prefix . 'ctr_users';
+    $sql = "SELECT * FROM " . $table_name . "WHERE user_id=" . $user_id;
+	echo $sql;
+	$result = $wpdb->get_results($sql);
+	echo result;
+	
+}
+
+
+// Returns first name of all users on data base, not in use
 function get_ctr_users(){
 	global $wpdb;
 	$table_name = $wpdb->prefix . 'ctr_users';
@@ -180,7 +194,7 @@ function get_ctr_users(){
 }
 
 add_shortcode('basic-form', 'basic_form');
-add_shortcode('get-users', 'get_ctr_users');
+add_shortcode('next-steps', 'next_steps_page');
 add_action('admin_post_basic_info', 'add_ctr_user');
 add_action('admin_post_nopriv_basic_info', 'add_ctr_user');
 
