@@ -134,10 +134,13 @@ function add_ctr_user(){
 	$address = $_POST['address'];
 	$zip = $_POST['zip'];
 
+	// Generate new unique user id
+	$user_id = new_user_id();
+	echo 'New User ID', $user_id;
+	echo 'Name', $fname, $lname;
+	
 
 	//add info to database
-	$lastid = $wpdb->insert_id;
-	$newid = $lastid + 1;
 	$table = $wpdb->prefix.'ctr_users';
 	$data = array('user_id' => $newid,
 				  'user_fname' => $fname, 
@@ -145,29 +148,24 @@ function add_ctr_user(){
 				  'user_street' => $address,
 				  'user_zip' => $zip);
 	$wpdb->insert($table,$data);
-
 	
-	foreach($data as $result) {
-		echo $result, '<br>';
-	}
-	echo $wpdb->last_query, '<br>';
-	echo $wpdb->last_error;
-	
-
-	$pagename = 'success page';
+	// Takes user to next page after filling out form
 	wp_redirect('http://104.248.4.174/success-page/');
-	$user_ID = get_current_user_id();
-	echo $user_ID;
-	get_ctr_users();
-
-
-	/*
-	//run python shit
-	$command = escapeshellcmd('./test');
-	$output = shell_exec($command);
-	echo $output;
-	*/
 }
+
+// Function to get new user id
+function new_user_id() {
+	global $wpdb;
+	$table_name = $wpdb->prefix . 'ctr_users';
+	$latestid=$wpdb->get_var("SELECT user_id from $table_name order by meta_value DESC limit 1;");
+ 	return $latestid;
+ }
+
+ // Run a python script with name $script_name
+ function run_python($script_name){
+	$command = 'ls';
+	exec($command, $out, $status);
+ }
 
 function get_ctr_users(){
 	global $wpdb;
