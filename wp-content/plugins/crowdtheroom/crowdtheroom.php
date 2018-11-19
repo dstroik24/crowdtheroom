@@ -157,8 +157,9 @@ function add_ctr_user(){
 function new_user_id() {
 	global $wpdb;
 	$table_name = $wpdb->prefix . 'ctr_users';
-	$latestid=$wpdb->get_var("SELECT user_id from $table_name order by meta_value DESC limit 1;");
- 	return $latestid;
+	$latestid = $wpdb->get_var("SELECT user_id from $table_name order by user_id DESC limit 1;");
+	$newid = $latestid + 1; 
+	return $newid;
  }
 
  // Run a python script with name $script_name
