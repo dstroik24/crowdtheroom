@@ -142,7 +142,7 @@ function add_ctr_user(){
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
-	$data = array('user_id' => $newid,
+	$data = array('user_id' => $user_id,
 				  'user_fname' => $fname, 
 				  'user_lname' => $lname,
 				  'user_street' => $address,
