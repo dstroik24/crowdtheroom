@@ -177,7 +177,7 @@ function next_steps_page(){
 	echo $sql;
 	$result = $wpdb->get_row($sql, ARRAY_A);
 	foreach($result as $col){
-		echo $col;
+		echo $col, '<br>';
 	}
 	
 }
