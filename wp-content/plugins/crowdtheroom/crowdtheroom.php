@@ -45,6 +45,25 @@ function ctr_users_create_db() {
     dbDelta($sql);
 }
 
+/*
+first_name
+last_name
+Age (via Birth date)
+address
+citizen
+yrs_citizen
+tx_resident
+yrs_tx_resident
+district_resident
+yrs_district_resident
+registered_to_vote_in_district
+prac_lawyer_judge
+yrs_prac_lawyer_judge
+district
+commis_prec
+precinct
+*/
+
 
 function basic_form(){
 	?>
@@ -139,6 +158,10 @@ function add_ctr_user(){
 	$user_id = new_user_id();
 	echo 'New User ID', $user_id;
 	echo 'Name', $fname, $lname;
+
+	// Calculate fields from given info
+	date_default_timezone_set('America/Chicago');
+	$date = date('m/d/Y');
 	
 
 	//add info to database
