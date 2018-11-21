@@ -22,7 +22,7 @@ function ctr_users_create_db() {
 		user_id INT NOT NULL,
 		fname TEXT NOT NULL,
 		lname TEXT NOT NULL,
-		bday DATE NOT NULL,
+		dob DATE NOT NULL,
 		age INT NOT NULL,
 		email TEXT NOT NULL,
 		street TEXT NOT NULL,
@@ -61,14 +61,16 @@ function delete_ctr_database(){
 function basic_form(){
 	?>
 	<form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-            
+	
 		<label for="fname">First Name:</label>
 		<input type="text" name="fname" id="fname" value="" />
 
 		<label for="lname">Last Name:</label>
 		<input type="text" name="lname" id="lname" value="" />
+		
+		<h2>Where do you currently live?</h2>
 
-		<label for="address">Street Address</label>
+		<label for="address">Street Address:</label>
 		<input type="text" name="address" id="address" value="" />
 
 		<label for="state">State:</label>
@@ -130,6 +132,30 @@ function basic_form(){
 		<label for="zip">Zip Code:</label>
 		<input type="text" name="zip" id="zip" value="" />
 
+		<label for="yrsAtCurRes">How many years have you lived at this address?</label>
+		<input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" />
+
+		<label for="dob">Date of Birth:</label>
+		<input type="date" id="dob" name="dob" value=""/>
+		
+		<label for="isCitizen">Are you a US citizen?</label>
+		<input type="radio" name="isCitizen">Yes</input>
+		<input type="radio" name="isCitizen">No</input>
+
+		<label for="yrsCitizen">How many years have you been a citizen?</label>
+		<input type="text" name="yrsCitizen" id="yrsCitizen" value="" />
+
+
+		<h2>Fields for School Board (I think?)</h2>
+
+		<label for="isFelon">Have you even been convicted of a felony?</label>
+		<input type="radio" name="isFelon">Yes</input>
+		<input type="radio" name="isFelon">No</input>
+
+		<label for="isMentalIncap">Have you even been deemed totally mentally incapacitated or partially mentally incapacitated without the right to vote by a court of law?</label>
+		<input type="radio" name="isMentalIncap">Yes</input>
+		<input type="radio" name="isMentalIncap">No</input>
+
 		<input type="hidden" name="action" value="basic_info">
 		<input type="submit" name="submit_form" value="submit" />
     </form>
@@ -146,6 +172,30 @@ function add_ctr_user(){
 	$lname = $_POST['lname'];
 	$address = $_POST['address'];
 	$zip = $_POST['zip'];
+	$yrsAtCurRes = $_POST['yrsAtCurRes'];
+	$dob = $_POST['dob'];
+	$isCitizen = $_POST['isCitizen'];
+	$yrsCitizen = $_POST['yrsCitizen'];
+	$isFelon = $_POST['isFelon'];
+	$isMentalIncap = $_POST['isMentalIncap'];
+	
+	if ($isCitizen == 'Yes')
+		$isCitizen = 1;
+	else
+		$isCitizen = 0;
+	endif;
+	
+	if ($isFelon == 'Yes')
+		$isFelon = 1;
+	else
+		$isFelon = 0;
+	endif;
+
+	if ($isMentalIncap == 'Yes')
+		$isMentalIncap = 1;
+	else
+		$isMentalIncap = 0;
+	endif;
 
 	// Generate new unique user id
 	$id = new_user_id();
@@ -163,7 +213,13 @@ function add_ctr_user(){
 				  'fname' => $fname, 
 				  'lname' => $lname,
 				  'street' => $address,
-				  'zip' => $zip);
+				  'zip' => $zip,
+				  'yrsAtCurRes' => $yrsAtCurRes,
+				  'dob' => $dob,
+				  'isCitizen' => $isCitizen,
+				  'yrsCitizen' => $yrsCitizen,
+				  'isFelon' => $isFelon,
+				  'isMentalIncap' => $isMentalIncap,);
 	$wpdb->insert($table,$data);
 	
 	// Takes user to next page after filling out form
