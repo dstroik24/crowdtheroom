@@ -51,10 +51,10 @@ function ctr_users_create_db() {
 register_deactivation_hook( __FILE__, 'delete_ctr_database'); 
 
 function delete_ctr_database(){
-	global $wpdb
+	global $wpdb;
 	$table_name = $wpdb->prefix . 'ctr_users';
 	$sql = "DROP TABLE IF EXISTS $table_name";
-	$wpdb->query($sql)
+	$wpdb->query($sql);
 }
 
 /*
