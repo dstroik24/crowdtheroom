@@ -181,21 +181,21 @@ function add_ctr_user(){
 	
 	if ($isCitizen == 'Yes')
 		$isCitizen = 1;
-	else
+	else{
 		$isCitizen = 0;
-	endif;
+	}
 	
 	if ($isFelon == 'Yes')
 		$isFelon = 1;
-	else
+	else{
 		$isFelon = 0;
-	endif;
+	}
 
 	if ($isMentalIncap == 'Yes')
 		$isMentalIncap = 1;
-	else
+	else{
 		$isMentalIncap = 0;
-	endif;
+	}
 
 	// Generate new unique user id
 	$id = new_user_id();
