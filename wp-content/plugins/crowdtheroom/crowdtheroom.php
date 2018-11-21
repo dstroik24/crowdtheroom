@@ -20,29 +20,41 @@ function ctr_users_create_db() {
     
     $sql = "CREATE TABLE " . $table_name . " (
 		user_id INT NOT NULL,
-		user_fname TEXT NOT NULL,
-		user_lname TEXT NOT NULL,
-		user_bday DATE NOT NULL,
-		user_age INT NOT NULL,
-		user_email TEXT NOT NULL,
-		user_street TEXT NOT NULL,
-		user_city TEXT NOT NULL,
-		user_state CHAR(2) NOT NULL,
-		user_zip TEXT NOT NULL,
-		user_yrsAtCurRes TEXT NOT NULL,
-		user_regVote INT(1) NOT NULL,
-		user_isCitizen INT(1) NOT NULL,
-		user_yrsCitizen INT NOT NULL,
-		user_isTxRes INT(1) NOT NULL,
-		user_yrsTxRes INT NOT NULL,
-		user_isPracLaw INT(1) NOT NULL,
-		user_usRepDist INT NOT NULL,
-		user_txRepDist INT NOT NULL,
-		user_aisdDist INT NOT NULL
+		fname TEXT NOT NULL,
+		lname TEXT NOT NULL,
+		bday DATE NOT NULL,
+		age INT NOT NULL,
+		email TEXT NOT NULL,
+		street TEXT NOT NULL,
+		city TEXT NOT NULL,
+		state CHAR(2) NOT NULL,
+		zip TEXT NOT NULL,
+		yrsAtCurRes TEXT NOT NULL,
+		regVote INT(1) NOT NULL,
+		isCitizen INT(1) NOT NULL,
+		yrsCitizen INT NOT NULL,
+		isTxRes INT(1) NOT NULL,
+		yrsTxRes INT NOT NULL,
+		isPracLaw INT(1) NOT NULL,
+		yrsPracLaw INT NOT NULL,
+		usRepDist INT NOT NULL,
+		txRepDist INT NOT NULL,
+		aisdDist INT NOT NULL,
+		isFelon INT(1) NOT NULL,
+		isMentalIncap INT(1) NOT NULL
 	) ". $charset_collate .";";
     
     require_once( ABSPATH . 'wp-admin/includes/upgrade.php');
     dbDelta($sql);
+}
+
+register_deactivation_hook( __FILE__, 'delete_ctr_database'); 
+
+function delete_ctr_database(){
+	global $wpdb
+	$table_name = $wpdb->prefix . 'ctr_users';
+	$sql = "DROP TABLE IF EXISTS $table_name";
+	$wpdb->query($sql)
 }
 
 /*
@@ -155,8 +167,8 @@ function add_ctr_user(){
 	$zip = $_POST['zip'];
 
 	// Generate new unique user id
-	$user_id = new_user_id();
-	echo 'New User ID', $user_id;
+	$id = new_user_id();
+	echo 'New User ID', $d;
 	echo 'Name', $fname, $lname;
 
 	// Calculate fields from given info
@@ -166,15 +178,15 @@ function add_ctr_user(){
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
-	$data = array('user_id' => $user_id,
-				  'user_fname' => $fname, 
-				  'user_lname' => $lname,
-				  'user_street' => $address,
-				  'user_zip' => $zip);
+	$data = array('user_id' => $d,
+				  'fname' => $fname, 
+				  'lname' => $lname,
+				  'street' => $address,
+				  'zip' => $zip);
 	$wpdb->insert($table,$data);
 	
 	// Takes user to next page after filling out form
-	wp_redirect( 'http://104.248.4.174/success-page/?user_id='.$user_id);
+	wp_redirect( 'http://104.248.4.174/success-page/?d='.$user_id);
 }
 
 // Function to get new user id
