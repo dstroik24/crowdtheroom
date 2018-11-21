@@ -57,25 +57,6 @@ function delete_ctr_database(){
 	$wpdb->query($sql);
 }
 
-/*
-first_name
-last_name
-Age (via Birth date)
-address
-citizen
-yrs_citizen
-tx_resident
-yrs_tx_resident
-district_resident
-yrs_district_resident
-registered_to_vote_in_district
-prac_lawyer_judge
-yrs_prac_lawyer_judge
-district
-commis_prec
-precinct
-*/
-
 
 function basic_form(){
 	?>
