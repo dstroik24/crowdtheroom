@@ -225,7 +225,7 @@ function add_ctr_user(){
 	echo "---------------";
 
 	foreach($data as $field => $input){
-		echo "{$field}  |  {$input}";
+		echo "{$field}  |  {$input} <br>";
 	}
 	
 	
