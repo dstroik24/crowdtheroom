@@ -199,13 +199,11 @@ function add_ctr_user(){
 
 	// Generate new unique user id
 	$id = new_user_id();
-	echo 'New User ID', $d;
-	echo 'Name', $fname, $lname;
 
 	// Calculate fields from given info
 	date_default_timezone_set('America/Chicago');
 	$date = date('m/d/Y');
-	
+
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
@@ -221,6 +219,14 @@ function add_ctr_user(){
 				  'isFelon' => $isFelon,
 				  'isMentalIncap' => $isMentalIncap,);
 	$wpdb->insert($table,$data);
+
+	// Looking to make sure input data is good
+	echo "Field  |  Input"
+	echo "---------------"
+	foreach($data as $field => $input){
+		echo "{$field}  |  {$input}"
+	}
+	
 	
 	// Takes user to next page after filling out form
 	//wp_redirect( 'http://104.248.4.174/success-page/?d='.$user_id);
