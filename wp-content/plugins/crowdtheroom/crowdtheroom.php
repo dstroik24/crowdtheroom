@@ -179,6 +179,11 @@ function add_ctr_user(){
 	$isFelon = $_POST['isFelon'];
 	$isMentalIncap = $_POST['isMentalIncap'];
 	
+	echo $isCitizen, "<br>";
+	echo $isFelon, "<br>";
+	echo $isMentalIncap, "<br>";
+
+
 	if ($isCitizen == 'Yes')
 		$isCitizen = 1;
 	else{
