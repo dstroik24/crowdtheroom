@@ -221,10 +221,11 @@ function add_ctr_user(){
 	$wpdb->insert($table,$data);
 
 	// Looking to make sure input data is good
-	echo "Field  |  Input"
-	echo "---------------"
+	echo "Field  |  Input";
+	echo "---------------";
+
 	foreach($data as $field => $input){
-		echo "{$field}  |  {$input}"
+		echo "{$field}  |  {$input}";
 	}
 	
 	
