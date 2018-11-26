@@ -204,12 +204,11 @@ function add_ctr_user(){
 				  'isCitizen' => $isCitizen,
 				  'yrsCitizen' => $yrsCitizen,
 				  'isFelon' => $isFelon,
-				  'isMentalIncap' => $isMentalIncap,);
+				  'isMentalIncap' => $isMentalIncap);
 	$wpdb->insert($table,$data);
 
 	// Looking to make sure input data is good
 	arr_as_table($data);
-	}
 	
 	
 	// Takes user to next page after filling out form
