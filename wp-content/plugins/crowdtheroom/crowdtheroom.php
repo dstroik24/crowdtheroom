@@ -229,11 +229,11 @@ function new_user_id() {
 function next_steps_page(){
 	global $wpdb;
 	$user_id = $_GET['user_id'];
+	echo "User ID {$user_id} <br>";
 	$table_name = $wpdb->prefix . 'ctr_users';
-    $sql = "SELECT * FROM " . $table_name . " WHERE user_id=" . $user_id;
+    $sql = "SELECT * FROM " . $table_name . " WHERE user_id={$user_id}";
 	
 	echo $sql;
-	echo $user_id;
 	
 	$result = $wpdb->get_row($sql, ARRAY_A);
 	foreach($result as $col){
