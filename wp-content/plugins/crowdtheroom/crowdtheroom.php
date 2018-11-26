@@ -184,26 +184,6 @@ function add_ctr_user(){
 	echo $isFelon, "<br>";
 	echo $isMentalIncap, "<br>";
 
-	/*
-	if ($isCitizen == 'Yes')
-		$isCitizen = 1;
-	else{
-		$isCitizen = 0;
-	}
-	
-	if ($isFelon == 'Yes')
-		$isFelon = 1;
-	else{
-		$isFelon = 0;
-	}
-
-	if ($isMentalIncap == 'Yes')
-		$isMentalIncap = 1;
-	else{
-		$isMentalIncap = 0;
-	}
-	*/
-	
 	// Generate new unique user id
 	$id = new_user_id();
 
@@ -228,11 +208,7 @@ function add_ctr_user(){
 	$wpdb->insert($table,$data);
 
 	// Looking to make sure input data is good
-	echo "Field  |  Input<br>";
-	echo "---------------<br>";
-
-	foreach($data as $field => $input){
-		echo "{$field}  |  {$input} <br>";
+	arr_as_table($data);
 	}
 	
 	
@@ -268,6 +244,18 @@ function next_steps_page(){
 	
 }
 
+// Nice function to print out elements of an assocaitive array as a table
+function arr_as_table($array, $col1="Key", $col2="Value"){
+	echo "<table>";
+	echo "<tr><th>{$col1}</th> <th>{$col2}</th><tr>";
+	foreach ($array as $key => $value){
+		echo "<tr>";
+		echo "<td>{$key}</td>";
+		echo "<td>{$value}</td>";
+		echo "</tr>";
+	}
+	echo "</table>";
+}
 
 // Returns first name of all users on data base, not in use
 function get_ctr_users(){
