@@ -192,7 +192,9 @@ function add_ctr_user(){
 	date_default_timezone_set('America/Chicago');
 	$today = date('m/d/Y');
 	$age = date_diff($dob, $today);
-	echo $age;
+	echo $age->y, "<br>";
+	echo $age['m'], "<br>";
+	echo $age['d'], "<br>";
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
