@@ -192,6 +192,8 @@ function add_ctr_user(){
 	date_default_timezone_set('America/Chicago');
 	$today = date('m/d/Y', time());
 	$age = date_diff($dob, $today);
+	echo "Today", $today, gettype($today), "<br>";
+	echo "DOB", $dob, gettype($dob), "<br>";
 	echo $age->y, "<br>";
 	echo $age['m'], "<br>";
 	echo $age['d'], "<br>";
