@@ -191,7 +191,7 @@ function add_ctr_user(){
 	// Calculate fields from given info
 	date_default_timezone_set('America/Chicago');
 	$today = date_create(time());
-	$dob_new = date_create($dob)
+	$dob_new = date_create($dob);
 	echo "Today", $today, gettype($today), "<br>";
 	echo "DOB", $dob, gettype($dob), "<br>";
 
