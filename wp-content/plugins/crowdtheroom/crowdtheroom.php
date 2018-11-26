@@ -221,7 +221,7 @@ function add_ctr_user(){
 	
 	
 	// Takes user to next page after filling out form
-	//wp_redirect( "http://104.248.4.174/success-page/?id={$id}");
+	wp_redirect( "http://104.248.4.174/success-page/?id={$id}");
 }
 
 // Function to get new user id
