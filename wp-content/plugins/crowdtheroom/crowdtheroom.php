@@ -139,8 +139,8 @@ function basic_form(){
 		<input type="date" id="dob" name="dob" value=""/>
 		
 		<label for="isCitizen">Are you a US citizen?</label>
-		<input type="radio" name="isCitizen">Yes</input>
-		<input type="radio" name="isCitizen">No</input>
+		<input type="radio" name="isCitizen" value=1>Yes</input>
+		<input type="radio" name="isCitizen" value=0>No</input>
 
 		<label for="yrsCitizen">How many years have you been a citizen?</label>
 		<input type="text" name="yrsCitizen" id="yrsCitizen" value="" />
@@ -149,13 +149,14 @@ function basic_form(){
 		<h2>Fields for School Board (I think?)</h2>
 
 		<label for="isFelon">Have you even been convicted of a felony?</label>
-		<input type="radio" name="isFelon">Yes</input>
-		<input type="radio" name="isFelon">No</input>
+		<input type="radio" name="isFelon" value=1>Yes</input>
+		<input type="radio" name="isFelon" value=0>No</input>
 
 		<label for="isMentalIncap">Have you even been deemed totally mentally incapacitated or partially mentally incapacitated without the right to vote by a court of law?</label>
-		<input type="radio" name="isMentalIncap">Yes</input>
-		<input type="radio" name="isMentalIncap">No</input>
+		<input type="radio" name="isMentalIncap" value=1>Yes</input>
+		<input type="radio" name="isMentalIncap" value=0>No</input>
 
+		<br>
 		<input type="hidden" name="action" value="basic_info">
 		<input type="submit" name="submit_form" value="submit" />
     </form>
@@ -183,7 +184,7 @@ function add_ctr_user(){
 	echo $isFelon, "<br>";
 	echo $isMentalIncap, "<br>";
 
-
+	/*
 	if ($isCitizen == 'Yes')
 		$isCitizen = 1;
 	else{
@@ -201,7 +202,8 @@ function add_ctr_user(){
 	else{
 		$isMentalIncap = 0;
 	}
-
+	*/
+	
 	// Generate new unique user id
 	$id = new_user_id();
 
