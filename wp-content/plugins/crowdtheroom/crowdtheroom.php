@@ -190,8 +190,9 @@ function add_ctr_user(){
 
 	// Calculate fields from given info
 	date_default_timezone_set('America/Chicago');
-	$date = date('m/d/Y');
-
+	$today = date('m/d/Y');
+	$age = date_diff($dob, $today);
+	echo $age;
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
@@ -215,7 +216,7 @@ function add_ctr_user(){
 	
 	
 	// Takes user to next page after filling out form
-	wp_redirect( "http://104.248.4.174/success-page/?id={$id}");
+	//wp_redirect( "http://104.248.4.174/success-page/?id={$id}");
 }
 
 // Function to get new user id
