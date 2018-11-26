@@ -209,6 +209,7 @@ function add_ctr_user(){
 				  'zip' => $zip,
 				  'yrsAtCurRes' => $yrsAtCurRes,
 				  'dob' => $dob,
+				  'age' => $age->y,
 				  'isCitizen' => $isCitizen,
 				  'yrsCitizen' => $yrsCitizen,
 				  'isFelon' => $isFelon,
