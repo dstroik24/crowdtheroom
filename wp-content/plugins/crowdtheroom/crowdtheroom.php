@@ -73,8 +73,11 @@ function basic_form(){
 		<label for="address">Street Address:</label>
 		<input type="text" name="address" id="address" value="" />
 
+		<label for="city">City:</label>
+		<input type="text" name="city" id="city" value="" />
+
 		<label for="state">State:</label>
-		<select>
+		<select name='state'>
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
@@ -172,6 +175,8 @@ function add_ctr_user(){
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$address = $_POST['address'];
+	$state = $_POST['state'];
+	$city = $_POST['city'];
 	$zip = $_POST['zip'];
 	$yrsAtCurRes = $_POST['yrsAtCurRes'];
 	$dob = $_POST['dob'];
@@ -194,6 +199,8 @@ function add_ctr_user(){
 				  'fname' => $fname, 
 				  'lname' => $lname,
 				  'street' => $address,
+				  'city' => $city,
+				  'state' => $state,
 				  'zip' => $zip,
 				  'yrsAtCurRes' => $yrsAtCurRes,
 				  'dob' => $dob,
