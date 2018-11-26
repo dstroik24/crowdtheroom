@@ -179,10 +179,6 @@ function add_ctr_user(){
 	$yrsCitizen = $_POST['yrsCitizen'];
 	$isFelon = $_POST['isFelon'];
 	$isMentalIncap = $_POST['isMentalIncap'];
-	
-	echo $isCitizen, "<br>";
-	echo $isFelon, "<br>";
-	echo $isMentalIncap, "<br>";
 
 	// Generate new unique user id
 	$id = new_user_id();
@@ -212,7 +208,7 @@ function add_ctr_user(){
 	
 	
 	// Takes user to next page after filling out form
-	//wp_redirect( 'http://104.248.4.174/success-page/?d='.$user_id);
+	wp_redirect( 'http://104.248.4.174/success-page/?id='.$user_id);
 }
 
 // Function to get new user id
@@ -235,7 +231,10 @@ function next_steps_page(){
 	$user_id = $_GET['user_id'];
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM " . $table_name . " WHERE user_id=" . $user_id;
+	
 	echo $sql;
+	echo $user_id;
+	
 	$result = $wpdb->get_row($sql, ARRAY_A);
 	foreach($result as $col){
 		echo $col, '<br>';
