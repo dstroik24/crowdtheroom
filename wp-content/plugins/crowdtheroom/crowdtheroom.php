@@ -190,7 +190,7 @@ function add_ctr_user(){
 
 	// Calculate fields from given info
 	date_default_timezone_set('America/Chicago');
-	$today = date('m/d/Y');
+	$today = date('m/d/Y', time());
 	$age = date_diff($dob, $today);
 	echo $age->y, "<br>";
 	echo $age['m'], "<br>";
