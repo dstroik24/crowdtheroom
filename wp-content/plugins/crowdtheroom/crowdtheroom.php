@@ -171,6 +171,7 @@ function basic_form(){
 
 		<label for="office">What Office would you like to run for?</label>
 		<select name='office'>
+			<option value="">Select an Office</option>
 			<option value="us_rep_d10">US REP - District 10</option>
 			<option value="us_rep_d17">US REP - District 17</option>
 			<option value="us_rep_d21">US REP - District 21</option>
@@ -191,7 +192,7 @@ function basic_form(){
 			<option value="aisd_d6">AISD Trustee District 6</option>
 			<option value="aisd_d7">AISD Trustee District 7</option>
 			<option value="aisd_large">AISD Trustee At Large</option>
-		<select>
+		</select>
 
 		<label for="fname">First Name:</label>
 		<input type="text" name="fname" id="fname" value="" />
@@ -209,6 +210,7 @@ function basic_form(){
 
 		<label for="state">State:</label>
 		<select name='state'>
+			<option value=""></option>
 			<option value="AL">Alabama</option>
 			<option value="AK">Alaska</option>
 			<option value="AZ">Arizona</option>
