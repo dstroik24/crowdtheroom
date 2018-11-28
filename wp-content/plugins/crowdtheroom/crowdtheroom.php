@@ -168,7 +168,31 @@ function basic_form_with_validation(){
 function basic_form(){
 	?>
 	<form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
-	
+
+		<label for="office">What Office would you like to run for?</label>
+		<select name='office'>
+			<option value="us_rep_d10">US REP - District 10</option>
+			<option value="us_rep_d17">US REP - District 17</option>
+			<option value="us_rep_d21">US REP - District 21</option>
+			<option value="us_rep_d25">US REP - District 25</option>
+			<option value="us_rep_d35">US REP - District 35</option>
+			<option value="tx_rep_d46">Texas State Representative, District 46</option>
+			<option value="tx_rep_d47">Texas State Representative, District 47</option>
+			<option value="tx_rep_d48">Texas State Representative, District 48</option>
+			<option value="tx_rep_d49">Texas State Representative, District 49</option>
+			<option value="tx_rep_d50">Texas State Representative, District 50</option>
+			<option value="tx_rep_d51">Texas State Representative, District 51</option>
+			<option value="travis_DA">Travis County District Attorney</option>
+			<option value="aisd_d1">AISD Trustee District 1</option>
+			<option value="aisd_d2">AISD Trustee District 2</option>
+			<option value="aisd_d3">AISD Trustee District 3</option>
+			<option value="aisd_d4">AISD Trustee District 4</option>
+			<option value="aisd_d5">AISD Trustee District 5</option>
+			<option value="aisd_d6">AISD Trustee District 6</option>
+			<option value="aisd_d7">AISD Trustee District 7</option>
+			<option value="aisd_large">AISD Trustee At Large</option>
+		<select>
+
 		<label for="fname">First Name:</label>
 		<input type="text" name="fname" id="fname" value="" />
 
@@ -343,7 +367,8 @@ function new_user_id() {
  // Run a python script with name $script_name
  function run_python($script_name){
 	$command = 'ls';
-	exec($command, $out, $status);
+	exec($command, $out);
+	return $out;
  }
 
 function next_steps_page(){
