@@ -172,7 +172,7 @@ function basic_form(){
 
 		<label for="office">What Office would you like to run for?</label>
 		<select name='office'>
-			<option value="">Select an Office</option>
+			<option value="na">Select an Office</option>
 			<option value="us_rep_d10">US REP - District 10</option>
 			<option value="us_rep_d17">US REP - District 17</option>
 			<option value="us_rep_d21">US REP - District 21</option>
@@ -355,9 +355,33 @@ function add_ctr_user(){
 	// Looking to make sure input data is good
 	arr_as_table($data);
 	
+	$us_reps = array("us_rep_d10", "us_rep_d17", "us_rep_d21", "us_rep_d25", "us_rep_d35");
+	$tx_reps = array("tx_rep_d46", "tx_rep_d47", "tx_rep_d48", "tx_rep_d49", "tx_rep_d50", "tx_rep_d51");
+	$trav_da = array("travis_DA");
+	$aisd_reps = array("aisd_d1", "aisd_d2", "aisd_d3", "aisd_d4", "aisd_d5", "aisd_d6", "aisd_d7", "aisd_large");
+	if (in_array($office, $us_reps)) {
+		echo "go To us reps page";
+		wp_redirect("http://104.248.4.174/us-representative/");
+	}
+	if (in_array($office, $tx_reps)) {
+		echo "go To tx reps page";
+		wp_redirect("http://104.248.4.174/texas-state-representative/");
+	}
+	if (in_array($office, $trav_da)) {
+		echo "go To DA page";
+		wp_redirect("http://104.248.4.174/district-attorney/");
+	}
+	if (in_array($office, $aisd_reps)) {
+		echo "go To aisd page";
+		wp_redirect("http://104.248.4.174/aisd-trustee/");
+	}
+	if ($office == "na"){
+		wp_redirect( "http://104.248.4.174/success-page/?id={$id}");
+	}
+
 	
 	// Takes user to next page after filling out form
-	wp_redirect( "http://104.248.4.174/success-page/?id={$id}");
+	//wp_redirect( "http://104.248.4.174/success-page/?id={$id}");
 }
 
 // Function to get new user id
