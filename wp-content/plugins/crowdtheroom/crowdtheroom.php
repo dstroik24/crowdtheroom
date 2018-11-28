@@ -20,6 +20,7 @@ function ctr_users_create_db() {
     
     $sql = "CREATE TABLE " . $table_name . " (
 		user_id INT NOT NULL,
+		office TEXT NOT NULL,
 		fname TEXT NOT NULL,
 		lname TEXT NOT NULL,
 		dob DATE NOT NULL,
@@ -305,6 +306,7 @@ function add_ctr_user(){
 	global $wpdb;
 	
 	//get info from form
+	$office = $_POST['office'];
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$address = $_POST['address'];
@@ -334,6 +336,7 @@ function add_ctr_user(){
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
 	$data = array('user_id' => $id,
+				  'office' => $office,
 				  'fname' => $fname, 
 				  'lname' => $lname,
 				  'street' => $address,
