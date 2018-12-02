@@ -26,12 +26,13 @@ function ctr_users_create_db() {
 		dob DATE NOT NULL,
 		age INT NOT NULL,
 		email TEXT NOT NULL,
-		street TEXT NOT NULL,
+		full_address TEXT NOT NULL,
+		street_address TEXT NOT NULL,
 		city TEXT NOT NULL,
 		state CHAR(2) NOT NULL,
 		zip TEXT NOT NULL,
 		yrsAtCurRes TEXT NOT NULL,
-		regVote INT(1) NOT NULL,
+		isRegVote INT(1) NOT NULL,
 		isCitizen INT(1) NOT NULL,
 		yrsCitizen INT NOT NULL,
 		isTxRes INT(1) NOT NULL,
@@ -70,8 +71,8 @@ function basic_form_with_validation(){
 		
 		<h2>Where do you currently live?</h2>
 
-		<label for="address">Street Address:</label>
-		<input type="text" name="address" id="address" value="" />
+		<label for="street_address">Street Address:</label>
+		<input type="text" name="street_address" id="street_address" value="" />
 
 		<label for="city">City:</label>
 		<input type="text" name="city" id="city" value="" />
@@ -309,7 +310,7 @@ function add_ctr_user(){
 	$office = $_POST['office'];
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
-	$address = $_POST['address'];
+	$street_address = $_POST['street_address'];
 	$state = $_POST['state'];
 	$city = $_POST['city'];
 	$zip = $_POST['zip'];
@@ -320,6 +321,22 @@ function add_ctr_user(){
 	$isFelon = $_POST['isFelon'];
 	$isMentalIncap = $_POST['isMentalIncap'];
 
+
+	// Use google api to standardize address
+	$address_standard = geocode("{$street_address} {$city} {$state} {$zip}");
+	if ($address_standard){
+		$full_address = $address_standard['full_address'];
+		$street_address = $address_standard['street_address'];
+		$state = $address_standard['state'];
+		$city = $address_standard['city'];
+		$zip = $address_standard['zip'];
+		$county = $address_standard['county'];
+		$lati = $address_standard['latitude'];
+		$longi = $address_standard['longitude'];
+	}
+
+
+
 	// Generate new unique user id
 	$id = new_user_id();
 
@@ -327,11 +344,10 @@ function add_ctr_user(){
 	date_default_timezone_set('America/Chicago');
 	$today = new dateTime('now');;
 	$dob_new = date_create($dob);
-
 	$age = date_diff($dob_new, $today);
-	echo $age->y, "<br>";
-	echo $age->m, "<br>";
-	echo $age->d, "<br>";
+	
+	$isRegVote = run_python("check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
+
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
@@ -339,20 +355,22 @@ function add_ctr_user(){
 				  'office' => $office,
 				  'fname' => $fname, 
 				  'lname' => $lname,
-				  'street' => $address,
+				  'full_address' => $full_address,
+				  'street_address' => $street_address,
 				  'city' => $city,
 				  'state' => $state,
 				  'zip' => $zip,
 				  'yrsAtCurRes' => $yrsAtCurRes,
 				  'dob' => $dob,
 				  'age' => $age->y,
+				  'isRegVote' => $isRegVote,
 				  'isCitizen' => $isCitizen,
 				  'yrsCitizen' => $yrsCitizen,
 				  'isFelon' => $isFelon,
 				  'isMentalIncap' => $isMentalIncap);
 	$wpdb->insert($table,$data);
 
-	// Looking to make sure input data is good
+	// Looking to make sure input data is good, echos a table
 	arr_as_table($data);
 	
 	$us_reps = array("us_rep_d10", "us_rep_d17", "us_rep_d21", "us_rep_d25", "us_rep_d35");
@@ -393,12 +411,65 @@ function new_user_id() {
 	return $newid;
  }
 
- // Run a python script with name $script_name
- function run_python($script_name){
-	$command = 'ls';
-	exec($command, $out);
-	return $out;
- }
+// Standardizes address using google API, returns 
+function geocode($address){
+ 
+	// url encode the address
+	$url_address = urlencode($address);
+     
+    // google map geocode api url
+    $url = "https://maps.googleapis.com/maps/api/geocode/json?address={$url_address}&key=AIzaSyAqn3-tuxrnf_fQlyd4S3qmJWj4zvh1q10";
+ 
+    // get the json response
+    $resp_json = file_get_contents($url);
+     
+    // decode the json
+    $resp = json_decode($resp_json, true);
+ 
+    // response status will be 'OK', if able to geocode given address 
+    if($resp['status']=='OK'){
+ 
+        // get the important data
+        $lati = isset($resp['results'][0]['geometry']['location']['lat']) ? $resp['results'][0]['geometry']['location']['lat'] : "";
+        $longi = isset($resp['results'][0]['geometry']['location']['lng']) ? $resp['results'][0]['geometry']['location']['lng'] : "";
+        $formatted_address = isset($resp['results'][0]['formatted_address']) ? $resp['results'][0]['formatted_address'] : "";
+		foreach ($resp['results'][0]['address_components'] as $field){
+			echo $field['long_name'], "<br>";
+		}
+		$street = "{$resp['results'][0]['address_components'][0]['long_name']} {$resp['results'][0]['address_components'][1]['long_name']}";
+		$city = $resp['results'][0]['address_components'][3]['long_name'];
+		$state = $resp['results'][0]['address_components'][5]['short_name'];
+		$zip = $resp['results'][0]['address_components'][7]['long_name'];
+		$county = $resp['results'][0]['address_components'][4]['long_name'];
+		
+		// verify if data is complete
+        if($lati && $longi && $formatted_address){
+         
+            // put the data in the array
+            $data_arr = array(
+						'full_address' => $formatted_address,
+						'street_address' => $street,
+						'city' => $city,
+						'state' => $state,
+						'zip' => $zip,
+						'county' => $county,
+						'latitude' => $lati, 
+						'longitude' => $longi);
+             
+            return $data_arr;
+             
+        }else{
+            return false;
+        }
+         
+    }
+ 
+    else{
+        echo "<strong>ERROR: {$resp['status']}</strong>";
+        return false;
+	}
+}
+
 
 function next_steps_page(){
 	global $wpdb;
