@@ -3,6 +3,21 @@
  Template Name: results-page-template
  */
 
+function get_user_info(){
+	global $wpdb;
+    //$user_id = $_GET['id'];
+    $user_id = 1;
+	echo "User ID {$user_id} <br>";
+	$table_name = $wpdb->prefix . 'ctr_users';
+    $sql = "SELECT * FROM " . $table_name . " WHERE user_id={$user_id}";
+	$result = $wpdb->get_row($sql, ARRAY_A);
+    arr_as_table($result);
+    return $result;
+}
+
+$info_arr = get_user_info();
+$office = "us_rep_d25";
+
 ?>
 <!DOCTYPE html>
 
@@ -18,7 +33,7 @@ let aisdAge = 18;
 let daAge = 18;
 
 // Variables
-var office = "us_rep_d17";
+var office = "<?= $office ?>";
 var fname = "Connor";
 var lname = "Leech";
 var fullName = fname + " " + lname;
