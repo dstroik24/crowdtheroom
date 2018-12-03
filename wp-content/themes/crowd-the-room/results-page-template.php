@@ -5,8 +5,7 @@
 
 function get_user_info(){
 	global $wpdb;
-    //$user_id = $_GET['id'];
-    $user_id = 1;
+    $user_id = $_GET['id'];
 	echo "User ID {$user_id} <br>";
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM " . $table_name . " WHERE user_id={$user_id}";
@@ -16,6 +15,7 @@ function get_user_info(){
 }
 
 $info_arr = get_user_info();
+print_r($info_arr);
 $office = "us_rep_d25";
 $fname = "Dan";
 $lname = "Leech";
