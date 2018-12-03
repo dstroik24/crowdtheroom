@@ -321,7 +321,7 @@ function add_ctr_user(){
 	$isFelon = $_POST['isFelon'];
 	$isMentalIncap = $_POST['isMentalIncap'];
 
-	echo $street_address;
+	echo "Street Address", $street_address;
 	// Initialize new stuff
 	$full_address = "";
 	$county = "";
@@ -340,7 +340,7 @@ function add_ctr_user(){
 		$longi = $address_standard['longitude'];
 	}
 	
-	print_r($address_standard);
+	//print_r($address_standard);
 
 
 
@@ -355,7 +355,7 @@ function add_ctr_user(){
 	$dob_format = date_format($dob_new, "d/m/Y");
 	
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
-	echo "{$fname} {$lname} {$county} {$dob} {$zip}";
+	echo "{$fname} {$lname} {$county} {$dob_format} {$zip}";
 	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
 	$isRegVote = $voterStatus[1];
 
