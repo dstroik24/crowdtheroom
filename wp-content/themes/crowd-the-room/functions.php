@@ -161,6 +161,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 
 function custom_script_load(){
-  wp_enqueue_script( 'input-form.js', '/var/www/html/wp-content/themes/crowd-the-room/input-form.js');
+  wp_enqueue_script( 'input-form', '/var/www/html/wp-content/themes/crowd-the-room/input-form.js');
 }
 add_action( 'wp_enqueue_scripts', 'custom_script_load' );

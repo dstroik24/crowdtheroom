@@ -2,6 +2,12 @@
 /*
  Template Name: input-form-template
  */
+
+function custom_script_load(){
+    wp_enqueue_script( 'input-form', '/var/www/html/wp-content/themes/crowd-the-room/input-form.js');
+  }
+
+custom_script_load()
 ?>
 
 <!DOCTYPE html>
@@ -196,7 +202,7 @@
       </tr>
     </table>
 
-    <script src="input-form.js"></script>
+    <script src="input-form"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqn3-tuxrnf_fQlyd4S3qmJWj4zvh1q10&libraries=places&callback=initAutocomplete"
         async defer></script>
     </head>
