@@ -46,6 +46,7 @@ def submit_form(input):
         driver.find_element_by_xpath("//select[@name='selType']/option[text()='Name, County, Date of Birth']").click()
         time.sleep(2)
     except:
+        print("Couldn't click the validation type")
         return None
 
     # Find fields and put the given info in them
@@ -65,6 +66,7 @@ def submit_form(input):
     try:
         driver.find_element_by_xpath("//select[@name='county']/option[text()='" + county + "']").click()
     except:
+        print("Couldn't find county")
         return None
     
 
@@ -79,7 +81,8 @@ def submit_form(input):
                                     'Timed out waiting for PA creation confirmation popup to appear.')
         alert = driver.switch_to.alert
         alert.accept()
-        return False
+        print("Invalid input into roter registration website")
+        return None
     except TimeoutException:
         pass
 
