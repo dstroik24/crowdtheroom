@@ -31,6 +31,8 @@ function ctr_users_create_db() {
 		city TEXT NOT NULL,
 		state CHAR(2) NOT NULL,
 		zip TEXT NOT NULL,
+		latitude FLOAT NOT NULL,
+		longitude FLOAT NOT NULL,
 		yrsAtCurRes TEXT NOT NULL,
 		isRegVote INT(1) NOT NULL,
 		isCitizen INT(1) NOT NULL,
@@ -214,10 +216,18 @@ function add_ctr_user(){
 	$isMentalIncap = $_POST['isMentalIncap'];
 
 	// Initialize new stuff
-	$full_address = "";
-	$county = "";
-	$lati = 0;
-	$longi = 0;
+	$full_address = null;
+	$county = null;
+	$lati = null;
+	$longi = null;
+	$isTxRes = null;
+	$yrsTxRes = null;
+	$isPracLaw = null;
+	$yrsPracLaw = null;
+	$usRepDist = null;
+	$txRepDist = null;
+	$aisdDist = null;
+
 	// Use google api to standardize address
 	$address_standard = geocode("{$street_address} {$city} {$state} {$zip}");
 	if ($address_standard){
@@ -230,19 +240,22 @@ function add_ctr_user(){
 		$lati = $address_standard['latitude'];
 		$longi = $address_standard['longitude'];
 	}
-	
-	print_r($address_standard);
-
 
 
 	// Generate new unique user id
 	$id = new_user_id();
 
 	// Calculate fields from given info
+	// Age
 	date_default_timezone_set('America/Chicago');
 	$today = new dateTime('now');;
 	$dob_new = date_create($dob);
 	$age = date_diff($dob_new, $today);
+	// Texas resident
+	if ($state == "TX"){
+		$isTxRes = 1;
+		$yrsTxRes = $yrsAtCurRes;
+	}
 	
 	// Reformat some data for the python script
 	$dob_format = date_format($dob_new, "m/d/Y");
@@ -263,7 +276,12 @@ function add_ctr_user(){
 				  'city' => $city,
 				  'state' => $state,
 				  'zip' => $zip,
+				  'county' => $county,
+				  'latitude' => $lati,
+				  'longitude' => $longi,
 				  'yrsAtCurRes' => $yrsAtCurRes,
+				  'isTxRes' => $isTxRes,
+				  'yrsTxRes' => $yrsTxRes,
 				  'dob' => $dob,
 				  'age' => $age->y,
 				  'isRegVote' => $isRegVote,
