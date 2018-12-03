@@ -346,7 +346,7 @@ function add_ctr_user(){
 	$dob_new = date_create($dob);
 	$age = date_diff($dob_new, $today);
 	
-	$isRegVote = run_python("check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
+	$isRegVote = run_python3("check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
 
 
 	//add info to database
@@ -405,12 +405,12 @@ function add_ctr_user(){
 }
 
 
-// Testing the voter registration thing
-function test_vote(){
-	$isRegVote = run_python("check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
+// Runs script with python3
+function run_python3($script_name){
+	$command = "python3 {$script_name}";
+	exec($command, $out);
+	return $out;
 }
-
-add_shortcode('test-vote', 'test_vote');
 
 // Function to get new user id
 function new_user_id() {

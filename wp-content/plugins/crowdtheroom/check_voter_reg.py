@@ -2,6 +2,7 @@
 import sys
 from bs4 import BeautifulSoup
 from selenium import webdriver
+from pyvirtualdisplay import Display
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.support.ui import WebDriverWait
@@ -28,7 +29,11 @@ def submit_form(input):
 
 
     # Initialize webdriver and go to url
-    driver = webdriver.Chrome()
+    display = Display(visible=0, size=(800, 600))
+    display.start()
+    options = webdriver.ChromeOptions()
+    options.add_argument('--no-sandbox')
+    driver = webdriver.Chrome(chrome_options=options)
     url = "https://teamrv-mvp.sos.texas.gov/MVP/back2HomePage.do"
     driver.get(url)
     time.sleep(2)
