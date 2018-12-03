@@ -321,7 +321,11 @@ function add_ctr_user(){
 	$isFelon = $_POST['isFelon'];
 	$isMentalIncap = $_POST['isMentalIncap'];
 
-
+	// Initialize new stuff
+	$full_address = "";
+	$county = "";
+	$lati = 0;
+	$longi = 0;
 	// Use google api to standardize address
 	$address_standard = geocode("{$street_address} {$city} {$state} {$zip}");
 	if ($address_standard){
@@ -334,6 +338,8 @@ function add_ctr_user(){
 		$lati = $address_standard['latitude'];
 		$longi = $address_standard['longitude'];
 	}
+	
+	print_r($address_standard);
 
 
 
@@ -345,6 +351,7 @@ function add_ctr_user(){
 	$today = new dateTime('now');;
 	$dob_new = date_create($dob);
 	$age = date_diff($dob_new, $today);
+	$dob_format = date_format($dob_new, "d/m/Y");
 	
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
 	echo "{$fname} {$lname} {$county} {$dob} {$zip}";
