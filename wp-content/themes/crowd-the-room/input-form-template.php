@@ -16,6 +16,10 @@
         font-family: "Courier New", Courier, monospace;
         color: white;
     }
+    input[type=text] {
+        width: 300px;
+        height: 100px;
+    }
 
     </style>
         <title>MAGA</title>
@@ -61,6 +65,7 @@
         <h2>Where do you currently live?</h2>
 
         <div id="locationField">
+        <label for="autocomplete">Google maps autocomplete address:</label>
         <input id="autocomplete" placeholder="Enter your address"
              onFocus="geolocate()" type="text"></input>
         </div>
