@@ -315,7 +315,7 @@ function test_vote(){
 
 	$county_fixed = preg_replace("#\s#", "-", $county);
 	echo $county_fixed;
-	$out = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county} {$dob_format} {$zip}");
+	$out = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county_fixed} {$dob_format} {$zip}");
 	print_r($out);
 }
 add_shortcode('test-vote', 'test_vote');
