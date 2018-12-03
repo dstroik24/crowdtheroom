@@ -31,6 +31,7 @@ function ctr_users_create_db() {
 		city TEXT NOT NULL,
 		state CHAR(2) NOT NULL,
 		zip TEXT NOT NULL,
+		county TEXT NOT NULL,
 		latitude FLOAT NOT NULL,
 		longitude FLOAT NOT NULL,
 		yrsAtCurRes TEXT NOT NULL,
