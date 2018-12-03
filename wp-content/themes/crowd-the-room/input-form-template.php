@@ -16,9 +16,6 @@
         font-family: "Courier New", Courier, monospace;
         color: white;
     }
-    input { 
-        display: inline; 
-    }
 
     </style>
         <title>MAGA</title>
@@ -28,7 +25,7 @@
 
     <body>
 
-        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
+        <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" style="display: inline;">
 
         <label for="office">What Office would you like to run for?</label>
         <select name='office'>
