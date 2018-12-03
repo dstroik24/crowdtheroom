@@ -249,6 +249,7 @@ function add_ctr_user(){
 	echo "{$fname} {$lname} {$county} {$dob_format} {$zip}";
 	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county} {$dob_format} {$zip}");
 	$isRegVote = $voterStatus[1];
+	print_r($voterStatus);
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
@@ -306,7 +307,12 @@ function add_ctr_user(){
 }
 
 function test_vote(){
-	$out = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py");
+	$fname = "Daniel";
+	$lname = "Stroik";
+	$county = "Travis County";
+	$dob_format = "02/10/1997";
+	$zip = "78705";
+	$out = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county} {$dob_format} {$zip}");
 	print_r($out);
 }
 add_shortcode('test-vote', 'test_vote');
