@@ -243,7 +243,11 @@ function add_ctr_user(){
 	$today = new dateTime('now');;
 	$dob_new = date_create($dob);
 	$age = date_diff($dob_new, $today);
+	
+	// Reformat some data for the python script
 	$dob_format = date_format($dob_new, "m/d/Y");
+	$county_fixed = preg_replace("#\s#", "-", $county);
+	echo $county_fixed;
 	
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
 	echo "{$fname} {$lname} {$county} {$dob_format} {$zip}";
