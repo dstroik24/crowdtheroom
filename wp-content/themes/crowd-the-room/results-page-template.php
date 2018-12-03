@@ -33,6 +33,7 @@ let txRepAge = 21;
 let aisdAge = 18;
 let daAge = 18;
 
+
 // Variables
 var office = "<?= $office ?>";
 var fname = "<?= $fname ?>";
@@ -50,6 +51,9 @@ var isCitizen = 1;
 var yrsCitizen = 8;
 var isFelon = 0;
 var isMentalIncap = 0;
+
+document.write(fname);
+
 
 // Define position cetegory
 function whatPosCateg(office) {
