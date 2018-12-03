@@ -16,7 +16,7 @@ function get_user_info(){
 
 $info_arr = get_user_info();
 print_r($info_arr);
-$office = "us_rep_d25";
+$office = $info_arr['office'];
 $fname = "Dan";
 $lname = "Leech";
 
@@ -83,22 +83,22 @@ $lname = "Leech";
 
 
     // Variables
-    var office = "<?= $office ?>";
-    var fname = "<?= $fname ?>";
-    var lname = "<?= $lname ?>";
-    var fullName = fname + " " + lname;
-    var address = "123 Main Street";
-    var state = "TX";
-    var city = "Austin";
-    var zip = "78705";
-    var yrsAtCurRes = "2";
-    var dob = "02241996";
-    var age = 33;
-    var isTxRes = 1;
-    var isCitizen = 1;
-    var yrsCitizen = 8;
-    var isFelon = 0;
-    var isMentalIncap = 0;
+    var office = "<?= $info_arr['office'] ?>";
+    var fname = "<?= $info_arr['fname'] ?>";
+    var lname = "<?= $info_arr['lname'] ?>";
+    var fullName = null;
+    var full_address = "<?= $info_arr['full_address'] ?>";
+    var state = "<?= $info_arr['state'] ?>";
+    var city = "<?= $info_arr['city'] ?>";
+    var zip = "<?= $info_arr['zip'] ?>";
+    var yrsAtCurRes = "<?= $info_arr['yrsAtCurRes'] ?>";
+    var dob = "<?= $info_arr['dob'] ?>";
+    var age = "<?= $info_arr['age'] ?>";
+    var isTxRes = "<?= $info_arr['isTxRes'] ?>";
+    var isCitizen = "<?= $info_arr['isCitizen'] ?>";
+    var yrsCitizen = "<?= $info_arr['yrsCitizen'] ?>";
+    var isFelon = "<?= $info_arr['isFelon'] ?>";
+    var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
 
     document.write(fname);
 
