@@ -312,6 +312,9 @@ function test_vote(){
 	$county = "Travis County";
 	$dob_format = "02/10/1997";
 	$zip = "78705";
+
+	$county_fixed = preg_replace("#\s#", "-", $county);
+	echo $county_fixed;
 	$out = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county} {$dob_format} {$zip}");
 	print_r($out);
 }
