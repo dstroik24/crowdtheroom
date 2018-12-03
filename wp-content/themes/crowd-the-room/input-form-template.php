@@ -7,7 +7,7 @@ function custom_script_load(){
     wp_enqueue_script( 'input-form', '/var/www/html/wp-content/themes/crowd-the-room/input-form.js');
   }
 
-custom_script_load()
+custom_script_load();
 ?>
 
 <!DOCTYPE html>
