@@ -165,7 +165,7 @@ function basic_form_with_validation(){
 		<input type="submit" name="submit_form" value="submit" />
     </form>
 	<?php
-	$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
+	//$_POST  = filter_input_array(INPUT_POST, FILTER_SANITIZE_STRING);
 }
 function basic_form(){
 	?>
@@ -352,7 +352,7 @@ function add_ctr_user(){
 	$today = new dateTime('now');;
 	$dob_new = date_create($dob);
 	$age = date_diff($dob_new, $today);
-	$dob_format = date_format($dob_new, "d/m/Y");
+	$dob_format = date_format($dob_new, "m/d/Y");
 	
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
 	echo "{$fname} {$lname} {$county} {$dob_format} {$zip}";
