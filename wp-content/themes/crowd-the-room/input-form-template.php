@@ -24,12 +24,6 @@
     <title>MAGA</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
 
-
-    <script src="/var/www/html/wp-content/themes/crowd-the-room/input-form.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqn3-tuxrnf_fQlyd4S3qmJWj4zvh1q10&libraries=places&callback=initAutocomplete"
-        async defer></script>
-    </head>
-
     <body>
 
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post">
@@ -202,7 +196,10 @@
       </tr>
     </table>
 
-
+    <script src="input-form.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqn3-tuxrnf_fQlyd4S3qmJWj4zvh1q10&libraries=places&callback=initAutocomplete"
+        async defer></script>
+    </head>
 
 
 </html>
