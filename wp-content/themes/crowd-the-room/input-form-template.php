@@ -198,7 +198,7 @@
       </tr>
     </table>
 
-    <script src="input-form.js"></script>
+    <script src="/var/www/html/wp-content/themes/crowd-the-room/input-form.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqn3-tuxrnf_fQlyd4S3qmJWj4zvh1q10&libraries=places&callback=initAutocomplete"
         async defer></script>
 
