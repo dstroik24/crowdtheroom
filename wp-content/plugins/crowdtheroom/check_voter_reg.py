@@ -98,7 +98,7 @@ def check_status(html_source):
     Gender
     Valid From
     Effective Date of Registration
-    Voter Status - (The one we want)
+    Voter Status - (The field we want)
     County
     Precinct
     VUID
@@ -135,7 +135,8 @@ def check_status(html_source):
     if info_dict['Voter Status'] == "ACTIVE":
         isVoter = True
 
-    return isVoter
+    if isVoter:return 1
+    else: return 0
 
 
 
