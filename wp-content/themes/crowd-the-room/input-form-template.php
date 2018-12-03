@@ -135,7 +135,7 @@
                 <option value="WY">Wyoming</option>
             </select></td>
         </tr>
-        
+
         <tr>
             <td><label for="zip">Zip Code:</label></td>
             <td><input type="text" name="zip" id="zip" value="" /></td>
@@ -221,6 +221,8 @@
               id="administrative_area_level_2" disabled="true"></input></td>
       </tr>
     </table>
+
+    <p id="debug"><p>
     </body>
 
     <script>
@@ -250,7 +252,7 @@
             administrative_area_level_2: "county",
             country: 'long_name',
             postal_code: 'zip'
-        }
+        };
 
         function initAutocomplete() {
             // Create the autocomplete object, restricting the search to geographical
@@ -278,8 +280,9 @@
             for (var i = 0; i < place.address_components.length; i++) {
                 var addressType = place.address_components[i].types[0];
                 if (componentForm[addressType]) {
-                var val = place.address_components[i][componentForm[addressType]];
-                document.getElementById(addressType).value = val;
+                    var val = place.address_components[i][componentForm[addressType]];
+                    document.getElementById("debug").innerHTML += compDecode[addressType] + "<br>";
+                    document.getElementById(compDecode[addressType]).value = val;
                 }
             }
         }
