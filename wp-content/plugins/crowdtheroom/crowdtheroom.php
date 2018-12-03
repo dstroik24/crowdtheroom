@@ -404,6 +404,13 @@ function add_ctr_user(){
 
 }
 
+function test_vote(){
+	$out = run_python3("check_voter_reg.py");
+	foreach($out as $o){
+		echo $o, "<br>";
+	}
+}
+add_shortcode('test-vote', 'test_vote');
 
 // Runs script with python3
 function run_python3($script_name){
