@@ -68,6 +68,7 @@
         </div>
 
         <label for="street_address">Street Address:</label>
+        <input type="text" name="street_number" id="street_number" value="" />
         <input type="text" name="street_address" id="street_address" value="" />
 
         <label for="city">City:</label>
@@ -207,14 +208,24 @@
 
         var placeSearch, autocomplete;
         var componentForm = {
-        street_number: 'long_name',
-        route: 'long_name',
-        locality: 'long_name',
-        administrative_area_level_1: 'short_name',
-        administrative_area_level_2: 'short_name',
-        country: 'long_name',
-        postal_code: 'short_name'
+            street_number: 'long_name',
+            route: 'long_name',
+            locality: 'long_name',
+            administrative_area_level_1: 'short_name',
+            administrative_area_level_2: 'short_name',
+            country: 'long_name',
+            postal_code: 'short_name'
         };
+
+        var compDecode = {
+            street_number: 'street_number',
+            route: 'street_address',
+            locality: 'city',
+            administrative_area_level_1: "state"
+            administrative_area_level_2: "county"
+            country: 'long_name',
+            postal_code: 'zip'
+        }
 
         function initAutocomplete() {
             // Create the autocomplete object, restricting the search to geographical
@@ -243,7 +254,7 @@
                 var addressType = place.address_components[i].types[0];
                 if (componentForm[addressType]) {
                 var val = place.address_components[i][componentForm[addressType]];
-                document.getElementById(addressType).value = val;
+                document.getElementById(compDecode[addressType]).value = val;
                 }
             }
         }
