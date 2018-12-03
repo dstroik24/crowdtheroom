@@ -18,6 +18,7 @@ function get_user_info(){
 $info_arr = get_user_info();
 $office = "us_rep_d25";
 $fname = "Dan";
+$lname = "Leech";
 
 ?>
 <!DOCTYPE html>
@@ -37,7 +38,7 @@ let daAge = 18;
 // Variables
 var office = "<?= $office ?>";
 var fname = "<?= $fname ?>";
-var lname = "Leech";
+var lname = "<?= $lname ?>";
 var fullName = fname + " " + lname;
 var address = "123 Main Street";
 var state = "TX";
