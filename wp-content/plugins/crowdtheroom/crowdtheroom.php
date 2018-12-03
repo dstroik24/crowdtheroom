@@ -346,8 +346,9 @@ function add_ctr_user(){
 	$dob_new = date_create($dob);
 	$age = date_diff($dob_new, $today);
 	
-	$isRegVote = run_python3("check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
-
+	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
+	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
+	$isRegVote = $voterStatus[1];
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
@@ -413,9 +414,7 @@ add_shortcode('test-vote', 'test_vote');
 // Runs script with python3
 function run_python3($script_name){
 	$command = "python3 {$script_name}";
-	echo $command;
 	exec($command, $out);
-	print_r($out);
 	return $out;
 }
 
