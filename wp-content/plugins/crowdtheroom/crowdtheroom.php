@@ -401,7 +401,16 @@ function add_ctr_user(){
 	
 	// Takes user to next page after filling out form
 	wp_redirect( "http://104.248.4.174/success-page/?id={$id}");
+
 }
+
+
+// Testing the voter registration thing
+function test_vote(){
+	$isRegVote = run_python("check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
+}
+
+add_shortcode('test-vote', 'test_vote');
 
 // Function to get new user id
 function new_user_id() {
@@ -434,9 +443,6 @@ function geocode($address){
         $lati = isset($resp['results'][0]['geometry']['location']['lat']) ? $resp['results'][0]['geometry']['location']['lat'] : "";
         $longi = isset($resp['results'][0]['geometry']['location']['lng']) ? $resp['results'][0]['geometry']['location']['lng'] : "";
         $formatted_address = isset($resp['results'][0]['formatted_address']) ? $resp['results'][0]['formatted_address'] : "";
-		foreach ($resp['results'][0]['address_components'] as $field){
-			echo $field['long_name'], "<br>";
-		}
 		$street = "{$resp['results'][0]['address_components'][0]['long_name']} {$resp['results'][0]['address_components'][1]['long_name']}";
 		$city = $resp['results'][0]['address_components'][3]['long_name'];
 		$state = $resp['results'][0]['address_components'][5]['short_name'];
@@ -480,7 +486,6 @@ function next_steps_page(){
     $sql = "SELECT * FROM " . $table_name . " WHERE user_id={$user_id}";
 	$result = $wpdb->get_row($sql, ARRAY_A);
 	arr_as_table($result);
-	
 }
 
 // Nice function to print out elements of an assocaitive array as a table

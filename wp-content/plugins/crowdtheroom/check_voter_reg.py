@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 import sys
 from bs4 import BeautifulSoup
 from selenium import webdriver
