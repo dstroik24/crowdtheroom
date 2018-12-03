@@ -321,6 +321,7 @@ function add_ctr_user(){
 	$isFelon = $_POST['isFelon'];
 	$isMentalIncap = $_POST['isMentalIncap'];
 
+	echo $street_address;
 	// Initialize new stuff
 	$full_address = "";
 	$county = "";
@@ -462,6 +463,9 @@ function geocode($address){
 		$state = $resp['results'][0]['address_components'][5]['short_name'];
 		$zip = $resp['results'][0]['address_components'][7]['long_name'];
 		$county = $resp['results'][0]['address_components'][4]['long_name'];
+
+		//foreach ($resp['results'][0]['address_components'] as $field){
+		//}
 		
 		// verify if data is complete
         if($lati && $longi && $formatted_address){
