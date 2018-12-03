@@ -153,9 +153,6 @@ def main():
 
     result = submit_form(info)
     print(result)
-
-    #with open('results.html', 'r') as html:
-    #    print(check_status(html))
     
 
 
