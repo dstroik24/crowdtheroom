@@ -78,7 +78,7 @@
             <td><input type="text" name="city" id="city" value="" /></td>
         </tr>
 
-        <tr>
+        <!-- <tr>
             <td><label for="state">State:</label></td>
             <td><select name='state'>
                 <option value=""></option>
@@ -135,14 +135,19 @@
                 <option value="WY">Wyoming</option>
             </select></td>
         </tr>
-        
+        -->
+        <tr>
+            <td><label for="state">State:</label></td>
+            <td><input type="text" name="state" id="state" value="" /></td>
+        </tr>
+
         <tr>
             <td><label for="zip">Zip Code:</label></td>
             <td><input type="text" name="zip" id="zip" value="" /></td>
         </tr>
 
         <tr>
-            <td><label for="county">Zip Code:</label></td>
+            <td><label for="county">County:</label></td>
             <td><input type="text" name="county" id="county" value="" /></td>
         </tr>
 
@@ -245,7 +250,6 @@
             locality: 'long_name',
             administrative_area_level_1: 'short_name',
             administrative_area_level_2: 'short_name',
-            country: 'long_name',
             postal_code: 'short_name'
         };
 
@@ -255,7 +259,6 @@
             locality: 'city',
             administrative_area_level_1: "state",
             administrative_area_level_2: "county",
-            country: 'long_name',
             postal_code: 'zip'
         };
 
