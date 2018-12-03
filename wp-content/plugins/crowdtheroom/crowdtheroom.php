@@ -347,6 +347,7 @@ function add_ctr_user(){
 	$age = date_diff($dob_new, $today);
 	
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
+	echo "{$fname} {$lname} {$county} {$dob} {$zip}";
 	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county} {$dob} {$zip}");
 	$isRegVote = $voterStatus[1];
 
