@@ -135,10 +135,15 @@
                 <option value="WY">Wyoming</option>
             </select></td>
         </tr>
-
+        
         <tr>
             <td><label for="zip">Zip Code:</label></td>
             <td><input type="text" name="zip" id="zip" value="" /></td>
+        </tr>
+
+        <tr>
+            <td><label for="county">Zip Code:</label></td>
+            <td><input type="text" name="county" id="county" value="" /></td>
         </tr>
 
         <tr>
