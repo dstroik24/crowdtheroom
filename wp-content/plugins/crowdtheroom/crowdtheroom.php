@@ -250,8 +250,8 @@ function add_ctr_user(){
 	echo $county_fixed;
 	
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
-	echo "{$fname} {$lname} {$county} {$dob_format} {$zip}";
-	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county} {$dob_format} {$zip}");
+	echo "{$fname} {$lname} {$county_fixed} {$dob_format} {$zip}";
+	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county_fixed} {$dob_format} {$zip}");
 	$isRegVote = $voterStatus[1];
 	print_r($voterStatus);
 
