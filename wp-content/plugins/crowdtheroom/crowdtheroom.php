@@ -412,10 +412,9 @@ add_shortcode('test-vote', 'test_vote');
 
 // Runs script with python3
 function run_python3($script_name){
-	echo "Started python script <br>";
 	$command = "python3 {$script_name}";
+	echo $command;
 	exec($command, $out);
-	echo "Finished python script <br>";
 	print_r($out);
 	return $out;
 }
