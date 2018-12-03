@@ -320,6 +320,7 @@ add_shortcode('test-vote', 'test_vote');
 // Runs script with python3
 function run_python3($script_name){
 	$command = "python3 {$script_name}";
+	echo $command;
 	exec($command, $out);
 	return $out;
 }
