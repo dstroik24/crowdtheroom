@@ -405,7 +405,7 @@ function add_ctr_user(){
 }
 
 function test_vote(){
-	$out = run_python3("check_voter_reg.py");
+	$out = run_python3("./check_voter_reg.py");
 	print_r($out);
 }
 add_shortcode('test-vote', 'test_vote');

@@ -9,6 +9,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.common.exceptions import TimeoutException
 import time
+import re
 
 
 '''
@@ -24,6 +25,7 @@ def submit_form(input):
     first_name = input[1]
     last_name = input[2]
     county = input[3].upper()
+    county = re.sub("COUNTY", "", county)
     dob = input[4]
     zip_code = input[5]
 
@@ -76,10 +78,9 @@ def submit_form(input):
                                     'Timed out waiting for PA creation confirmation popup to appear.')
         alert = driver.switch_to.alert
         alert.accept()
-        print("alert accepted")
         return False
     except TimeoutException:
-        print("no alert")
+        pass
 
     # Get html from page after submit
     html_source = driver.page_source
@@ -140,16 +141,12 @@ def check_status(html_source):
 
 
 
-
-
 def main():
 	# Get data input from console
     info = sys.argv
     if len(info) == 1:
         defaults = ["Daniel", "Stroik", "Travis", "02/10/1997", "78705"]
         info += defaults
-        print("Using Defaults:")
-        print(info)
 
     result = submit_form(info)
     print(result)
