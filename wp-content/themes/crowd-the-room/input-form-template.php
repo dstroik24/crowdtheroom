@@ -27,9 +27,10 @@
     <body>
 
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
-
-        <label for="office">What Office would you like to run for?</label>
-        <select name='office'>
+        <table>
+        <tr>
+        <td><label for="office">What Office would you like to run for?</label></td>
+        <td><select name='office'>
             <option value="na">Select an Office</option>
             <option value="us_rep_d10">US REP - District 10</option>
             <option value="us_rep_d17">US REP - District 17</option>
@@ -51,31 +52,25 @@
             <option value="aisd_d6">AISD Trustee District 6</option>
             <option value="aisd_d7">AISD Trustee District 7</option>
             <option value="aisd_large">AISD Trustee At Large</option>
-        </select>
+        </select></td>
 
-        <label for="fname">First Name:</label>
-        <input type="text" name="fname" id="fname" value="" />
+        <td><label for="fname">First Name:</label></td>
+        <td><input type="text" name="fname" id="fname" value="" /></td>
 
-        <label for="lname">Last Name:</label>
-        <input type="text" name="lname" id="lname" value="" />
+        <td><label for="lname">Last Name:</label></td>
+        <td><input type="text" name="lname" id="lname" value="" /></td>
 
         <h2>Where do you currently live?</h2>
 
-        <div id="locationField">
-        <label for="autocomplete">Google maps autocomplete address:</label>
-        <input id="autocomplete" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
-        </div>
+        <td><label for="street_address">Street Address:</label></td>
+        <td><input type="text" name="street_number" id="street_number" value="" /></td>
+        <td><input type="text" name="street_address" id="street_address" value="" /></td>
 
-        <label for="street_address">Street Address:</label>
-        <input type="text" name="street_number" id="street_number" value="" />
-        <input type="text" name="street_address" id="street_address" value="" />
+        <td><label for="city">City:</label></td>
+        <td><input type="text" name="city" id="city" value="" /></td>
 
-        <label for="city">City:</label>
-        <input type="text" name="city" id="city" value="" />
-
-        <label for="state">State:</label>
-        <select name='state'>
+        <td><label for="state">State:</label></td>
+        <td><select name='state'>
             <option value=""></option>
             <option value="AL">Alabama</option>
             <option value="AK">Alaska</option>
@@ -128,42 +123,47 @@
             <option value="WV">West Virginia</option>
             <option value="WI">Wisconsin</option>
             <option value="WY">Wyoming</option>
-        </select>
+        </select></td>
 
         <br>
-        <label for="zip">Zip Code:</label>
-        <input type="text" name="zip" id="zip" value="" />
+        <td><label for="zip">Zip Code:</label></td>
+        <td><input type="text" name="zip" id="zip" value="" /></td>
 
-        <label for="yrsAtCurRes">How many years have you lived at this address?</label>
-        <input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" />
+        <td><label for="yrsAtCurRes">How many years have you lived at this address?</label></td>
+        <td><input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" /></td>
 
-        <label for="dob">Date of Birth:</label>
-        <input type="date" id="dob" name="dob" value=""/>
+        <td><label for="dob">Date of Birth:</label></td>
+        <td><input type="date" id="dob" name="dob" value=""/></td>
 
-        <label for="isCitizen">Are you a US citizen?</label>
-        <input type="radio" name="isCitizen" value=1>Yes</input>
-        <input type="radio" name="isCitizen" value=0>No</input>
+        <td><label for="isCitizen">Are you a US citizen?</label></td>
+        <td><input type="radio" name="isCitizen" value=1>Yes</input>
+        <input type="radio" name="isCitizen" value=0>No</input></td>
 
-        <label for="yrsCitizen">How many years have you been a citizen?</label>
-        <input type="text" name="yrsCitizen" id="yrsCitizen" value="" />
+        <td><label for="yrsCitizen">How many years have you been a citizen?</label></td>
+        <td><input type="text" name="yrsCitizen" id="yrsCitizen" value="" /></td>
 
 
         <h2>Fields for School Board (I think?)</h2>
 
-        <label for="isFelon">Have you even been convicted of a felony?</label>
-        <input type="radio" name="isFelon" value=1>Yes</input>
-        <input type="radio" name="isFelon" value=0>No</input>
+        <td><label for="isFelon">Have you even been convicted of a felony?</label></td>
+        <td><input type="radio" name="isFelon" value=1>Yes</input>
+        <input type="radio" name="isFelon" value=0>No</input></td>
 
-        <label for="isMentalIncap">Have you even been deemed totally mentally incapacitated or partially mentally incapacitated without the right to vote by a court of law?</label>
-        <input type="radio" name="isMentalIncap" value=1>Yes</input>
-        <input type="radio" name="isMentalIncap" value=0>No</input>
+        <td><label for="isMentalIncap">Have you even been deemed totally mentally incapacitated or partially mentally incapacitated without the right to vote by a court of law?</label></td>
+        <td><input type="radio" name="isMentalIncap" value=1>Yes</input>
+        <input type="radio" name="isMentalIncap" value=0>No</input></td>
 
         <br>
-        <input type="hidden" name="action" value="basic_info">
-        <input type="submit" name="submit_form" value="submit" />
+        <td><input type="hidden" name="action" value="basic_info"></td>
+        <td><input type="submit" name="submit_form" value="submit"></td>
         </form>
+        </table>
 
-    </body>
+    <div id="locationField">
+        <label for="autocomplete">Google maps autocomplete address:</label>
+        <input id="autocomplete" placeholder="Enter your address"
+             onFocus="geolocate()" type="text"></input>
+    </div>
 
     <table id="address">
       <tr>
@@ -197,6 +197,7 @@
               id="administrative_area_level_2" disabled="true"></input></td>
       </tr>
     </table>
+    </body>
 
     <script>
         // This example displays an address form, using the autocomplete feature
@@ -221,8 +222,8 @@
             street_number: 'street_number',
             route: 'street_address',
             locality: 'city',
-            administrative_area_level_1: "state"
-            administrative_area_level_2: "county"
+            administrative_area_level_1: "state",
+            administrative_area_level_2: "county",
             country: 'long_name',
             postal_code: 'zip'
         }
@@ -254,7 +255,7 @@
                 var addressType = place.address_components[i].types[0];
                 if (componentForm[addressType]) {
                 var val = place.address_components[i][componentForm[addressType]];
-                document.getElementById(compDecode[addressType]).value = val;
+                document.getElementById(addressType).value = val;
                 }
             }
         }
@@ -277,7 +278,7 @@
             }
         }
     </script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAqn3-tuxrnf_fQlyd4S3qmJWj4zvh1q10&libraries=places&callback=initAutocomplete"
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCytjQ0DS7mTa7WVRgvs-eoFaKD-UdKiLg&libraries=places&callback=initAutocomplete"
         async defer></script>
     </head>
 
