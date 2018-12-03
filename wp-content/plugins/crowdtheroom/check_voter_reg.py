@@ -26,7 +26,7 @@ def submit_form(input):
     last_name = input[2]
     county = input[3].upper()
     county = re.sub("COUNTY", "", county)
-    county = re.sub("-", " ", county)
+    county = re.sub("-", " ", county).strip()
     dob = input[4]
     zip_code = input[5]
 
