@@ -86,7 +86,7 @@ $lname = "Leech";
     var office = "<?= $info_arr['office'] ?>";
     var fname = "<?= $info_arr['fname'] ?>";
     var lname = "<?= $info_arr['lname'] ?>";
-    var fullName = null;
+    var fullName = fname + " " + lname;
     var full_address = "<?= $info_arr['full_address'] ?>";
     var state = "<?= $info_arr['state'] ?>";
     var city = "<?= $info_arr['city'] ?>";
