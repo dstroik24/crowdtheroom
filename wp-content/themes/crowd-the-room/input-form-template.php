@@ -76,17 +76,17 @@
             <td><input type="text" name="city" id="city" value="" /></td>
         </tr>
 
-        <tr >
+        <tr style="display:none;">
             <td><label for="state">State:</label></td>
             <td><input type="text" name="state" id="state" value="" /></td>
         </tr>
 
-        <tr>
+        <tr style="display:none;">
             <td><label for="zip">Zip Code:</label></td>
             <td><input type="text" name="zip" id="zip" value="" /></td>
         </tr>
 
-        <tr>
+        <tr style="display:none;">
             <td><label for="county">County:</label></td>
             <td><input type="text" name="county" id="county" value="" /></td>
         </tr>
