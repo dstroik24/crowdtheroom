@@ -31,31 +31,61 @@
         <table>
         <tr>
             <td><label for="office">What Office would you like to run for?</label></td>
-            <td><input list="offices" name="office" id="office">
-                <datalist id="offices">
-                    <option value="">Select an Office</option>
-                    <option value="us_rep_d10">US REP - District 10</option>
-                    <option value="us_rep_d17">US REP - District 17</option>
-                    <option value="us_rep_d21">US REP - District 21</option>
-                    <option value="us_rep_d25">US REP - District 25</option>
-                    <option value="us_rep_d35">US REP - District 35</option>
-                    <option value="tx_rep_d46">Texas State Representative, District 46</option>
-                    <option value="tx_rep_d47">Texas State Representative, District 47</option>
-                    <option value="tx_rep_d48">Texas State Representative, District 48</option>
-                    <option value="tx_rep_d49">Texas State Representative, District 49</option>
-                    <option value="tx_rep_d50">Texas State Representative, District 50</option>
-                    <option value="tx_rep_d51">Texas State Representative, District 51</option>
-                    <option value="travis_DA">Travis County District Attorney</option>
-                    <option value="aisd_d1">AISD Trustee District 1</option>
-                    <option value="aisd_d2">AISD Trustee District 2</option>
-                    <option value="aisd_d3">AISD Trustee District 3</option>
-                    <option value="aisd_d4">AISD Trustee District 4</option>
-                    <option value="aisd_d5">AISD Trustee District 5</option>
-                    <option value="aisd_d6">AISD Trustee District 6</option>
-                    <option value="aisd_d7">AISD Trustee District 7</option>
-                    <option value="aisd_large">AISD Trustee At Large</option>
-                </datalist></td>
+            <td><select name='office' onchange = displayQuestion(this.value)>
+                <option value="">Select an Office</option>
+                <option value="us_rep">United State Representative</option>
+                <option value="tx_rep">Texas State Representative</option>
+                <option value="travis_DA">Travis County District Attorney</option>
+                <option value="aisd">AISD Trustee</option>
+                <option value="aisd_large">AISD Trustee At Large</option>
+            </select></td>
         </tr>
+
+        <div id="us_rep_dist" style="display:none;">
+        <tr>
+            <td><label for="us_rep_district">Which district would you like to run for?</label></td>
+            <td><select name='us_rep_district' id='us_rep_district'>
+                <option value="">Select a District</option>
+                <option value="d10">10</option>
+                <option value="d17">17</option>
+                <option value="d21">21</option>
+                <option value="d25">25</option>
+                <option value="d35">35</option>
+            </td>
+        </tr>
+        </div>
+
+        <div id="tx_rep_dist" style="display:none;">
+        <tr>
+            <td><label for="tx_rep_district">Which district would you like to run for?</label></td>
+            <td><select name='tx_rep_district' id='tx_rep_district'>       
+                <option value="">Select a District</option>
+                <option value="d46">46</option>
+                <option value="d47">47</option>
+                <option value="d48">48</option>
+                <option value="d49">49</option>
+                <option value="d50">50</option>
+                <option value="d51">51</option>
+                </td>
+        </tr>
+        </div>
+
+        <div id="aisd_dist" style="display:none;">
+        <tr>
+            <td><label for="aisd_district">Which district would you like to run for?</label></td>
+            <td><select name='aisd_district' id='aisd_district'>
+                <option value="">Select a District</option>
+                <option value="d1">1</option>
+                <option value="d2">2</option>
+                <option value="d3">3</option>
+                <option value="d4">4</option>
+                <option value="d5">5</option>
+                <option value="d6">6</option>
+                <option value="d7">7</option>
+            </select>
+            </td>
+        </tr>
+        </div>
 
         <tr>
             <td><label for="fname">First Name:</label></td>
@@ -203,7 +233,23 @@
         </form>
         </table>
     </body>
+    <script>
+    function displayQuestion(answer) {
+        if (answer == "us_rep") { // show the div selected
 
+        document.getElementById('us_rep_dist').style.display = "block";
+
+        } else if (answer == "tx_rep") {
+
+        document.getElementById('tx_rep_dist').style.display = "block";
+
+        } else if (answer == "aisd") {
+
+        document.getElementById('aisd_dist').style.display = "block";
+
+        }
+    }
+    </script>
     <script>
         // This example displays an address form, using the autocomplete feature
         // of the Google Places API to help users fill in the information.
