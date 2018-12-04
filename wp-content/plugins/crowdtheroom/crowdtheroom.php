@@ -66,7 +66,6 @@ function add_ctr_user(){
 	//get info from form
 	$office = $_POST['office'];
 	$district = $_POST['district'];
-	$full_office = $office ."_". $district;
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
 	$street_number = $_POST['street_number'];
@@ -124,6 +123,8 @@ function add_ctr_user(){
 		$isTxRes = 1;
 		$yrsTxRes = $yrsAtCurRes;
 	}
+	// Office and district
+	if ($office )
 	
 	// Reformat some data for the python script
 	$dob_format = date_format($dob_new, "m/d/Y");
