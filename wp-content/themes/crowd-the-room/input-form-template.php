@@ -30,7 +30,7 @@
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
 
         <label for="office">What Office would you like to run for?</label>
-        <select name='office' onchange = displayQuestion(this.value)>
+        <select name='office' onchange = "displayQuestion(this.value)">
             <option value="">Select an Office</option>
             <option value="us_rep">United State Representative</option>
             <option value="tx_rep">Texas State Representative</option>
