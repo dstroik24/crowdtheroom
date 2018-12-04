@@ -26,7 +26,6 @@ function ctr_users_create_db() {
 		dob DATE NOT NULL,
 		age INT NOT NULL,
 		email TEXT NOT NULL,
-		full_address TEXT NOT NULL,
 		street_address TEXT NOT NULL,
 		city TEXT NOT NULL,
 		state CHAR(2) NOT NULL,
@@ -205,10 +204,13 @@ function add_ctr_user(){
 	$office = $_POST['office'];
 	$fname = $_POST['fname'];
 	$lname = $_POST['lname'];
-	$street_address = $_POST['street_address'];
+	$street_number = $_POST['street_number'];
+	$street_words = $_POST['street_address'];
+	$street_address = $street_number + $street_words;
 	$state = $_POST['state'];
 	$city = $_POST['city'];
 	$zip = $_POST['zip'];
+	$county = $_POST['county'];
 	$yrsAtCurRes = $_POST['yrsAtCurRes'];
 	$dob = $_POST['dob'];
 	$isCitizen = $_POST['isCitizen'];
@@ -217,8 +219,6 @@ function add_ctr_user(){
 	$isMentalIncap = $_POST['isMentalIncap'];
 
 	// Initialize new stuff
-	$full_address = null;
-	$county = null;
 	$lati = null;
 	$longi = null;
 	$isTxRes = null;
@@ -229,6 +229,7 @@ function add_ctr_user(){
 	$txRepDist = null;
 	$aisdDist = null;
 
+	/* No longer needed due to autocomplete
 	// Use google api to standardize address
 	$address_standard = geocode("{$street_address} {$city} {$state} {$zip}");
 	if ($address_standard){
@@ -241,6 +242,7 @@ function add_ctr_user(){
 		$lati = $address_standard['latitude'];
 		$longi = $address_standard['longitude'];
 	}
+	*/
 
 
 	// Generate new unique user id
@@ -272,7 +274,6 @@ function add_ctr_user(){
 				  'office' => $office,
 				  'fname' => $fname, 
 				  'lname' => $lname,
-				  'full_address' => $full_address,
 				  'street_address' => $street_address,
 				  'city' => $city,
 				  'state' => $state,
