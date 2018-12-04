@@ -112,15 +112,15 @@
             <td><input type="text" name="yrsCitizen" id="yrsCitizen" value="" /></td>
         </tr>
 
-        <th><h2>Fields for School Board (I think?)</h2></th>
+        <th id="aisdHead" style="display:none;"><h2>Fields for School Board (I think?)</h2></th>
 
-        <tr>
+        <tr id="isFelonQuestion" style="display:none;">
             <td><label for="isFelon">Have you even been convicted of a felony?</label></td>
             <td><input type="radio" name="isFelon" value=1>Yes</input>
             <input type="radio" name="isFelon" value=0>No</input></td>
         </tr>
         
-        <tr>
+        <tr id="isMentalIncapQuestion" style="display:none;">
             <td><label for="isMentalIncap">Have you even been deemed totally mentally incapacitated or partially mentally incapacitated without the right to vote by a court of law?</label></td>
             <td><input type="radio" name="isMentalIncap" value=1>Yes</input>
             <input type="radio" name="isMentalIncap" value=0>No</input></td>
@@ -141,10 +141,11 @@
             var dSelect=document.getElementById("district");
             var dLabel=document.getElementById("districtLabel");
             var officeVal=document.getElementById("office").value;
-            document.getElementById("debug").innerHTML += dSelect.length ;
+            var aisdHead=document.getElementById("aisdHead");
+            var isFelonQuestion=document.getElementById("isFelonQuestion");
+            var isMentalIncapQuestion=document.getElementById("isMentalIncapQuestion");
             
             while (true){
-                document.getElementById("debug").innerHTML += "looped again" ;
             
                 if (dSelect.length > 0) {
                     dSelect.remove(dSelect.length-1);
@@ -175,6 +176,11 @@
                 dSelect.add(new Option("5", "d5"), null);
                 dSelect.add(new Option("6", "d6"), null);
                 dSelect.add(new Option("7", "d7"), null);
+                
+                aisdHead.style.display = 'none';
+                isFelonQuestion.style.display = 'none';
+                isMentalIncapQuestion.style.display = 'none';
+
             }else{
                 dSelect.style.display = 'none';
                 dLabel.style.display = 'none';
