@@ -281,9 +281,9 @@
             // Get the place details from the autocomplete object.
             var place = autocomplete.getPlace();
 
-            for (var component in componentForm) {
-                document.getElementById(component).value = '';
-                document.getElementById(component).disabled = false;
+            for (var comp in compDecode) {
+                document.getElementById(compDecode[comp]).value = '';
+                document.getElementById(compDecode[comp]).disabled = false;
             }
 
             // Get each component of the address from the place details
