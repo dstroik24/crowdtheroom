@@ -264,6 +264,8 @@ function add_ctr_user(){
 	$dob_format = date_format($dob_new, "m/d/Y");
 	$county_fixed = preg_replace("#\s#", "-", $county);
 	
+	echo "checking voter registration";
+
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
 	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county_fixed} {$dob_format} {$zip}");
 	$isRegVote = $voterStatus[1];
@@ -323,7 +325,7 @@ function add_ctr_user(){
 	*/
 	
 	// Takes user to next page after filling out form
-	wp_redirect( "http://104.248.4.174/results/?id={$id}");
+	//wp_redirect( "http://104.248.4.174/results/?id={$id}");
 
 }
 
