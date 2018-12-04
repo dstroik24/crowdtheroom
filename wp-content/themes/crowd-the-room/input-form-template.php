@@ -28,37 +28,31 @@
     <body>
 
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
-        <table>
-        <tr>
-            <td><label for="office">What Office would you like to run for?</label></td>
-            <td><select name='office' onchange = displayQuestion(this.value)>
-                <option value="">Select an Office</option>
-                <option value="us_rep">United State Representative</option>
-                <option value="tx_rep">Texas State Representative</option>
-                <option value="travis_DA">Travis County District Attorney</option>
-                <option value="aisd">AISD Trustee</option>
-                <option value="aisd_large">AISD Trustee At Large</option>
-            </select></td>
-        </tr>
+
+        <label for="office">What Office would you like to run for?</label>
+        <select name='office' onchange = displayQuestion(this.value)>
+            <option value="">Select an Office</option>
+            <option value="us_rep">United State Representative</option>
+            <option value="tx_rep">Texas State Representative</option>
+            <option value="travis_DA">Travis County District Attorney</option>
+            <option value="aisd">AISD Trustee</option>
+            <option value="aisd_large">AISD Trustee At Large</option>
+        </select>
 
         <div id="us_rep_dist" style="display:none;">
-        <tr>
-            <td><label for="us_rep_district">Which district would you like to run for?</label></td>
-            <td><select name='us_rep_district' id='us_rep_district'>
+            <label for="us_rep_district">Which district would you like to run for?</label>
+            <select name='us_rep_district' id='us_rep_district'>
                 <option value="">Select a District</option>
                 <option value="d10">10</option>
                 <option value="d17">17</option>
                 <option value="d21">21</option>
                 <option value="d25">25</option>
                 <option value="d35">35</option>
-            </td>
-        </tr>
         </div>
 
         <div id="tx_rep_dist" style="display:none;">
-        <tr>
-            <td><label for="tx_rep_district">Which district would you like to run for?</label></td>
-            <td><select name='tx_rep_district' id='tx_rep_district'>       
+            <label for="tx_rep_district">Which district would you like to run for?</label>
+            <select name='tx_rep_district' id='tx_rep_district'>       
                 <option value="">Select a District</option>
                 <option value="d46">46</option>
                 <option value="d47">47</option>
@@ -66,14 +60,11 @@
                 <option value="d49">49</option>
                 <option value="d50">50</option>
                 <option value="d51">51</option>
-                </td>
-        </tr>
         </div>
 
         <div id="aisd_dist" style="display:none;">
-        <tr>
-            <td><label for="aisd_district">Which district would you like to run for?</label></td>
-            <td><select name='aisd_district' id='aisd_district'>
+            <label for="aisd_district">Which district would you like to run for?</label>
+            <select name='aisd_district' id='aisd_district'>
                 <option value="">Select a District</option>
                 <option value="d1">1</option>
                 <option value="d2">2</option>
@@ -83,10 +74,9 @@
                 <option value="d6">6</option>
                 <option value="d7">7</option>
             </select>
-            </td>
-        </tr>
         </div>
 
+        <table>
         <tr>
             <td><label for="fname">First Name:</label></td>
             <td><input type="text" name="fname" id="fname" value="" /></td>
