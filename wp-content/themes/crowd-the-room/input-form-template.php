@@ -41,8 +41,9 @@
             </select></td>
         </tr>
 
-        <div id="us_rep_dist" style="display:none;">
+        
         <tr>
+        <div id="us_rep_dist" style="display:none;">
             <td><label for="us_rep_district">Which district would you like to run for?</label></td>
             <td><select name='us_rep_district' id='us_rep_district'>
                 <option value="">Select a District</option>
@@ -52,8 +53,9 @@
                 <option value="d25">25</option>
                 <option value="d35">35</option>
             </td>
+            </div>
         </tr>
-        </div>
+       
 
         <div id="tx_rep_dist" style="display:none;">
         <tr>
