@@ -19,9 +19,6 @@
     input[type=text] {
         width: 300px;
     }
-    input:required {
-        box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);
-    }
 
     /**
     * style input elements that have a required
