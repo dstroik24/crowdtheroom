@@ -15,20 +15,16 @@ function get_user_info(){
 }
 
 $info_arr = get_user_info();
-//print_r($info_arr);
-$office = $info_arr['office'];
-$fname = "Dan";
-$lname = "Leech";
 
+/* HI CONNOR
+ This loop populates all the varibles you'll need for the eligibility logic.
+ They are called:
+
+*/
 foreach($info_arr as $field => $value){
+    echo $field . " : " . $value . "<br>";
     ${$field} = $value;
 }
-echo "new vars <br>";
-echo $fname;
-echo $lname; 
-echo $street_address;
-echo $dob;
-echo "<br>end new vars";
 
 ?>
 <!DOCTYPE html>
