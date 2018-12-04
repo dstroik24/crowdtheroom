@@ -20,8 +20,8 @@ $office = $info_arr['office'];
 $fname = "Dan";
 $lname = "Leech";
 
-foreach($info_arr as $field){
-    ${$field} = $info_arr[$field];
+foreach($info_arr as $field => $value){
+    ${$field} = $value;
 }
 echo "new vars <br>";
 echo $fname;
