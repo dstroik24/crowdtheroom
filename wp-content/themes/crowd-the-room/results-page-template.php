@@ -27,7 +27,7 @@ echo "new vars <br>";
 echo $fname;
 echo $lname; 
 echo $street_address;
-echo $dob:
+echo $dob;
 echo "<br>end new vars";
 
 ?>
