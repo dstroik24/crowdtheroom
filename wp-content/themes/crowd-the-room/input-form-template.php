@@ -30,7 +30,7 @@
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
 
         <label for="office">What Office would you like to run for?</label>
-        <select name='office' onchange = "displayQuestion(this.value)">
+        <select name='office' id="office" onchange = "addOptions()">
             <option value="">Select an Office</option>
             <option value="us_rep">United State Representative</option>
             <option value="tx_rep">Texas State Representative</option>
@@ -39,43 +39,11 @@
             <option value="aisd_large">AISD Trustee At Large</option>
         </select>
 
-        <div id="us_rep_dist" style="display:none;">
-            <label for="us_rep_district">Which district would you like to run for?</label>
-            <select name='us_rep_district' id='us_rep_district'>
-                <option value="">Select a District</option>
-                <option value="d10">10</option>
-                <option value="d17">17</option>
-                <option value="d21">21</option>
-                <option value="d25">25</option>
-                <option value="d35">35</option>
-        </div>
-
-        <div id="tx_rep_dist" style="display:none;">
-            <label for="tx_rep_district">Which district would you like to run for?</label>
-            <select name='tx_rep_district' id='tx_rep_district'>       
-                <option value="">Select a District</option>
-                <option value="d46">46</option>
-                <option value="d47">47</option>
-                <option value="d48">48</option>
-                <option value="d49">49</option>
-                <option value="d50">50</option>
-                <option value="d51">51</option>
-        </div>
-
-        <div id="aisd_dist" style="display:none;">
-            <label for="aisd_district">Which district would you like to run for?</label>
-            <select name='aisd_district' id='aisd_district'>
-                <option value="">Select a District</option>
-                <option value="d1">1</option>
-                <option value="d2">2</option>
-                <option value="d3">3</option>
-                <option value="d4">4</option>
-                <option value="d5">5</option>
-                <option value="d6">6</option>
-                <option value="d7">7</option>
-            </select>
-        </div>
-
+        <label for="district" id="districtLabel" style="display:none;">Which District?</label>
+        <select name='district' id="district" style="display:none;">
+            <option value="">Select a District</option>
+        </select>
+        
         <table>
         <tr>
             <td><label for="fname">First Name:</label></td>
@@ -224,38 +192,51 @@
         </table>
     
 
-    <div id="us_rep_dist" style="display:none;">
-       
-            <label for="us_rep_district">Which district would you like to run for?</label>
-            <select name='us_rep_district' id='us_rep_district'>
-                <option value="">Select a District</option>
-                <option value="d10">10</option>
-                <option value="d17">17</option>
-                <option value="d21">21</option>
-                <option value="d25">25</option>
-                <option value="d35">35</option>
-    </div>
 
     </body>
     <script>
-    function displayQuestion(answer) {
-        document.getElementById('us_rep_dist').style.display = "none";
-        document.getElementById('tx_rep_dist').style.display = "none";
-        document.getElementById('aisd_dist').style.display = "none";
-        
-        if (answer == "us_rep") { // show the div selected
-
-        document.getElementById('us_rep_dist').style.display = "block";
-
-        } else if (answer == "tx_rep") {
-
-        document.getElementById('tx_rep_dist').style.display = "block";
-
-        } else if (answer == "aisd") {
-
-        document.getElementById('aisd_dist').style.display = "block";
-
-        }
+        function addOptions(){
+            var dSelect=document.getElementById("district");
+            var dLabel=document.getElementById("districtLabel");
+            var officeVal=document.getElementById("office").value;
+            document.getElementById("debug").innerHTML += dSelect.length ;
+            
+            while (true){
+                document.getElementById("debug").innerHTML += "looped again" ;
+            
+                if (dSelect.length > 0) {
+                    dSelect.remove(dSelect.length-1);
+                }else{
+                    break;
+                }
+            }
+            dSelect.style.display = 'inline';
+            dLabel.style.display = 'inline';
+            if (officeVal == "us_rep"){
+                dSelect.add(new Option("10", "d10"), null);
+                dSelect.add(new Option("17", "d17"), null);
+                dSelect.add(new Option("21", "d21"), null);
+                dSelect.add(new Option("25", "d25"), null);
+                dSelect.add(new Option("35", "d35"), null);
+            }else if (officeVal == "tx_rep"){
+                dSelect.add(new Option("46", "d46"), null);
+                dSelect.add(new Option("47", "d47"), null);
+                dSelect.add(new Option("48", "d48"), null);
+                dSelect.add(new Option("49", "d49"), null);
+                dSelect.add(new Option("50", "d50"), null);
+                dSelect.add(new Option("51", "d51"), null);
+            }else if (officeVal == "aisd"){
+                dSelect.add(new Option("1", "d1"), null);
+                dSelect.add(new Option("2", "d2"), null);
+                dSelect.add(new Option("3", "d3"), null);
+                dSelect.add(new Option("4", "d4"), null);
+                dSelect.add(new Option("5", "d5"), null);
+                dSelect.add(new Option("6", "d6"), null);
+                dSelect.add(new Option("7", "d7"), null);
+            }else{
+                dSelect.style.display = 'none';
+                dLabel.style.display = 'none';
+            }
     }
     </script>
     <script>
