@@ -81,6 +81,7 @@ foreach($info_arr as $field => $value){
 
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.2/jquery.min.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
+    <script type='text/javascript' src='loadImg.js'></script>
     <script>
     //paste this code under the head tag or in a separate js file.
         // Wait for window load
@@ -88,6 +89,11 @@ foreach($info_arr as $field => $value){
             // Animate loader off screen
             $(".se-pre-con").fadeOut("slow");;
         });
+    </script>
+    <script type='text/javascript'>
+        $(function(){
+            $('img').imgPreload()
+    })
     </script>
   </head>
 
@@ -123,103 +129,113 @@ foreach($info_arr as $field => $value){
     <p>RESOURCE</p>
     <p>RESOURCE</p>
     <p>RESOURCE</p>
+    <div class="images">
+        <ul>
+            <li>
+                <img class="main-img" src="https://smallenvelop.com/demo/image-loading/images/1.jpg">
+            </li>	
+            <li>
+                <img class="main-img" src="https://smallenvelop.com/demo/image-loading/images/2.jpg">
+            </li>	
+        </ul>
+    </div>
 
     <script>
         // Position requirements
-    // Age
-    let usRepAge = 25;
-    let txRepAge = 21;
-    let aisdAge = 18;
-    let daAge = 18;
+        // Age
+        let usRepAge = 25;
+        let txRepAge = 21;
+        let aisdAge = 18;
+        let daAge = 18;
 
 
-    // Variables
-    var office = "<?= $info_arr['office'] ?>";
-    var fname = "<?= $info_arr['fname'] ?>";
-    var lname = "<?= $info_arr['lname'] ?>";
-    var fullName = fname + " " + lname;
-    var full_address = "<?= $info_arr['full_address'] ?>";
-    var state = "<?= $info_arr['state'] ?>";
-    var city = "<?= $info_arr['city'] ?>";
-    var zip = "<?= $info_arr['zip'] ?>";
-    var yrsAtCurRes = "<?= $info_arr['yrsAtCurRes'] ?>";
-    var dob = "<?= $info_arr['dob'] ?>";
-    var age = "<?= $info_arr['age'] ?>";
-    var isTxRes = "<?= $info_arr['isTxRes'] ?>";
-    var isCitizen = "<?= $info_arr['isCitizen'] ?>";
-    var yrsCitizen = "<?= $info_arr['yrsCitizen'] ?>";
-    var isFelon = "<?= $info_arr['isFelon'] ?>";
-    var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
+        // Variables
+        var office = "<?= $info_arr['office'] ?>";
+        var fname = "<?= $info_arr['fname'] ?>";
+        var lname = "<?= $info_arr['lname'] ?>";
+        var fullName = fname + " " + lname;
+        var full_address = "<?= $info_arr['full_address'] ?>";
+        var state = "<?= $info_arr['state'] ?>";
+        var city = "<?= $info_arr['city'] ?>";
+        var zip = "<?= $info_arr['zip'] ?>";
+        var yrsAtCurRes = "<?= $info_arr['yrsAtCurRes'] ?>";
+        var dob = "<?= $info_arr['dob'] ?>";
+        var age = "<?= $info_arr['age'] ?>";
+        var isTxRes = "<?= $info_arr['isTxRes'] ?>";
+        var isCitizen = "<?= $info_arr['isCitizen'] ?>";
+        var yrsCitizen = "<?= $info_arr['yrsCitizen'] ?>";
+        var isFelon = "<?= $info_arr['isFelon'] ?>";
+        var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
 
-    document.write(fname);
-
-
-    // Define position cetegory
-    function whatPosCateg(office) {
-    if (office == "us_rep_d10" || office == "us_rep_d17" || office == "us_rep_d21" || office == "us_rep_d25" || office == "us_rep_d35") {
-        posCateg = "usRep";
-    } else if (office == "tx_rep_d46" || office == "tx_rep_d47" || office == "tx_rep_d48" || office == "tx_rep_d49" || office == "tx_rep_d50" || office == "tx_rep_d51") {
-        posCateg = "txRep";
-    } else if (office == "travis_DA") {
-        posCateg = "travisDA";
-    } else if (office == "aisd_d1" || office == "aisd_d2" || office == "aisd_d3" || office == "aisd_d4" || office == "aisd_d5" || office == "aisd_d6" || office == "aisd_d7" || office == "aisd_large") {
-        posCateg = "aisdBoard";
-    }
-
-    }
-
-    //Determine if user is old enough
-    function oldEnough() {
-    if ((posCateg == "usRep") && (age < 25)) {
-        isOldEnough = 0;
-    } else if ((posCateg == "txRep") && (age < 21)) {
-        isOldEnough = 0;
-    } else if ((posCateg == "travisDA" || posCateg == "aisdBoard") && (age < 18)) {
-        isOldEnough = 0;
-    } else {
-        isOldEnough = 1;
-    }
-    }
-
-    // Print if user is eligible or not
-    function readyOrNotFunc() {
-    if (isOldEnough == 0) {
-        document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
-    } else if (isCitizen == 0) {
-        document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
-    } else if (isTxRes == 0) {
-        document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
-    } else if (yrsCitizen < 7) {
-        document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
-    } else {
-        document.getElementById("readyOrNot").innerHTML = "<h4>You're ready to rock for 2020! Here's what's next:</h4>";
-    }
-    }
-
-    // Print, if necessary, why user is not eligible
-    function whyOrWhyNotFunc() {
-    if (isOldEnough == 0) {
-        document.getElementById("whyOrWhyNotAge").innerHTML = "<li>You're not old enough.</li>";
-    }
-    if (isCitizen == 0) {
-        document.getElementById("whyOrWhyNotCitizen").innerHTML = "<li>Being a U.S. citizen is a requirement for most elected seats.</li>";
-    }
-    if (isTxRes == 0) {
-        document.getElementById("whyOrWhyNotTx").innerHTML = "<li>Being a Texas resident is a requirement to run for this position</li>";
-    }
-    if (yrsCitizen < 7) {
-        document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a U.S. Citizen for at least seven years to run for this position.</li>";
-    }
-    }
-
-    // Fill in key info
-    document.getElementById("fullName").innerHTML = fullName;
+        document.write(fname);
 
 
-    whatPosCateg(office);
-    oldEnough();
-    readyOrNotFunc();
-    whyOrWhyNotFunc();
+        // Define position cetegory
+        function whatPosCateg(office) {
+        if (office == "us_rep_d10" || office == "us_rep_d17" || office == "us_rep_d21" || office == "us_rep_d25" || office == "us_rep_d35") {
+            posCateg = "usRep";
+        } else if (office == "tx_rep_d46" || office == "tx_rep_d47" || office == "tx_rep_d48" || office == "tx_rep_d49" || office == "tx_rep_d50" || office == "tx_rep_d51") {
+            posCateg = "txRep";
+        } else if (office == "travis_DA") {
+            posCateg = "travisDA";
+        } else if (office == "aisd_d1" || office == "aisd_d2" || office == "aisd_d3" || office == "aisd_d4" || office == "aisd_d5" || office == "aisd_d6" || office == "aisd_d7" || office == "aisd_large") {
+            posCateg = "aisdBoard";
+        }
+
+        }
+
+        //Determine if user is old enough
+        function oldEnough() {
+        if ((posCateg == "usRep") && (age < 25)) {
+            isOldEnough = 0;
+        } else if ((posCateg == "txRep") && (age < 21)) {
+            isOldEnough = 0;
+        } else if ((posCateg == "travisDA" || posCateg == "aisdBoard") && (age < 18)) {
+            isOldEnough = 0;
+        } else {
+            isOldEnough = 1;
+        }
+        }
+
+        // Print if user is eligible or not
+        function readyOrNotFunc() {
+        if (isOldEnough == 0) {
+            document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
+        } else if (isCitizen == 0) {
+            document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
+        } else if (isTxRes == 0) {
+            document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
+        } else if (yrsCitizen < 7) {
+            document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
+        } else {
+            document.getElementById("readyOrNot").innerHTML = "<h4>You're ready to rock for 2020! Here's what's next:</h4>";
+        }
+        }
+
+        // Print, if necessary, why user is not eligible
+        function whyOrWhyNotFunc() {
+        if (isOldEnough == 0) {
+            document.getElementById("whyOrWhyNotAge").innerHTML = "<li>You're not old enough.</li>";
+        }
+        if (isCitizen == 0) {
+            document.getElementById("whyOrWhyNotCitizen").innerHTML = "<li>Being a U.S. citizen is a requirement for most elected seats.</li>";
+        }
+        if (isTxRes == 0) {
+            document.getElementById("whyOrWhyNotTx").innerHTML = "<li>Being a Texas resident is a requirement to run for this position</li>";
+        }
+        if (yrsCitizen < 7) {
+            document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a U.S. Citizen for at least seven years to run for this position.</li>";
+        }
+        }
+
+        // Fill in key info
+        document.getElementById("fullName").innerHTML = fullName;
+
+
+        whatPosCateg(office);
+        oldEnough();
+        readyOrNotFunc();
+        whyOrWhyNotFunc();
     </script>
   </body>
   
