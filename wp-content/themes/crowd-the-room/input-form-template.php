@@ -21,38 +21,40 @@
     }
 
     </style>
+
     <title>MAGA</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
+    </head>
     <body>
 
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
         <table>
         <tr>
             <td><label for="office">What Office would you like to run for?</label></td>
-            <td><select name='office'>
-                <option value="">Select an Office</option>
-                <option value="us_rep_d10">US REP - District 10</option>
-                <option value="us_rep_d17">US REP - District 17</option>
-                <option value="us_rep_d21">US REP - District 21</option>
-                <option value="us_rep_d25">US REP - District 25</option>
-                <option value="us_rep_d35">US REP - District 35</option>
-                <option value="tx_rep_d46">Texas State Representative, District 46</option>
-                <option value="tx_rep_d47">Texas State Representative, District 47</option>
-                <option value="tx_rep_d48">Texas State Representative, District 48</option>
-                <option value="tx_rep_d49">Texas State Representative, District 49</option>
-                <option value="tx_rep_d50">Texas State Representative, District 50</option>
-                <option value="tx_rep_d51">Texas State Representative, District 51</option>
-                <option value="travis_DA">Travis County District Attorney</option>
-                <option value="aisd_d1">AISD Trustee District 1</option>
-                <option value="aisd_d2">AISD Trustee District 2</option>
-                <option value="aisd_d3">AISD Trustee District 3</option>
-                <option value="aisd_d4">AISD Trustee District 4</option>
-                <option value="aisd_d5">AISD Trustee District 5</option>
-                <option value="aisd_d6">AISD Trustee District 6</option>
-                <option value="aisd_d7">AISD Trustee District 7</option>
-                <option value="aisd_large">AISD Trustee At Large</option>
-            </select></td>
+            <td><input list="office" name="office" id="office">
+                <datalist id="offices">
+                    <option value="">Select an Office</option>
+                    <option value="us_rep_d10">US REP - District 10</option>
+                    <option value="us_rep_d17">US REP - District 17</option>
+                    <option value="us_rep_d21">US REP - District 21</option>
+                    <option value="us_rep_d25">US REP - District 25</option>
+                    <option value="us_rep_d35">US REP - District 35</option>
+                    <option value="tx_rep_d46">Texas State Representative, District 46</option>
+                    <option value="tx_rep_d47">Texas State Representative, District 47</option>
+                    <option value="tx_rep_d48">Texas State Representative, District 48</option>
+                    <option value="tx_rep_d49">Texas State Representative, District 49</option>
+                    <option value="tx_rep_d50">Texas State Representative, District 50</option>
+                    <option value="tx_rep_d51">Texas State Representative, District 51</option>
+                    <option value="travis_DA">Travis County District Attorney</option>
+                    <option value="aisd_d1">AISD Trustee District 1</option>
+                    <option value="aisd_d2">AISD Trustee District 2</option>
+                    <option value="aisd_d3">AISD Trustee District 3</option>
+                    <option value="aisd_d4">AISD Trustee District 4</option>
+                    <option value="aisd_d5">AISD Trustee District 5</option>
+                    <option value="aisd_d6">AISD Trustee District 6</option>
+                    <option value="aisd_d7">AISD Trustee District 7</option>
+                    <option value="aisd_large">AISD Trustee At Large</option>
+                </datalist></td>
         </tr>
 
         <tr>
@@ -281,7 +283,6 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCytjQ0DS7mTa7WVRgvs-eoFaKD-UdKiLg&libraries=places&callback=initAutocomplete"
         async defer></script>
-    </head>
 
 
 </html>
