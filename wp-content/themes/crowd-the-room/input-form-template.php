@@ -239,6 +239,10 @@
     </body>
     <script>
     function displayQuestion(answer) {
+        document.getElementById('us_rep_dist').style.display = "none";
+        document.getElementById('tx_rep_dist').style.display = "none";
+        document.getElementById('aisd_dist').style.display = "none";
+        
         if (answer == "us_rep") { // show the div selected
 
         document.getElementById('us_rep_dist').style.display = "block";
