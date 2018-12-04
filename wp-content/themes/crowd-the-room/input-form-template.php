@@ -177,9 +177,9 @@
                 dSelect.add(new Option("6", "d6"), null);
                 dSelect.add(new Option("7", "d7"), null);
                 
-                aisdHead.style.display = 'none';
-                isFelonQuestion.style.display = 'none';
-                isMentalIncapQuestion.style.display = 'none';
+                aisdHead.style.display = 'inline';
+                isFelonQuestion.style.display = 'inline';
+                isMentalIncapQuestion.style.display = 'inline';
 
             }else{
                 dSelect.style.display = 'none';
