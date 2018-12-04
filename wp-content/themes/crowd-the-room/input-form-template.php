@@ -9,18 +9,59 @@
 <html>
 
     <head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
-   
-    body {
+    h1 { 
+        font-family: Lato; 
+        font-size: 23px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700; 
+        line-height: 23px; 
+    } 
+    h3 { 
+        font-family: Lato; 
+        font-size: 17px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700; 
+        line-height: 23px; 
+    }
+    body { 
         background-color:   #91A8d0;
-        font-family: "Courier New", Courier, monospace;
         color: white;
-    }
-    input[type=text] {
-        width: 300px;
-    }
-
+        font-family: Lato; 
+        font-size: 14px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 23px; 
+    }  
+    p { 
+        font-family: Lato; 
+        font-size: 14px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 23px; 
+    } 
+    blockquote { 
+        font-family: Lato; 
+        font-size: 17px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 23px; 
+    } 
     
+    pre { 
+        font-family: Lato; 
+        font-size: 11px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 23px; 
+    }
 
     </style>
 
@@ -31,109 +72,121 @@
 
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
 
-        <label for="office">What Office would you like to run for?</label>
-        <select name='office' id="office" onchange = "addOptions()" required>
-            <option value="">Select an Office</option>
-            <option value="us_rep">United State Representative</option>
-            <option value="tx_rep">Texas State Representative</option>
-            <option value="travis_DA">Travis County District Attorney</option>
-            <option value="aisd">AISD Trustee</option>
-            <option value="aisd_large">AISD Trustee At Large</option>
-        </select>*
+            <div>
+                <label for="office">What Office would you like to run for?</label>
+                <select name='office' id="office" onchange = "addOptions()" required>
+                    <option value="">Select an Office</option>
+                    <option value="us_rep">United State Representative</option>
+                    <option value="tx_rep">Texas State Representative</option>
+                    <option value="travis_DA">Travis County District Attorney</option>
+                    <option value="aisd">AISD Trustee</option>
+                    <option value="aisd_large">AISD Trustee At Large</option>
+                </select><span style="color:red">*</span>
+            </div>
 
-        <label for="district" id="districtLabel" style="display:none;">Which District?</label>
-        <select name='district' id="district" style="display:none;">
-            <option value="">Select a District</option>
-        </select>
+            <div>
+                <label for="district" id="districtLabel" style="display:none;">Which District?</label>
+                <select name='district' id="district" style="display:none;">
+                    <option value="">Select a District</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="fname">First Name:</label>
+                <input type="text" name="fname" id="fname" value="" required>
+            </div>
         
-        <table>
-        <tr>
-            <td><label for="fname">First Name:</label></td>
-            <td><input type="text" name="fname" id="fname" value="" required></td>
-        </tr>
-
-        <tr>
-            <td><label for="lname">Last Name:</label></td>
-            <td><input type="text" name="lname" id="lname" value="" required></td>
-        </tr>
-        
-        <th><h2>Where do you currently live?</h2></th>
-        <tr>
-            <td>
-                <div id="locationField">
+            <div>
+                <label for="lname">Last Name:</label>
+                <input type="text" name="lname" id="lname" value="" required>
+            </div>
+            
+            <h2>Where do you currently live?</h2>
+            
+            <div id="locationField">
                 <label for="autocomplete">Google maps autocomplete address:</label>
                 <input id="autocomplete" placeholder="Enter your address"
-                onFocus="geolocate()" type="text" required></input>
+                    onFocus="geolocate()" type="text" required></input>
+            </div>
+                
+            <div style="display:none;">
+                <label for="street_address">Street Address:</label>
+                <input type="text" name="street_number" id="street_number" value="" />
+                <input type="text" name="street_address" id="street_address" value="" />
+            </div>
+            
+            <div style="display:none;">
+                    <label for="city">City:</label>
+                    <input type="text" name="city" id="city" value="" />
+            </div>
+
+            <div style="display:none;">
+                    <label for="state">State:</label>
+                    <input type="text" name="state" id="state" value="" />
+            </div>
+
+                <div style="display:none;">
+                    <label for="zip">Zip Code:</label>
+                    <input type="text" name="zip" id="zip" value="" />
                 </div>
-             </td>
-        </tr>
-        <tr style="display:none;">
-            <td><label for="street_address">Street Address:</label></td>
-            <td><input type="text" name="street_number" id="street_number" value="" /></td>
-            <td><input type="text" name="street_address" id="street_address" value="" /></td>
-        </tr>
+
+            <div style="display:none;">
+                    <label for="county">County:</label>
+                    <input type="text" name="county" id="county" value="" />
+            </div>
+
+            <div>
+                <label for="yrsAtCurRes">How many years have you lived at this address?</label>
+                <input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" required>
+            </div>
+
+            <div>
+                <label for="yrsTxRes">How many years have you lived at this address?</label>
+                <input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" required>
+            </div>
+
         
-        <tr style="display:none;">
-            <td><label for="city">City:</label></td>
-            <td><input type="text" name="city" id="city" value="" /></td>
-        </tr>
+            <div>
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" value="" required>
+            </div>
 
-        <tr style="display:none;">
-            <td><label for="state">State:</label></td>
-            <td><input type="text" name="state" id="state" value="" /></td>
-        </tr>
-
-        <tr style="display:none;">
-            <td><label for="zip">Zip Code:</label></td>
-            <td><input type="text" name="zip" id="zip" value="" /></td>
-        </tr>
-
-        <tr style="display:none;">
-            <td><label for="county">County:</label></td>
-            <td><input type="text" name="county" id="county" value="" /></td>
-        </tr>
-
-        <tr>
-            <td><label for="yrsAtCurRes">How many years have you lived at this address?</label></td>
-            <td><input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" required></td>
-        </tr>
-
-        <tr>
-            <td><label for="dob">Date of Birth:</label></td>
-            <td><input type="date" id="dob" name="dob" value="" required></td>
-        </tr>
-
-        <tr>
-            <td><label for="isCitizen">Are you a US citizen?</label></td>
-            <td><input type="radio" name="isCitizen" value=1 required>Yes</input>
-            <input type="radio" name="isCitizen" value=0 >No</input></td>
-        </tr>
-
-        <tr>
-            <td><label for="yrsCitizen">How many years have you been a citizen?</label></td>
-            <td><input type="text" name="yrsCitizen" id="yrsCitizen" value="" required></td>
-        </tr>
-
-        <th id="aisdHead" style="display:none;"><h2>Fields for School Board (I think?)</h2></th>
-
-        <tr id="isFelonQuestion" style="display:none;">
-            <td><label for="isFelon">Have you even been convicted of a felony?</label></td>
-            <td><input type="radio" name="isFelon" value=1>Yes</input>
-            <input type="radio" name="isFelon" value=0>No</input></td>
-        </tr>
         
-        <tr id="isMentalIncapQuestion" style="display:none;">
-            <td><label for="isMentalIncap">Have you even been deemed totally mentally incapacitated or partially mentally incapacitated without the right to vote by a court of law?</label></td>
-            <td><input type="radio" name="isMentalIncap" value=1>Yes</input>
-            <input type="radio" name="isMentalIncap" value=0>No</input></td>
-        </tr>
+            <div>
+                <label for="isCitizen">Are you a US citizen?</label>
+                <input type="radio" name="isCitizen" value=1 required>Yes</input>
+                <input type="radio" name="isCitizen" value=0 >No</input>
+            </div>
 
-        <tr>
-            <td><input type="hidden" name="action" value="basic_info"></td>
-            <td><input type="submit" name="submit_form" value="submit"></td>
-        </tr>
+        
+            <div>
+                <label for="yrsCitizen">How many years have you been a citizen?</label>
+                <input type="text" name="yrsCitizen" id="yrsCitizen" value="" required>
+            </div>
+
+            <div id="aisdHead" style="display:none;">
+                <h2>Fields for School Board (I think?)</h2>
+            </div> 
+
+            <div id="isFelonQuestion" style="display:none;">
+                <label for="isFelon">Have you even been convicted of a felony?</label>
+                <input type="radio" name="isFelon" value=1>Yes</input>
+                <input type="radio" name="isFelon" value=0>No</input>
+            </div>
+            
+            
+            <div id="isMentalIncapQuestion" style="display:none;">
+                <label for="isMentalIncap">Have you even been deemed totally mentally incapacitated or partially mentally incapacitated without the right to vote by a court of law?</label>
+                <input type="radio" name="isMentalIncap" value=1>Yes</input>
+                <input type="radio" name="isMentalIncap" value=0>No</input>
+            </div>
+
+            
+            <div>
+                <input type="hidden" name="action" value="basic_info">
+                <input type="submit" name="submit_form" value="submit">
+            </div>
         </form>
-        </table>
     <p id="debug"></p>
 
 

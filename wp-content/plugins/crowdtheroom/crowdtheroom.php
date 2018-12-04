@@ -124,7 +124,12 @@ function add_ctr_user(){
 		$yrsTxRes = $yrsAtCurRes;
 	}
 	// Office and district
-	if ($office )
+	$distOffices = array("us_rep", "tx_rep", "aisd");
+	if (in_array($office, $distOffices)){
+		$full_office = $office ."_". $district;
+	}else{
+		$full_office = $office;
+	}
 	
 	// Reformat some data for the python script
 	$dob_format = date_format($dob_new, "m/d/Y");
