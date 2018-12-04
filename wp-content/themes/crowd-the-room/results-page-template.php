@@ -19,10 +19,34 @@ $info_arr = get_user_info();
 /* HI CONNOR
  This loop populates all the varibles you'll need for the eligibility logic.
  They are called:
-
+    user_id 
+    office
+    fname
+    lname
+    dob
+    age
+    email
+    street_address
+    city 
+    state
+    zip
+    county
+    yrsAtCurRes
+    isRegVote
+    isCitizen
+    yrsCitizen 
+    isTxRes
+    yrsTxRes
+    isPracLaw
+    yrsPracLaw
+    usRepDist
+    txRepDist
+    aisdDist     
+    isFelon
+    isMentalIncap
 */
+
 foreach($info_arr as $field => $value){
-    echo $field . " : " . $value . "<br>";
     ${$field} = $value;
 }
 

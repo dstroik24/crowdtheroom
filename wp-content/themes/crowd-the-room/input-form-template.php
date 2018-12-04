@@ -200,8 +200,6 @@
         </tr>
         </form>
         </table>
-
-    <p id="debug"><p>
     </body>
 
     <script>
@@ -258,7 +256,6 @@
                 var addressType = place.address_components[i].types[0];
                 if (componentForm[addressType]) {
                     var val = place.address_components[i][componentForm[addressType]];
-                    document.getElementById("debug").innerHTML += compDecode[addressType] + "<br>";
                     document.getElementById(compDecode[addressType]).value = val;
                 }
             }
