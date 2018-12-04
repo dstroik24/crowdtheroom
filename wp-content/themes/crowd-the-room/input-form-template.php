@@ -190,7 +190,7 @@
         </tr>
         </form>
         </table>
-    
+    <p id="debug"></p>
 
 
     </body>
