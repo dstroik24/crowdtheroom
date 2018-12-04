@@ -20,22 +20,7 @@
         width: 300px;
     }
 
-    /**
-    * style input elements that have a required
-    * attribute and a focus state
-    */
-    input:required:focus {
-        border: 1px solid red;
-        outline: none;
-    }
-
-    /**
-    * style input elements that have a required
-    * attribute and a hover state
-    */
-    input:required:hover {
-        opacity: 1;
-    }
+    
 
     </style>
 
@@ -54,7 +39,7 @@
             <option value="travis_DA">Travis County District Attorney</option>
             <option value="aisd">AISD Trustee</option>
             <option value="aisd_large">AISD Trustee At Large</option>
-        </select>
+        </select>*
 
         <label for="district" id="districtLabel" style="display:none;">Which District?</label>
         <select name='district' id="district" style="display:none;">
