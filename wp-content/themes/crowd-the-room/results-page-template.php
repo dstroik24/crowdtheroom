@@ -28,7 +28,7 @@ echo $fname;
 echo $lname; 
 echo $street_address;
 echo $dob:
-echo "<br>end new vars"
+echo "<br>end new vars";
 
 ?>
 <!DOCTYPE html>

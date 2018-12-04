@@ -201,12 +201,6 @@
         </form>
         </table>
 
-    <div id="locationField">
-        <label for="autocomplete">Google maps autocomplete address:</label>
-        <input id="autocomplete" placeholder="Enter your address"
-             onFocus="geolocate()" type="text"></input>
-    </div>
-
     <p id="debug"><p>
     </body>
 
