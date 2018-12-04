@@ -232,6 +232,20 @@
         </tr>
         </form>
         </table>
+    
+
+    <div id="us_rep_dist" style="display:none;">
+       
+            <label for="us_rep_district">Which district would you like to run for?</label>
+            <select name='us_rep_district' id='us_rep_district'>
+                <option value="">Select a District</option>
+                <option value="d10">10</option>
+                <option value="d17">17</option>
+                <option value="d21">21</option>
+                <option value="d25">25</option>
+                <option value="d35">35</option>
+    </div>
+
     </body>
     <script>
     function displayQuestion(answer) {
