@@ -31,7 +31,7 @@
         <tr>
             <td><label for="office">What Office would you like to run for?</label></td>
             <td><select name='office'>
-                <option value="na">Select an Office</option>
+                <option value="">Select an Office</option>
                 <option value="us_rep_d10">US REP - District 10</option>
                 <option value="us_rep_d17">US REP - District 17</option>
                 <option value="us_rep_d21">US REP - District 21</option>
@@ -66,7 +66,15 @@
         </tr>
         
         <th><h2>Where do you currently live?</h2></th>
-
+        <tr>
+            <td>
+                <div id="locationField">
+                <label for="autocomplete">Google maps autocomplete address:</label>
+                <input id="autocomplete" placeholder="Enter your address"
+                onFocus="geolocate()" type="text"></input>
+             </td>
+    </div>
+        </tr>
         <tr>
             <td><label for="street_address">Street Address:</label></td>
             <td><input type="text" name="street_number" id="street_number" value="" /></td>

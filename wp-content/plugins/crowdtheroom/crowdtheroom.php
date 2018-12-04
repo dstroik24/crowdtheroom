@@ -296,11 +296,12 @@ function add_ctr_user(){
 	// Looking to make sure input data is good, echos a table
 	arr_as_table($data);
 	
+	/*
 	$us_reps = array("us_rep_d10", "us_rep_d17", "us_rep_d21", "us_rep_d25", "us_rep_d35");
 	$tx_reps = array("tx_rep_d46", "tx_rep_d47", "tx_rep_d48", "tx_rep_d49", "tx_rep_d50", "tx_rep_d51");
 	$trav_da = array("travis_DA");
 	$aisd_reps = array("aisd_d1", "aisd_d2", "aisd_d3", "aisd_d4", "aisd_d5", "aisd_d6", "aisd_d7", "aisd_large");
-	/*
+	
 	if (in_array($office, $us_reps)) {
 		echo "go To us reps page";
 		wp_redirect("http://104.248.4.174/us-representative/");
@@ -323,7 +324,7 @@ function add_ctr_user(){
 	*/
 	
 	// Takes user to next page after filling out form
-	//wp_redirect( "http://104.248.4.174/results/?id={$id}");
+	wp_redirect( "http://104.248.4.174/results/?id={$id}");
 
 }
 
