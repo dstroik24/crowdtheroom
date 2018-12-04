@@ -281,8 +281,6 @@ function add_ctr_user(){
 				  'state' => $state,
 				  'zip' => $zip,
 				  'county' => $county,
-				  'latitude' => $lati,
-				  'longitude' => $longi,
 				  'yrsAtCurRes' => $yrsAtCurRes,
 				  'isTxRes' => $isTxRes,
 				  'yrsTxRes' => $yrsTxRes,
