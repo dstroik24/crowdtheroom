@@ -159,5 +159,19 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+// MY CODE
+// Use custom CSS
 
+function add_theme_codes() {
 
+	wp_enqueue_style( ‘style’, get_stylesheet_directory_uri().’/clean-form/vendor/bootstrap/css/bootstrap.min.css’, ‘all’);
+	//wp_enqueue_style( ‘style’, get_stylesheet_directory_uri().’/clean-form/fonts/font-awesome-4.7.0/css/font-awesome.min.css’, ‘all’);
+	wp_enqueue_style( ‘style’, get_stylesheet_directory_uri().’/clean-form/vendor/animate/animate.css’, ‘all’);
+	wp_enqueue_style( ‘style’, get_stylesheet_directory_uri().’/clean-form/vendor/css-hamburgers/hamburgers.min.css’, ‘all’);
+	wp_enqueue_style( ‘style’, get_stylesheet_directory_uri().’/clean-form/vendor/select2/select2.min.css’, ‘all’);
+	wp_enqueue_style( ‘style’, get_stylesheet_directory_uri().’/clean-form/css/util.css’, ‘all’);
+	wp_enqueue_style( ‘style’, get_stylesheet_directory_uri().’/clean-form/css/main.css’, ‘all’);
+   
+   }
+   
+   add_action( ‘wp_enqueue_scripts’, ‘add_theme_codes’ );

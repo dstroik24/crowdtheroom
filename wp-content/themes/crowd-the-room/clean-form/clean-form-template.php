@@ -25,6 +25,9 @@ Template Name: clean-form-template
 	<link rel="stylesheet" type="text/css" href="css/util.css">
 	<link rel="stylesheet" type="text/css" href="css/main.css">
 <!--===============================================================================================-->
+<style>
+	
+</style>
 </head>
 <body>
 
