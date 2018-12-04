@@ -31,7 +31,7 @@
         <table>
         <tr>
             <td><label for="office">What Office would you like to run for?</label></td>
-            <td><input list="office" name="office" id="office">
+            <td><input list="offices" name="office" id="office">
                 <datalist id="offices">
                     <option value="">Select an Office</option>
                     <option value="us_rep_d10">US REP - District 10</option>
