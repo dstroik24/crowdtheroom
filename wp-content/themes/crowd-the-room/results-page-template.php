@@ -10,15 +10,25 @@ function get_user_info(){
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM " . $table_name . " WHERE user_id={$user_id}";
 	$result = $wpdb->get_row($sql, ARRAY_A);
-    arr_as_table($result);
+    //arr_as_table($result);
     return $result;
 }
 
 $info_arr = get_user_info();
-print_r($info_arr);
+//print_r($info_arr);
 $office = $info_arr['office'];
 $fname = "Dan";
 $lname = "Leech";
+
+foreach($info_arr as $field){
+    ${$field} = $info_arr[$field];
+}
+echo "new vars <br>";
+echo $fname;
+echo $lname; 
+echo $street_address;
+echo $dob:
+echo "<br>end new vars"
 
 ?>
 <!DOCTYPE html>

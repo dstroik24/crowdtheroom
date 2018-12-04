@@ -31,8 +31,6 @@ function ctr_users_create_db() {
 		state CHAR(2) NOT NULL,
 		zip TEXT NOT NULL,
 		county TEXT NOT NULL,
-		latitude FLOAT NOT NULL,
-		longitude FLOAT NOT NULL,
 		yrsAtCurRes TEXT NOT NULL,
 		isRegVote INT(1) NOT NULL,
 		isCitizen INT(1) NOT NULL,
@@ -206,7 +204,7 @@ function add_ctr_user(){
 	$lname = $_POST['lname'];
 	$street_number = $_POST['street_number'];
 	$street_words = $_POST['street_address'];
-	$street_address = $street_number + $street_words;
+	$street_address = $street_number ." ". $street_words;
 	$state = $_POST['state'];
 	$city = $_POST['city'];
 	$zip = $_POST['zip'];
