@@ -19,6 +19,26 @@
     input[type=text] {
         width: 300px;
     }
+    input:required {
+        box-shadow: 4px 4px 20px rgba(200, 0, 0, 0.85);
+    }
+
+    /**
+    * style input elements that have a required
+    * attribute and a focus state
+    */
+    input:required:focus {
+        border: 1px solid red;
+        outline: none;
+    }
+
+    /**
+    * style input elements that have a required
+    * attribute and a hover state
+    */
+    input:required:hover {
+        opacity: 1;
+    }
 
     </style>
 
@@ -30,7 +50,7 @@
         <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
 
         <label for="office">What Office would you like to run for?</label>
-        <select name='office' id="office" onchange = "addOptions()">
+        <select name='office' id="office" onchange = "addOptions()" required>
             <option value="">Select an Office</option>
             <option value="us_rep">United State Representative</option>
             <option value="tx_rep">Texas State Representative</option>
@@ -47,12 +67,12 @@
         <table>
         <tr>
             <td><label for="fname">First Name:</label></td>
-            <td><input type="text" name="fname" id="fname" value="" /></td>
+            <td><input type="text" name="fname" id="fname" value="" required></td>
         </tr>
 
         <tr>
             <td><label for="lname">Last Name:</label></td>
-            <td><input type="text" name="lname" id="lname" value="" /></td>
+            <td><input type="text" name="lname" id="lname" value="" required></td>
         </tr>
         
         <th><h2>Where do you currently live?</h2></th>
@@ -61,7 +81,7 @@
                 <div id="locationField">
                 <label for="autocomplete">Google maps autocomplete address:</label>
                 <input id="autocomplete" placeholder="Enter your address"
-                onFocus="geolocate()" type="text"></input>
+                onFocus="geolocate()" type="text" required></input>
                 </div>
              </td>
         </tr>
@@ -93,23 +113,23 @@
 
         <tr>
             <td><label for="yrsAtCurRes">How many years have you lived at this address?</label></td>
-            <td><input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" /></td>
+            <td><input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" required></td>
         </tr>
 
         <tr>
             <td><label for="dob">Date of Birth:</label></td>
-            <td><input type="date" id="dob" name="dob" value=""/></td>
+            <td><input type="date" id="dob" name="dob" value="" required></td>
         </tr>
 
         <tr>
             <td><label for="isCitizen">Are you a US citizen?</label></td>
-            <td><input type="radio" name="isCitizen" value=1>Yes</input>
-            <input type="radio" name="isCitizen" value=0>No</input></td>
+            <td><input type="radio" name="isCitizen" value=1 required>Yes</input>
+            <input type="radio" name="isCitizen" value=0 >No</input></td>
         </tr>
 
         <tr>
             <td><label for="yrsCitizen">How many years have you been a citizen?</label></td>
-            <td><input type="text" name="yrsCitizen" id="yrsCitizen" value="" /></td>
+            <td><input type="text" name="yrsCitizen" id="yrsCitizen" value="" required></td>
         </tr>
 
         <th id="aisdHead" style="display:none;"><h2>Fields for School Board (I think?)</h2></th>
@@ -184,6 +204,9 @@
             }else{
                 dSelect.style.display = 'none';
                 dLabel.style.display = 'none';
+                aisdHead.style.display = 'none';
+                isFelonQuestion.style.display = 'none';
+                isMentalIncapQuestion.style.display = 'none';
             }
     }
     </script>
