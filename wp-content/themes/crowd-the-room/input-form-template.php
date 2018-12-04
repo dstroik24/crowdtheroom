@@ -65,7 +65,7 @@
             <td><input type="text" name="lname" id="lname" value="" /></td>
         </tr>
         
-        <h2>Where do you currently live?</h2>
+        <th><h2>Where do you currently live?</h2></th>
 
         <tr>
             <td><label for="street_address">Street Address:</label></td>
@@ -172,7 +172,7 @@
             <td><input type="text" name="yrsCitizen" id="yrsCitizen" value="" /></td>
         </tr>
 
-        <h2>Fields for School Board (I think?)</h2>
+        <th><h2>Fields for School Board (I think?)</h2></th>
 
         <tr>
             <td><label for="isFelon">Have you even been convicted of a felony?</label></td>
@@ -199,6 +199,7 @@
              onFocus="geolocate()" type="text"></input>
     </div>
 
+    <!--
     <table id="address">
       <tr>
         <td class="label">Street address</td>
@@ -232,6 +233,8 @@
       </tr>
     </table>
 
+    -->
+    
     <p id="debug"><p>
     </body>
 
