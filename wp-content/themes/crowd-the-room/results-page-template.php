@@ -85,7 +85,7 @@ get_header();
     <p>RESOURCE</p>
     <p>RESOURCE</p>
     <p>RESOURCE</p>
-    <p>RESOURCE</p>d
+    <p>RESOURCE</p>
 
     <script>
         // Position requirements
