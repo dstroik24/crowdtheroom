@@ -116,6 +116,9 @@
         style="float: left; margin-right: 15px;"
     }
     </style>
+    <header>
+    <title>Crowd The Room</title>
+    </header>
     <body>
     <div class="header">
             <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;" onclick="location.href='http://crowdtheroom.org/sign-in/';">here</span> to sign in.</p>
