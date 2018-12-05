@@ -11,7 +11,6 @@
     <head>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
-    <style>
     h1 { 
         font-family: Lato; 
         font-size: 23px; 
@@ -29,7 +28,7 @@
         line-height: 23px; 
     }
     body { 
-        background-color:   #91A8d0;
+        background-color: #779FFF;
         color: white;
         font-family: Lato; 
         font-size: 14px; 
@@ -63,131 +62,62 @@
         font-weight: 400; 
         line-height: 23px; 
     }
-    
-    .form-style-8{
-        font-family: 'Lato';
-        width: 500px;
-        padding: 30px;
-        background: #FFFFFF;
-        margin: 50px auto;
-        box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-        -moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
-        -webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
 
+    ::placeholder { 
+        color: #D6DBDF;
+        opacity: 1; 
     }
-    .form-style-8 h2{
-        background: #4D4D4D;
-        text-transform: uppercase;
-        font-family: 'Lato';
-        color: #797979;
-        font-size: 18px;
-        font-weight: 100;
-        padding: 20px;
-        margin: -30px -30px 30px -30px;
-    }
-    .form-style-8 input[type="text"],
-    .form-style-8 input[type="date"],
-    .form-style-8 input[type="datetime"],
-    .form-style-8 input[type="email"],
-    .form-style-8 input[type="number"],
-    .form-style-8 input[type="search"],
-    .form-style-8 input[type="time"],
-    .form-style-8 input[type="url"],
-    .form-style-8 input[type="password"],
-    .form-style-8 textarea,
-    .form-style-8 select 
-    {
-        box-sizing: border-box;
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        outline: none;
-        display: block;
-        width: 100%;
-        padding: 7px;
-        border: none;
-        border-bottom: 1px solid #ddd;
-        background: transparent;
-        margin-bottom: 10px;
-        font: 16px Lato;
-        height: 45px;
-    }
-    .form-style-8 textarea{
-        resize:none;
-        overflow: hidden;
-    }
-    .form-style-8 input[type="button"], 
-    .form-style-8 input[type="submit"]{
-        -moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-        -webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
-        box-shadow: inset 0px 1px 0px 0px #45D6D6;
-        background-color: #2CBBBB;
-        border: 1px solid #27A0A0;
-        display: inline-block;
-        cursor: pointer;
-        color: #FFFFFF;
-        font-family: 'Lato';
-        font-size: 14px;
-        padding: 8px 18px;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
-    .form-style-8 input[type="button"]:hover, 
-    .form-style-8 input[type="submit"]:hover {
-        background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
-        background-color:#34CACA;
-    }
-
-
-
     .form-style-4{
-        width: 450px;
+        width: 70%;
+        margin: 0 auto;
         font-size: 16px;
-        background: #91A8d0;
+        background: #779FFF;
         padding: 30px 30px 15px 30px;
-        border: 5px solid #ffffff;
     }
+
     .form-style-4 input[type=submit],
     .form-style-4 input[type=button],
     .form-style-4 input[type=text],
     .form-style-4 input[type=email],
     .form-style-4 textarea,
-    .form-style-4 label
+    .form-style-4 label,
+    .form-style-4 select,
+    [type="date"]
     {
         font-family: Lato;
         font-size: 16px;
-        color: #fff;
-        margin-bottom: 30px;
-
-    }
-    .form-style-4 select
-    {
-        font-family: Lato;
-        font-size: 16px;
+        color: #000000;
         margin-bottom: 30px;
 
     }
     .form-style-4 label {
-        display:block;
+        font-size: 24px;
+        display:inline;
+        color: #ffffff;
         margin-bottom: 7px;
+        margin-right: 20px;
     }
+    
     .form-style-4 label > span{
         display: inline-block;
         float: left;
         width: 150px;
     }
+
     .form-style-4 input[type=text],
-    .form-style-4 input[type=email] 
+    .form-style-4 input[type=email],
+    [type="date"] 
     {
-        background: transparent;
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background: white;
         border: none;
-        border-bottom: 1px dashed #ffffff;
+        height: 30px;
         width: 275px;
         outline: none;
-        padding: 0px 0px 0px 0px;
-        font-style: italic;
+        padding: 3px 3px 3px 8px;
     }
     .form-style-4 textarea{
-        font-style: italic;
         padding: 0px 0px 0px 0px;
         background: transparent;
         outline: none;
@@ -209,25 +139,45 @@
 
     .form-style-4 input[type=submit],
     .form-style-4 input[type=button]{
-        background: #576E86;
+        background: #083FC5;
+        height: 70px;
+        width: 170px;
+        font-size: 40px;
         border: none;
         padding: 8px 10px 8px 10px;
         border-radius: 5px;
-        color: #A8BACE;
+        color: #ffffff;
+        text-align: center;
+
     }
     .form-style-4 input[type=submit]:hover,
     .form-style-4 input[type=button]:hover{
-    background: #394D61;
+        background: #83CAFF;
     }
-    #main-form {
-    width: 50%;
-    margin: 0 auto;
+
+    .centerSubmit{
+        text-align: center;
+    }
+    .intro{
+        text-align: center;
+        color: #083FC5;;
+    }
+    hr{
+        border-color: #ffffff;
+        background-color: #ffffff: 
     }
     </style>
 
-    <title>MAGA</title>
+    <title>Crowd The Room</title>
     </head>
     <body>
+        <h1>Let's get you running!</h1>
+        <p>We're happy you've expressed interest in running for a public office! In order to give you
+            more details on how to run for the specific office you desire, we need to collect a little
+            information first. We use this information to do a few simple checks and let you know if you're
+            eligible to run.
+        </p>
+        <hr noshade="true">
         <div id="main-form" class="form-style-4">
             <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
                 <div>
@@ -262,7 +212,7 @@
                 <h2>Where do you currently live?</h2>
                 
                 <div id="locationField">
-                    <label for="autocomplete">Google maps autocomplete address:</label>
+                    <label for="autocomplete">Address:</label>
                     <input id="autocomplete" onFocus="geolocate()" type="text" required></input>
                 </div>
                     
@@ -339,9 +289,9 @@
                 </div>
 
                 
-                <div>
+                <div class="centerSubmit">
                     <input type="hidden" name="action" value="basic_info">
-                    <input type="submit" name="submit_form" value="submit">
+                    <input type="submit" name="submit_form" value="Submit">
                 </div>
             </form>
         </div>
