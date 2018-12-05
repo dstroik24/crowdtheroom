@@ -165,7 +165,7 @@ get_header();
                 </div>
                 
                 <h2>Where do you currently live?</h2>
-                
+                <p id="debug"></p>
                 <div id="locationField">
                     <label for="autocomplete">Address:</label>
                     <input id="autocomplete" onFocus="geolocate()" type="text" required></input>
@@ -301,49 +301,7 @@ get_header();
             return false;
             }
             }
-            // Function that checks whether input text includes alphabetic and numeric characters.
-            function textAlphanumeric(inputtext, alertMsg) {
-            var alphaExp = /^[0-9a-zA-Z]+$/;
-            if (inputtext.value.match(alphaExp)) {
-            return true;
-            } else {
-            document.getElementById('p5').innerText = alertMsg; // This segment displays the validation rule for address.
-            inputtext.focus();
-            return false;
-            }
-            }
-            // Function that checks whether the input characters are restricted according to defined by user.
-            function lengthDefine(inputtext, min, max) {
-            var uInput = inputtext.value;
-            if (uInput.length >= min && uInput.length <= max) {
-            return true;
-            } else {
-            document.getElementById('p2').innerText = "* Please enter between " + min + " and " + max + " characters *"; // This segment displays the validation rule for username
-            inputtext.focus();
-            return false;
-            }
-            }
-            // Function that checks whether a option is selected from the selector and if it's not it displays an alert message.
-            function trueSelection(inputtext, alertMsg) {
-            if (inputtext.value == "Please Choose") {
-            document.getElementById('p4').innerText = alertMsg; //this segment displays the validation rule for selection.
-            inputtext.focus();
-            return false;
-            } else {
-            return true;
-            }
-            }
-            // Function that checks whether an user entered valid email address or not and displays alert message on wrong email address format.
-            function emailValidation(inputtext, alertMsg) {
-            var emailExp = /^[w-.+]+@[a-zA-Z0-9.-]+.[a-zA-z0-9]{2,4}$/;
-            if (inputtext.value.match(emailExp)) {
-            return true;
-            } else {
-            document.getElementById('p3').innerText = alertMsg; // This segment displays the validation rule for email.
-            inputtext.focus();
-            return false;
-            }
-            }
+            // FROM https://www.formget.com/form-validation-using-javascript/
     </script>
     <script>
         function addOptions(){
