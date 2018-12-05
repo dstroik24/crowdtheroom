@@ -165,7 +165,7 @@ get_header();
                 </div>
                 
                 <h2>Where do you currently live?</h2>
-                <p id="val2"></p>
+                <p id="val2" style="color: red;"></p>
                 <div id="locationField">
                     <label for="autocomplete">Address:</label>
                     <input id="autocomplete" onFocus="geolocate()" type="text" required></input>
@@ -264,9 +264,9 @@ get_header();
             // Check each input in the order that it appears in the form.
             if (inputAlphabet(fname, "* For your First Name please use letter only *")) {
                 if (inputAlphabet(lname, "* For your Last Name please use letter only *")) {
-                    if (textNumeric(yrsAtCurRes, "* Invalid Years at Residence *")) {
-                        if (textNumeric(yrsTxRes, "* Invalid Years in Texas *")) {
-                            if (textNumeric(yrsCitizen, "* Invalid Years of Citizenship *")) {
+                    if (textNumeric(yrsAtCurRes, "* Invalid Years at Residence (Use numbers) *")) {
+                        if (textNumeric(yrsTxRes, "* Invalid Years in Texas (Use numbers)*")) {
+                            if (textNumeric(yrsCitizen, "* Invalid Years of Citizenship (Use numbers)*")) {
             
             return true;
             }

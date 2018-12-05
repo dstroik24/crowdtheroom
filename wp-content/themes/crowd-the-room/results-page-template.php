@@ -6,7 +6,6 @@
 function get_user_info(){
 	global $wpdb;
     $user_id = $_GET['id'];
-	echo "User ID {$user_id} <br>";
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM " . $table_name . " WHERE user_id={$user_id}";
 	$result = $wpdb->get_row($sql, ARRAY_A);

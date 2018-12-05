@@ -152,7 +152,7 @@ function add_ctr_user(){
 	arr_as_table($data);
 	
 	// Takes user to next page after filling out form
-	//wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
+	wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
 
 }
 
