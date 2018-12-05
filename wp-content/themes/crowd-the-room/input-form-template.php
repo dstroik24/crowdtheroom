@@ -171,6 +171,7 @@
         background-color: #ffffff: 
     }
     .header{
+        width: 100%;
         padding: 60px;
         text-align: center;
         background: #ffffff;
