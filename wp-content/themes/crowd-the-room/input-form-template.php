@@ -134,7 +134,7 @@ get_header();
         <div id="main-form" class="form-style-4">
             <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off" onsubmit='return formValidation()'>
                 <p>All fields are required to get you up and running.</p>
-                <p id="debug" style="color: red;"></p>
+                <p id="val1" style="color: red;"></p>
                 <div>
                     <label for="office">What Office would you like to run for?</label>
                     <select name='office' id="office" onchange = "addOptions()" required>
@@ -165,7 +165,7 @@ get_header();
                 </div>
                 
                 <h2>Where do you currently live?</h2>
-                <p id="debug"></p>
+                <p id="val2"></p>
                 <div id="locationField">
                     <label for="autocomplete">Address:</label>
                     <input id="autocomplete" onFocus="geolocate()" type="text" required></input>
@@ -283,7 +283,8 @@ get_header();
             if (inputtext.value.match(numericExpression)) {
             return true;
             } else {
-            document.getElementById('debug').innerText = alertMsg; // This segment displays the validation rule for zip.
+            document.getElementById('val1').innerText = alertMsg; // This segment displays the validation rule for zip.
+            document.getElementById('val2').innerText = alertMsg;
             inputtext.focus();
             return false;
             }
@@ -295,7 +296,8 @@ get_header();
             if (inputtext.value.match(alphaExp)) {
             return true;
             } else {
-            document.getElementById('debug').innerText = alertMsg; // This segment displays the validation rule for name.
+            document.getElementById('val1').innerText = alertMsg; // This segment displays the validation rule for name.
+            document.getElementById('val2').innerText = alertMsg;
             //alert(alertMsg);
             inputtext.focus();
             return false;
