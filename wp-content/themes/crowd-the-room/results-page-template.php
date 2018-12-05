@@ -183,6 +183,9 @@ get_header();
         readyOrNotFunc();
         whyOrWhyNotFunc();
 
+        document.write(isOldEnough, isCitizen, isTxRes, yrsTxRes);
+
+
         function whyOrWhyNotFunc() {
 	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
             citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
