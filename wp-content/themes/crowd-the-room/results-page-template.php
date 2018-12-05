@@ -185,13 +185,13 @@ get_header();
         document.write(isOldEnough, isCitizen, isTxRes, yrsTxRes);
 
 
-        function whyOrWhyNotFunc() {
+        function whatBoutDis() {
 	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
             citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
             resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
             yrsVar = (yrsTxRes >= 2) ? "&#10003;Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
         }
-        whyOrWhyNotFunc();
+        whatBoutDis();
 
         document.write(oldVar, citVar, resVar, yrsVar);
 
