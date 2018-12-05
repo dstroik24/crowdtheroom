@@ -153,9 +153,13 @@ get_header();
         cursor: pointer;
         text-decoration: underline;
     }
-    #title{
-        overflow:auto;
-        font-size: 5vw;
+    #title h2{
+        font-size: 8vw;
+        font-family: Lato;  
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700; 
+        text-align: center; 
     }
     </style>
     </head>
@@ -167,8 +171,8 @@ get_header();
         <br class="bigBreak">
 
         <div id="title">
-            <h1>You want to run for office.</h1>
-            <h1>We're here to help.</h1>
+            <h2>You want to run for office.</h2>
+            <h2>We're here to help.</h2>
         </div>
 
         <br class="bigBreak">
