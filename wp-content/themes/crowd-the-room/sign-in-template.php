@@ -120,8 +120,11 @@
             <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;">here</span> to sign in.</p>
             <h1 id="left_head" onclick="location.href='http://crowdtheroom.org/';">crowdtheroom</h1>
     </div>
-    <h1>Our apologies</h1>
-    <p>Unfortunately, this page is not currently up and running. We're working hard to make it happen, but until then, keep crowding!</p>
-    </body>
+    <div style="padding: 30px;">
+        
+        <h1>Our apologies</h1>
+        <p>Unfortunately, this page is not currently up and running. We're working hard to make it happen, but until then, keep crowding!</p>
+        
+    </div></body>
     
     </html>
