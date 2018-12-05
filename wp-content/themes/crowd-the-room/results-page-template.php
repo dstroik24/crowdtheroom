@@ -174,6 +174,14 @@ get_header();
         }
         }
 
+        // New (and improved) eligible logic
+        function whatBoutDis() {
+	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
+            citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
+            resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
+            yrsVar = (yrsTxRes >= 2) ? "&#10003;Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
+            console.log("hi dan");
+        }
         // Fill in key info
         document.getElementById("fullName").innerHTML = fullName;
 
@@ -182,20 +190,9 @@ get_header();
         oldEnough();
         readyOrNotFunc();
         whyOrWhyNotFunc();
-
-        document.write(isOldEnough, isCitizen, isTxRes, yrsTxRes);
-
-
-        function whatBoutDis() {
-	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
-            citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
-            resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
-            yrsVar = (yrsTxRes >= 2) ? "&#10003;Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
-            console.log("hi dan");
-        }
         whatBoutDis();
+        
 
-        document.write(oldVar, citVar, resVar, yrsVar);
 
 
         document.getElementById("quals").innerHTML = oldVar + citVar + resVar + yrsVar;
