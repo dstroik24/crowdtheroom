@@ -2,6 +2,7 @@
 /*
  Template Name: home-page-template
  */
+get_header();
 ?>
 
 <!DOCTYPE html>
@@ -156,10 +157,6 @@
     </head>
 
     <body>
-        <div class="header">
-            <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;">here</span> to sign in.</p>
-            <h1 id="left_head" onclick="location.href='http://crowdtheroom.org/';">crowdtheroom</h1>
-        </div>
 
         <br class="bigBreak">
         <br class="bigBreak">

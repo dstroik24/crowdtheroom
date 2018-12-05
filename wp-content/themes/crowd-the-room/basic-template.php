@@ -14,7 +14,7 @@
 get_header();
 ?>
 <body>
-	<div id="primary" class="content-area">
+	<div id="primary" class="content-area" style="padding: 30px;">
 		<main id="main" class="site-main">
 
 		<?php
