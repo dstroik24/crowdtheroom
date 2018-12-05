@@ -320,8 +320,14 @@
                     break;
                 }
             }
-            dSelect.style.display = 'inline';
-            dLabel.style.display = 'inline';
+
+            dSelect.style.display = 'none';
+            dLabel.style.display = 'none';
+            aisdHead.style.display = 'none';
+            isFelonQuestion.style.display = 'none';
+            isMentalIncapQuestion.style.display = 'none';
+            txRes.style.display = 'none';
+
             if (officeVal == "us_rep"){
                 dSelect.add(new Option("Select your desired district", ""), null);
                 dSelect.add(new Option("10", "d10"), null);
@@ -329,6 +335,9 @@
                 dSelect.add(new Option("21", "d21"), null);
                 dSelect.add(new Option("25", "d25"), null);
                 dSelect.add(new Option("35", "d35"), null);
+                
+                dSelect.style.display = 'inline';
+                dLabel.style.display = 'inline';
             }else if (officeVal == "tx_rep"){
                 dSelect.add(new Option("Select your desired district", ""), null);
                 dSelect.add(new Option("46", "d46"), null);
@@ -337,7 +346,9 @@
                 dSelect.add(new Option("49", "d49"), null);
                 dSelect.add(new Option("50", "d50"), null);
                 dSelect.add(new Option("51", "d51"), null);
-                
+
+                dSelect.style.display = 'inline';
+                dLabel.style.display = 'inline';
                 txRes.style.display = 'inline';
             }else if (officeVal == "aisd"){
                 dSelect.add(new Option("Select your desired district", ""), null);
@@ -348,6 +359,9 @@
                 dSelect.add(new Option("5", "d5"), null);
                 dSelect.add(new Option("6", "d6"), null);
                 dSelect.add(new Option("7", "d7"), null);
+
+                dSelect.style.display = 'inline';
+                dLabel.style.display = 'inline';
                 
                 aisdHead.style.display = 'inline';
                 isFelonQuestion.style.display = 'inline';
