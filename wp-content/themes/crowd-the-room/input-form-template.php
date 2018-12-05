@@ -170,11 +170,23 @@
         border-color: #ffffff;
         background-color: #ffffff: 
     }
+    .header{
+        padding: 60px;
+        text-align: center;
+        background: #ffffff;
+        color: #779FFF;
+        font-size: 30px;
+    }
+
+    }
     </style>
 
     <title>Crowd The Room</title>
     </head>
     <body>
+        <div class="header">
+            <h1 id="left_head">crowdtheroom</h1>
+        </div>
         <div class="intro">
             
             <h1>Let's get you running!</h1>
