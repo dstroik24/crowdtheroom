@@ -109,10 +109,45 @@
          /* with some space to the left of the second form */
          
     }
+    .header{
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        background: #ffffff;
+        color: #779FFF;
+        font-size: 30px;
+        overflow: auto;
+    }
+    .header [id="left_head"]{
+        text-align: left;
+        padding-left: 15px;
+        float: left;
+        display: inline-block;
+        position: relative;
+    }
+    .header [id="right_head"]{
+        text-align: right;
+        padding-right: 15px;
+        display: inline-block;
+        float: right;
+        position: relative;
+     }
+     .header [id="left_head"]:hover{
+        color:blue;
+        cursor: pointer;
+    }
+    .clickable:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
     </style>
     </head>
 
     <body>
+        <div class="header">
+            <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;">here</span> to sign in.</p>
+            <h1 id="left_head" onclick="location.href='http://crowdtheroom.org/';">crowdtheroom</h1>
+        </div>
 
         <br class="bigBreak">
         <br class="bigBreak">
@@ -136,7 +171,13 @@
             <input type="submit" name="about_us" value="About Us" 
                 onclick="location.href='https://en.wikipedia.org/wiki/Cambridge_Analytica';">
         </div>
-
+        
+        <br class="bigBreak">
+        <br class="bigBreak">
+        <br class="bigBreak">
+        <br class="bigBreak">
+        <br class="bigBreak">
+        <br class="bigBreak">
 
     </body>
 

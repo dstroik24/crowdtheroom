@@ -214,7 +214,37 @@ foreach($info_arr as $field => $value){
         border-color: #ffffff;
         background-color: #ffffff: 
     }
-    
+    .header{
+        width: 100%;
+        padding-top: 20px;
+        padding-bottom: 10px;
+        background: #ffffff;
+        color: #779FFF;
+        font-size: 30px;
+        overflow: auto;
+    }
+    .header [id="left_head"]{
+        text-align: left;
+        padding-left: 15px;
+        float: left;
+        display: inline-block;
+        position: relative;
+    }
+    .header [id="right_head"]{
+        text-align: right;
+        padding-right: 15px;
+        display: inline-block;
+        float: right;
+        position: relative;
+     }
+     .header [id="left_head"]:hover{
+        color:blue;
+        cursor: pointer;
+    }
+    .clickable:hover{
+        cursor: pointer;
+        text-decoration: underline;
+    }
     </style>
         <title>MAGA</title>
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
@@ -222,7 +252,10 @@ foreach($info_arr as $field => $value){
   </head>
 
   <body>
-
+    <div class="header">
+            <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;">here</span> to sign in.</p>
+            <h1 id="left_head" onclick="location.href='http://crowdtheroom.org/';">crowdtheroom</h1>
+    </div>
 
     <h2 id="fullName">Name HERE</h2>
     <ul>
