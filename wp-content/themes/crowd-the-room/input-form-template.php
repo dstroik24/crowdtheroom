@@ -90,13 +90,13 @@ get_header();
 
     .form-style-4 input[type=submit],
     .form-style-4 input[type=button]{
-        background: #083FC5;
+        background: #1D0185;
         height: 70px;
         width: 170px;
         font-size: 40px;
         border: none;
         padding: 8px 10px 8px 10px;
-        border-radius: 0px;
+        border-radius: 2px;
         color: #ffffff;
         text-align: center;
 
