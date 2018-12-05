@@ -156,7 +156,7 @@ function add_ctr_user(){
 	
 	// Takes user to next page after filling out form
 	//wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
-
+}
 
 
 // Runs script with python3
