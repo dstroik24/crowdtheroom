@@ -155,7 +155,7 @@ function add_ctr_user(){
 	get_ctr_users();
 	
 	// Takes user to next page after filling out form
-	//wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
+	wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
 }
 
 
