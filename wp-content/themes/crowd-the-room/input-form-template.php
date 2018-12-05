@@ -131,6 +131,7 @@ get_header();
         </div>
         <div id="main-form" class="form-style-4">
             <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off" onsubmit='return formValidation()'>
+                <p id="debug" style="color: red;"></p>
                 <div>
                     <label for="office">What Office would you like to run for?</label>
                     <select name='office' id="office" onchange = "addOptions()" required>
@@ -238,7 +239,6 @@ get_header();
                     <input type="radio" name="isMentalIncap" value=0>No</input>
                 </div>
 
-                <p id="debug"></p>
                 <div class="centerSubmit">
                     <input type="hidden" name="action" value="basic_info">
                     <input type="submit" name="submit_form" value="Submit">
