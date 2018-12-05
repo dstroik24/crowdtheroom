@@ -105,7 +105,9 @@ get_header();
     .form-style-4 input[type=button]:hover{
         background: #83CAFF;
     }
-
+    input:invalid {
+        border-color: #FF0000;
+    }
     .centerSubmit{
         text-align: center;
     }
@@ -131,6 +133,7 @@ get_header();
         </div>
         <div id="main-form" class="form-style-4">
             <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off" onsubmit='return formValidation()'>
+                <p>All fields are required to get you up and running.</p>
                 <p id="debug" style="color: red;"></p>
                 <div>
                     <label for="office">What Office would you like to run for?</label>
@@ -225,7 +228,7 @@ get_header();
 
                 <div id="isFelonQuestion">
                     <label for="isFelon">Have you even been convicted of a felony?</label>
-                    <input type="radio" name="isFelon" value=1>Yes</input>
+                    <input type="radio" name="isFelon" value=1 required>Yes</input>
                     <input type="radio" name="isFelon" value=0>No</input>
                 </div>
                 
@@ -259,8 +262,8 @@ get_header();
             
         
             // Check each input in the order that it appears in the form.
-            if (inputAlphabet(fname, "* For your name please use letter only *")) {
-                if (inputAlphabet(lname, "* For your name please use letter only *")) {
+            if (inputAlphabet(fname, "* For your First Name please use letter only *")) {
+                if (inputAlphabet(lname, "* For your Last Name please use letter only *")) {
                     if (textNumeric(yrsAtCurRes, "* Invalid Years at Residence *")) {
                         if (textNumeric(yrsTxRes, "* Invalid Years in Texas *")) {
                             if (textNumeric(yrsCitizen, "* Invalid Years of Citizenship *")) {
