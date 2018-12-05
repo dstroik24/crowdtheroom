@@ -93,22 +93,6 @@ function add_ctr_user(){
 	$txRepDist = null;
 	$aisdDist = null;
 
-	/* No longer needed due to autocomplete
-	// Use google api to standardize address
-	$address_standard = geocode("{$street_address} {$city} {$state} {$zip}");
-	if ($address_standard){
-		$full_address = $address_standard['full_address'];
-		$street_address = $address_standard['street_address'];
-		$state = $address_standard['state'];
-		$city = $address_standard['city'];
-		$zip = $address_standard['zip'];
-		$county = $address_standard['county'];
-		$lati = $address_standard['latitude'];
-		$longi = $address_standard['longitude'];
-	}
-	*/
-
-
 	// Generate new unique user id
 	$id = new_user_id();
 
@@ -128,6 +112,7 @@ function add_ctr_user(){
 		$full_office = $office ."_". $district;
 	}else{
 		$full_office = $office;
+		$district = null;
 	}
 	
 	// Reformat some data for the python script
@@ -304,3 +289,17 @@ add_action('admin_post_basic_info', 'add_ctr_user');
 add_action('admin_post_nopriv_basic_info', 'add_ctr_user');
 
 
+/* No longer needed due to autocomplete
+	// Use google api to standardize address
+	$address_standard = geocode("{$street_address} {$city} {$state} {$zip}");
+	if ($address_standard){
+		$full_address = $address_standard['full_address'];
+		$street_address = $address_standard['street_address'];
+		$state = $address_standard['state'];
+		$city = $address_standard['city'];
+		$zip = $address_standard['zip'];
+		$county = $address_standard['county'];
+		$lati = $address_standard['latitude'];
+		$longi = $address_standard['longitude'];
+	}
+	*/
