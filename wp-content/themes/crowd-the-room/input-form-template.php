@@ -11,6 +11,10 @@
     <head>
     <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
+    html, body {
+        margin:0;
+        padding:0;
+    }
     h1 { 
         font-family: Lato; 
         font-size: 23px; 
@@ -172,13 +176,15 @@
     }
     .header{
         width: 100%;
-        padding: 60px;
-        text-align: center;
+        padding-top: 30px;
+        padding-bottom: 30px;
         background: #ffffff;
         color: #779FFF;
         font-size: 30px;
     }
-
+    .header [id="left_head"]{
+        text-align: left;
+        padding-left: 15px;
     }
     </style>
 
