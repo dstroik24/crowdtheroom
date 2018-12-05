@@ -73,6 +73,7 @@
         font-size: 16px;
         background: #779FFF;
         padding: 30px 30px 15px 30px;
+        border: 5px solid #FFFD1D;
     }
 
     .form-style-4 input[type=submit],
@@ -82,7 +83,8 @@
     .form-style-4 textarea,
     .form-style-4 label,
     .form-style-4 select,
-    [type="date"]
+    [type="date"],
+    [type="radio"]
     {
         font-family: Lato;
         font-size: 16px;
@@ -160,7 +162,9 @@
     }
     .intro{
         text-align: center;
-        color: #ffffff;;
+        color: #ffffff;
+        width: 70%;
+        margin: 0 auto;
     }
     hr{
         border-color: #ffffff;
@@ -180,7 +184,6 @@
                 eligible to run.
             </p>
         </div>
-        <hr noshade="true">
         <div id="main-form" class="form-style-4">
             <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
                 <div>
@@ -274,17 +277,16 @@
                     <input type="text" name="yrsCitizen" id="yrsCitizen" value="" required>
                 </div>
 
-                <div id="aisdHead" style="display:none;">
-                    <h2>Fields for School Board (I think?)</h2>
-                </div> 
-
-                <div id="isFelonQuestion" style="display:none;">
+                <div id="isFelonQuestion">
                     <label for="isFelon">Have you even been convicted of a felony?</label>
                     <input type="radio" name="isFelon" value=1>Yes</input>
                     <input type="radio" name="isFelon" value=0>No</input>
                 </div>
                 
-                
+                <div id="aisdHead" style="display:none;">
+                    <h2>Field for School Board</h2>
+                </div> 
+
                 <div id="isMentalIncapQuestion" style="display:none;">
                     <label for="isMentalIncap">Have you even been deemed totally mentally incapacitated or partially mentally incapacitated without the right to vote by a court of law?</label>
                     <input type="radio" name="isMentalIncap" value=1>Yes</input>
@@ -308,7 +310,6 @@
             var dLabel=document.getElementById("districtLabel");
             var officeVal=document.getElementById("office").value;
             var aisdHead=document.getElementById("aisdHead");
-            var isFelonQuestion=document.getElementById("isFelonQuestion");
             var isMentalIncapQuestion=document.getElementById("isMentalIncapQuestion");
             var txRes=document.getElementById("texas_resident");
 
@@ -324,7 +325,6 @@
             dSelect.style.display = 'none';
             dLabel.style.display = 'none';
             aisdHead.style.display = 'none';
-            isFelonQuestion.style.display = 'none';
             isMentalIncapQuestion.style.display = 'none';
             txRes.style.display = 'none';
 
@@ -364,14 +364,12 @@
                 dLabel.style.display = 'inline';
                 
                 aisdHead.style.display = 'inline';
-                isFelonQuestion.style.display = 'inline';
                 isMentalIncapQuestion.style.display = 'inline';
 
             }else{
                 dSelect.style.display = 'none';
                 dLabel.style.display = 'none';
                 aisdHead.style.display = 'none';
-                isFelonQuestion.style.display = 'none';
                 isMentalIncapQuestion.style.display = 'none';
                 txRes.style.display = 'none';
             }
