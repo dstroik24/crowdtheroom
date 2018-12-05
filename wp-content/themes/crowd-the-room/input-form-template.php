@@ -2,6 +2,8 @@
 /*
  Template Name: input-form-template
  */
+
+ wp_head();
 ?>
 
 <!DOCTYPE html>
