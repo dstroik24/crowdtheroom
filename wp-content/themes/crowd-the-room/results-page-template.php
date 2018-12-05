@@ -191,6 +191,9 @@ get_header();
         }
         whyOrWhyNotFunc();
 
+        document.write(oldVar, citVar, resVar, yrsVar);
+
+
         document.getElementById("quals").innerHTML = oldVar + citVar + resVar + yrsVar;
     </script>
   </body>
