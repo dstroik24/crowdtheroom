@@ -171,12 +171,15 @@
     <title>Crowd The Room</title>
     </head>
     <body>
-        <h1>Let's get you running!</h1>
-        <p>We're happy you've expressed interest in running for a public office! In order to give you
-            more details on how to run for the specific office you desire, we need to collect a little
-            information first. We use this information to do a few simple checks and let you know if you're
-            eligible to run.
-        </p>
+        <div class="intro">
+            
+            <h1>Let's get you running!</h1>
+            <p>We're happy you've expressed interest in running for a public office! In order to give you
+                more details on how to run for the specific office you desire, we need to collect a little
+                information first. We use this information to do a few simple checks and let you know if you're
+                eligible to run.
+            </p>
+        </div>
         <hr noshade="true">
         <div id="main-form" class="form-style-4">
             <form action="<?php echo esc_url( admin_url('admin-post.php') ); ?>" method="post" autocomplete="off">
