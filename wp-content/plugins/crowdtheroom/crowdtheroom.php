@@ -76,6 +76,7 @@ function add_ctr_user(){
 	$zip = $_POST['zip'];
 	$county = $_POST['county'];
 	$yrsAtCurRes = $_POST['yrsAtCurRes'];
+	$yrsTexRes = $_POST['yrsTexRes'];
 	$dob = $_POST['dob'];
 	$isCitizen = $_POST['isCitizen'];
 	$yrsCitizen = $_POST['yrsCitizen'];
@@ -121,7 +122,7 @@ function add_ctr_user(){
 	// Texas resident
 	if ($state == "TX"){
 		$isTxRes = 1;
-		$yrsTxRes = $yrsAtCurRes;
+		//$yrsTxRes = $yrsAtCurRes;
 	}
 	// Office and district
 	$distOffices = array("us_rep", "tx_rep", "aisd");

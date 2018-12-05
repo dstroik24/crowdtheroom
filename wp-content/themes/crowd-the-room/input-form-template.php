@@ -297,9 +297,9 @@
                     <input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" required>
                 </div>
 
-                <div>
-                    <label for="yrsTxRes">How many years have you lived at this address?</label>
-                    <input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" required>
+                <div id="texas_resident" style="display:none;">
+                    <label for="yrsTxRes">How many years have you lived in Texas?</label>
+                    <input type="text" name="yrsTexRes" id="yrsTexRes" value="" required>
                 </div>
 
             
@@ -357,7 +357,8 @@
             var aisdHead=document.getElementById("aisdHead");
             var isFelonQuestion=document.getElementById("isFelonQuestion");
             var isMentalIncapQuestion=document.getElementById("isMentalIncapQuestion");
-            
+            var txRes=document.getElementById("texas_resident");
+
             while (true){
             
                 if (dSelect.length > 0) {
@@ -383,6 +384,8 @@
                 dSelect.add(new Option("49", "d49"), null);
                 dSelect.add(new Option("50", "d50"), null);
                 dSelect.add(new Option("51", "d51"), null);
+                
+                txRes.style.display = 'inline';
             }else if (officeVal == "aisd"){
                 dSelect.add(new Option("Select your desired district", ""), null);
                 dSelect.add(new Option("1", "d1"), null);
@@ -403,6 +406,7 @@
                 aisdHead.style.display = 'none';
                 isFelonQuestion.style.display = 'none';
                 isMentalIncapQuestion.style.display = 'none';
+                txRes.style.display = 'none';
             }
     }
     </script>
