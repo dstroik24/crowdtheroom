@@ -114,13 +114,15 @@ function add_ctr_user(){
 		$full_office = $office;
 		$district = null;
 	}
+	// Sometime you just don't care
+	if ($office != "aisd"){
+		$isMentalIncap = 0;
+	}
 	
 	// Reformat some data for the python script
 	$dob_format = date_format($dob_new, "m/d/Y");
 	$county_fixed = preg_replace("#\s#", "-", $county);
 	
-	echo "checking voter registration";
-
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
 	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county_fixed} {$dob_format} {$zip}");
 	$isRegVote = $voterStatus[1];
@@ -150,30 +152,17 @@ function add_ctr_user(){
 
 	// Looking to make sure input data is good, echos a table
 	arr_as_table($data);
+	get_ctr_users();
 	
 	// Takes user to next page after filling out form
-	wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
+	//wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
 
-}
 
-function test_vote(){
-	$fname = "Daniel";
-	$lname = "Stroik";
-	$county = "Travis County";
-	$dob_format = "02/10/1997";
-	$zip = "78705";
-
-	$county_fixed = preg_replace("#\s#", "-", $county);
-	echo $county_fixed;
-	$out = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county_fixed} {$dob_format} {$zip}");
-	print_r($out);
-}
-add_shortcode('test-vote', 'test_vote');
 
 // Runs script with python3
 function run_python3($script_name){
 	$command = "python3 {$script_name}";
-	echo $command;
+	//echo $command;
 	exec($command, $out);
 	return $out;
 }
@@ -276,9 +265,13 @@ function get_ctr_users(){
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM " . $table_name;
 	echo $sql;
-	$result = $wpdb->get_results($sql);
-	foreach($result as $print) {
-		echo $print->user_fname, '<br>';
+	$result = $wpdb->get_results($sql, 'ARRAY_A');
+	
+	foreach($result as $row) {
+		foreach($row as $column => $value){
+			echo $column . "  :  " . $value;
+		}
+		echo "<br>--------------------------------------------<br>";
 	}
 }
 
@@ -289,17 +282,4 @@ add_action('admin_post_basic_info', 'add_ctr_user');
 add_action('admin_post_nopriv_basic_info', 'add_ctr_user');
 
 
-/* No longer needed due to autocomplete
-	// Use google api to standardize address
-	$address_standard = geocode("{$street_address} {$city} {$state} {$zip}");
-	if ($address_standard){
-		$full_address = $address_standard['full_address'];
-		$street_address = $address_standard['street_address'];
-		$state = $address_standard['state'];
-		$city = $address_standard['city'];
-		$zip = $address_standard['zip'];
-		$county = $address_standard['county'];
-		$lati = $address_standard['latitude'];
-		$longi = $address_standard['longitude'];
-	}
-	*/
+
