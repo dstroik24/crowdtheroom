@@ -160,7 +160,7 @@
     }
     .intro{
         text-align: center;
-        color: #083FC5;;
+        color: #ffffff;;
     }
     hr{
         border-color: #ffffff;

@@ -59,10 +59,160 @@ foreach($info_arr as $field => $value){
 
 
     <style>
-    body {
-    background-color:   #91A8d0;
-    font-family: "Courier New", Courier, monospace;
-    color: white;
+    h1 { 
+        font-family: Lato; 
+        font-size: 23px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700; 
+        line-height: 23px; 
+    } 
+    h3 { 
+        font-family: Lato; 
+        font-size: 17px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700; 
+        line-height: 23px; 
+    }
+    body { 
+        background-color: #779FFF;
+        color: white;
+        font-family: Lato; 
+        font-size: 14px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 23px; 
+    }  
+    p { 
+        font-family: Lato; 
+        font-size: 14px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 23px; 
+    } 
+    blockquote { 
+        font-family: Lato; 
+        font-size: 17px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 23px; 
+    } 
+    
+    pre { 
+        font-family: Lato; 
+        font-size: 11px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 400; 
+        line-height: 23px; 
+    }
+
+    ::placeholder { 
+        color: #D6DBDF;
+        opacity: 1; 
+    }
+    .form-style-4{
+        width: 70%;
+        margin: 0 auto;
+        font-size: 16px;
+        background: #779FFF;
+        padding: 30px 30px 15px 30px;
+    }
+
+    .form-style-4 input[type=submit],
+    .form-style-4 input[type=button],
+    .form-style-4 input[type=text],
+    .form-style-4 input[type=email],
+    .form-style-4 textarea,
+    .form-style-4 label,
+    .form-style-4 select,
+    [type="date"]
+    {
+        font-family: Lato;
+        font-size: 16px;
+        color: #000000;
+        margin-bottom: 30px;
+
+    }
+    .form-style-4 label {
+        font-size: 24px;
+        display:inline;
+        color: #ffffff;
+        margin-bottom: 7px;
+        margin-right: 20px;
+    }
+    
+    .form-style-4 label > span{
+        display: inline-block;
+        float: left;
+        width: 150px;
+    }
+
+    .form-style-4 input[type=text],
+    .form-style-4 input[type=email],
+    [type="date"] 
+    {
+        -moz-border-radius: 3px;
+        border-radius: 3px;
+        background: white;
+        border: none;
+        height: 30px;
+        width: 275px;
+        outline: none;
+        padding: 3px 3px 3px 8px;
+    }
+    .form-style-4 textarea{
+        padding: 0px 0px 0px 0px;
+        background: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px dashed #ffffff;
+        width: 275px;
+        overflow: hidden;
+        resize:none;
+        height:20px;
+    }
+
+    .form-style-4 textarea:focus, 
+    .form-style-4 input[type=text]:focus,
+    .form-style-4 input[type=email]:focus,
+    .form-style-4 input[type=email] :focus
+    {
+        border-bottom: 1px dashed #ffffff;
+    }
+
+    .form-style-4 input[type=submit],
+    .form-style-4 input[type=button]{
+        background: #083FC5;
+        height: 70px;
+        width: 170px;
+        font-size: 40px;
+        border: none;
+        padding: 8px 10px 8px 10px;
+        border-radius: 5px;
+        color: #ffffff;
+        text-align: center;
+
+    }
+    .form-style-4 input[type=submit]:hover,
+    .form-style-4 input[type=button]:hover{
+        background: #83CAFF;
+    }
+
+    .centerSubmit{
+        text-align: center;
+    }
+    .intro{
+        text-align: center;
+        color: #ffffff;;
+    }
+    hr{
+        border-color: #ffffff;
+        background-color: #ffffff: 
     }
     
     </style>
