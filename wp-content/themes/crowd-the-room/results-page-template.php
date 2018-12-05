@@ -58,6 +58,17 @@ get_header();
   <head>
     <title>MAGA</title>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <style>
+    a:link{
+        color: #fffff;
+    }
+    a:link:hover{
+        color: blue;
+    }
+    a:visited{
+        color: #fffff;
+    }
+    </style>
   </head>
 
   <body>
@@ -74,13 +85,13 @@ get_header();
         <h2>Apply</h2>
 	        <ol type="a">
 		        <li>You'll need to fill out <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-2f.pdf"><b>this application</b></a> and send it to your party's address:<br>
-			        Texas Democratic Party<br>
+			        <b>Texas Democratic Party<br>
 			        Gilberto Hinojosa, Chair<br>
 			        1106 Lavaca Street, #100<br>
 			        Austin, Texas 78701<br>
-			        (512) 478-9800</li>
+			        </b></li>
 
-		        <li>In addition to your application, you\'ll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
+		        <li>In addition to your application, you'll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
 		        <br> <em>NOTE: For your payment, you may include a check made out to your political party and attach it to your application. For the petition, make sure you receive valid signatures that include either the date of birth or VUID of the signatories. Attach the petition sheets to your application. It is recommended that you receive <b>three times</b> the required amount of signatures on your petition to retain your required amount during the certification process.</em></li></ol></div>
 
 		
@@ -96,22 +107,29 @@ get_header();
         <h2>Apply</h2>
 	        <ol type="a">
 		        <li>You'll need to fill out <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-2f.pdf"><b>this application</b></a> and send it to your party's address:<br>
-			        Texas GOP<br>
+			        <b>Texas GOP<br>
 			        James Dickey, Chair<br>
 			        211 E. 7th Street, Suite 915<br>
 			        Austin, Texas 78701<br>
-			        (512) 477-9821<br></li>
-		        <li>In addition to your application, you\'ll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
+			        <br><b></li>
+		        <li>In addition to your application, you'll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
 		        <br> <em>NOTE: For your payment, you may include a check made out to your political party and attach it to your application. For the petition, make sure you receive valid signatures that include either the date of birth or VUID of the signatories. Attach the petition sheets to your application. It is recommended that you receive <b>three times</b> the required amount of signatures on your petition to retain your required amount during the certification process.</em></li></ol></div>
 
     <hr>
 
     <div>Well, our job here is done. You're on your own. Take a look at the resources below to learn more.</div>
 
-    <p>RESOURCE</p>
-    <p>RESOURCE</p>
-    <p>RESOURCE</p>
-    <p>RESOURCE</p>
+    <div id="resources">
+        <h2>Resources:</h2>
+        <ul>
+            <li><a class="clickable" href="https://www.emilyslist.org/">Emily's List:</a> A political aid for pro-choice, democrat women.</li>
+        
+            <li><a class="clickable" href="https://runforsomething.net/">Run For Something:</a> A political resource for young, progressive candidates</p></li>
+        
+            <li><a class="clickable" href="https://ourrevolution.com/">Our Revolution:</a>A political organization working to elect progressive Democrats through local efforts.
+            </li>
+        </ul>
+    </div>  
 
     <script>
         // Position requirements
