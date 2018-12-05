@@ -169,7 +169,7 @@ function add_ctr_user(){
 	arr_as_table($data);
 	
 	// Takes user to next page after filling out form
-	wp_redirect( "http://104.248.4.174/results/?id={$id}");
+	//wp_redirect( "http://104.248.4.174/results/?id={$id}");
 
 }
 
