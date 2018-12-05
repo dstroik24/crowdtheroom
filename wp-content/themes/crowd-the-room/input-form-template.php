@@ -3,7 +3,7 @@
  Template Name: input-form-template
  */
 
- wp_head();
+ wp_header();
 ?>
 
 <!DOCTYPE html>
