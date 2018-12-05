@@ -109,6 +109,7 @@ get_header();
         var age = "<?= $info_arr['age'] ?>";
         var isTxRes = "<?= $info_arr['isTxRes'] ?>";
         var isCitizen = "<?= $info_arr['isCitizen'] ?>";
+        var yrsTxRes ="<?= $info_arr['yrsTxRes'] ?>";
         var yrsCitizen = "<?= $info_arr['yrsCitizen'] ?>";
         var isFelon = "<?= $info_arr['isFelon'] ?>";
         var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
