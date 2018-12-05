@@ -96,7 +96,7 @@ get_header();
         font-size: 40px;
         border: none;
         padding: 8px 10px 8px 10px;
-        border-radius: 5px;
+        border-radius: 0px;
         color: #ffffff;
         text-align: center;
 
