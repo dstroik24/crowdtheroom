@@ -11,7 +11,6 @@
  *
  * @package Crowd_the_Room
  */
-
 get_header();
 ?>
 <head>
@@ -143,5 +142,3 @@ get_header();
 	</div><!-- #primary -->
     </body>
 <?php
-get_sidebar();
-get_footer();
