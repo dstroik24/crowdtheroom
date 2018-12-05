@@ -57,7 +57,7 @@ foreach($info_arr as $field => $value){
 
   <head>
 
-
+    <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
     h1 { 
         font-family: Lato; 
