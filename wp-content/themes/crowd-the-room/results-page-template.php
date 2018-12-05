@@ -62,11 +62,7 @@ get_header();
 
   <body>
     <h2 id="fullName">Name HERE</h2>
-    <ul>
-      <div id="registeredYN"><i class="fas fa-bong"></i> Registered to vote</div>
-      <div id="distNum"><i class="fas fa-bong"></i> Citizen</div>
-      <div id="yearsResident"><i class="fas fa-bong"></i> Resident for at least 7 years</div>
-    </ul>
+    <div id="quals"></div>
     <div id="readyOrNot">You're ready to run in 2020! Here's what's next:</div>
     <div id="notReadyList">
       <div id="whyOrWhyNotAge"></div>
@@ -118,7 +114,6 @@ get_header();
         var isFelon = "<?= $info_arr['isFelon'] ?>";
         var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
 
-        document.write(fname);
 
 
         // Define position cetegory
@@ -187,6 +182,16 @@ get_header();
         oldEnough();
         readyOrNotFunc();
         whyOrWhyNotFunc();
+
+        function whyOrWhyNotFunc() {
+	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
+            citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
+            resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
+            yrsVar = (yrsTxRes >= 2) ? "&#10003;Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
+        }
+        whyOrWhyNotFunc();
+
+        document.getElementById("quals").innerHTML = oldVar + citVar + resVar + yrsVar;
     </script>
   </body>
 </html>
