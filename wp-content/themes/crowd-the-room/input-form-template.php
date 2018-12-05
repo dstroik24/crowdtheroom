@@ -200,7 +200,7 @@ get_header();
 
                 <div id="texas_resident" style="display:none;">
                     <label for="yrsTxRes">How many years have you lived in Texas?</label>
-                    <input type="text" name="yrsTexRes" id="yrsTexRes" value="" required>
+                    <input type="text" name="yrsTxRes" id="yrsTxRes" value="" required>
                 </div>
 
             

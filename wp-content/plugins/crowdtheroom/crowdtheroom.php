@@ -76,7 +76,7 @@ function add_ctr_user(){
 	$zip = $_POST['zip'];
 	$county = $_POST['county'];
 	$yrsAtCurRes = $_POST['yrsAtCurRes'];
-	$yrsTexRes = $_POST['yrsTexRes'];
+	$yrsTxRes = $_POST['yrsTxRes'];
 	$dob = $_POST['dob'];
 	$isCitizen = $_POST['isCitizen'];
 	$yrsCitizen = $_POST['yrsCitizen'];
@@ -169,7 +169,7 @@ function add_ctr_user(){
 	arr_as_table($data);
 	
 	// Takes user to next page after filling out form
-	//wp_redirect( "http://104.248.4.174/results/?id={$id}");
+	//wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
 
 }
 
