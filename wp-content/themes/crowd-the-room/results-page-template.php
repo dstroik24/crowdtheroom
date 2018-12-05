@@ -68,13 +68,14 @@ get_header();
     a:visited{
         color: #fffff;
     }
-    body{
-        margin: 30px;
+    #everything{
+        margin: 40px;
     }
     </style>
   </head>
 
   <body>
+    <div id="everything">
     <h2 id="fullName">Name HERE</h2>
     <div id="quals"></div>
     <div id="readyOrNot">You're ready to run in 2020! Here's what's next:</div>
@@ -133,7 +134,7 @@ get_header();
             </li>
         </ul>
     </div>  
-
+    </div>
     <script>
         // Position requirements
         // Age
