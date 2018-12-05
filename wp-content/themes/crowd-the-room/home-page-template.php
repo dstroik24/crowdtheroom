@@ -132,7 +132,7 @@
 
         <div class="niceButt">
             <input type="submit" name="start_running" value="Get Running" 
-                onclick="location.href='http://104.248.4.174/application/';">
+                onclick="location.href='http://crowdtheroom.org/application/';">
             <input type="submit" name="about_us" value="About Us" 
                 onclick="location.href='https://en.wikipedia.org/wiki/Cambridge_Analytica';">
         </div>
