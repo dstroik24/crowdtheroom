@@ -112,6 +112,9 @@
         cursor: pointer;
         text-decoration: underline;
     }
+    img{
+        style="float: left; margin-right: 15px;"
+    }
     </style>
     <body>
     <div class="header">
