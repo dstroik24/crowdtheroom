@@ -118,6 +118,14 @@
         font-size: 30px;
         overflow: auto;
     }
+    .header h1 { 
+        font-family: Lato; 
+        font-size: 23px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700; 
+        line-height: 23px; 
+    } 
     .header [id="left_head"]{
         text-align: left;
         padding-left: 15px;
