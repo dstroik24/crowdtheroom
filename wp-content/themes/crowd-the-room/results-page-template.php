@@ -20,6 +20,7 @@ $info_arr = get_user_info();
  They are called:
     user_id 
     office
+    party
     fname
     lname
     dob
@@ -97,6 +98,7 @@ get_header();
 
         // Variables
         var office = "<?= $info_arr['office'] ?>";
+        var party = "<?= $info_arr['party'] ?>";
         var fname = "<?= $info_arr['fname'] ?>";
         var lname = "<?= $info_arr['lname'] ?>";
         var fullName = fname + " " + lname;

@@ -155,6 +155,7 @@ get_header();
     }
     #title{
         overflow:auto;
+        font-size: 5vw;
     }
     </style>
     </head>

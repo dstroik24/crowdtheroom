@@ -153,6 +153,13 @@ get_header();
                         <option value="">Select a District</option>
                     </select>
                 </div>
+
+                <div>
+                    <label for="party">Which party are you running with?</label>
+                    <input type="radio" name="party" value="democrat" required>Democrat</input>
+                    <input type="radio" name="party" value="republican" >Republican</input>
+                    <input type="radio" name="party" value="independent" >Independent</input>
+                </div>
                 
                 <div>
                     <label for="fname">First Name:</label>
