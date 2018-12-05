@@ -115,7 +115,7 @@
     </style>
     <body>
     <div class="header">
-            <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;">here</span> to sign in.</p>
+            <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;" onclick="location.href='http://crowdtheroom.org/sign-in/';">here</span> to sign in.</p>
             <h1 id="left_head" onclick="location.href='http://crowdtheroom.org/';">crowdtheroom</h1>
     </div>
     </body>
