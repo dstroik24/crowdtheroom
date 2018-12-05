@@ -195,7 +195,7 @@
                         <option value="travis_DA">Travis County District Attorney</option>
                         <option value="aisd">AISD Trustee</option>
                         <option value="aisd_large">AISD Trustee At Large</option>
-                    </select><span style="color:red">*</span>
+                    </select>
                 </div>
 
                 <div>
