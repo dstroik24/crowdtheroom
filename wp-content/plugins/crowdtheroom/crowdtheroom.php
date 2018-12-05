@@ -87,7 +87,6 @@ function add_ctr_user(){
 	$lati = null;
 	$longi = null;
 	$isTxRes = null;
-	$yrsTxRes = null;
 	$isPracLaw = null;
 	$yrsPracLaw = null;
 	$usRepDist = null;
@@ -122,7 +121,6 @@ function add_ctr_user(){
 	// Texas resident
 	if ($state == "TX"){
 		$isTxRes = 1;
-		//$yrsTxRes = $yrsAtCurRes;
 	}
 	// Office and district
 	$distOffices = array("us_rep", "tx_rep", "aisd");
