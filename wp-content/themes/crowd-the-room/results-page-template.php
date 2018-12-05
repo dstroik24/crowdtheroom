@@ -64,19 +64,45 @@ get_header();
     <h2 id="fullName">Name HERE</h2>
     <div id="quals"></div>
     <div id="readyOrNot">You're ready to run in 2020! Here's what's next:</div>
-    <div id="notReadyList">
-      <div id="whyOrWhyNotAge"></div>
-      <div id="whyOrWhyNotCitizen"></div>
-      <div id="whyOrWhyNotTx"></div>
-      <div id="whyOrWhyNotCit7"></div>
-    </div>
+    <div id="dem" style="display:none;">
+        <h2>Appoint a campaign treasurer</h2>
+            <ol type="a">
+		        <li>Texas state law requires all candidates to file a campaign treasurer appointment with the appropriate filing authority. <b>You are required to have a campaign treasurer appointment on file with your filing authority even if you do not plan to raise or spend any money.</b></li>
+		        <li>Fill out <a href="https://www.ethics.state.tx.us/e-forms/e_cta.pdf">this form</a> and send it form to the TEC electronically at <b>treasappoint@ethics.state.tx.us</b> or fax it to <b>(512) 463-8808</b> or mail it to: <b><br>Texas Ethics Commission<br>P.O. Box 12070 <br>Austin, TX 78711-2070</b></li>
+		        <li>For more information regarding the rules and regulations of a campaign treasurer, click <b><a href="https://www.ethics.state.tx.us/forms/CTA_ins.html">here</a></b>.</li>
+	        </ol>
+        <h2>Apply</h2>
+	        <ol type="a">
+		        <li>You'll need to fill out <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-2f.pdf"><b>this application</b></a> and send it to your party's address:<br>
+			        Texas Democratic Party<br>
+			        Gilberto Hinojosa, Chair<br>
+			        1106 Lavaca Street, #100<br>
+			        Austin, Texas 78701<br>
+			        (512) 478-9800</li>
 
+		        <li>In addition to your application, you\'ll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
+		        <br> <em>NOTE: For your payment, you may include a check made out to your political party and attach it to your application. For the petition, make sure you receive valid signatures that include either the date of birth or VUID of the signatories. Attach the petition sheets to your application. It is recommended that you receive <b>three times</b> the required amount of signatures on your petition to retain your required amount during the certification process.</em></li></ol></div>
 
-    <ol>
-      <div id="fillGovForm">You need to fill out form XXX</div>
-      <div id="gatherSigs">You need to gather XX signatures on this form endorsing your candidacy:</div>
-      <div id="fillPartyForm">You need to fill out form XXX and send it to the Democratic Party of Texas.</div>
-    </ol>
+		
+		
+
+        <div id="repub" style="display:none;">
+        <h2>Appoint a campaign treasurer</h2>
+        <ol type="a">
+		        <li>Texas state law requires all candidates to file a campaign treasurer appointment with the appropriate filing authority. <b>You are required to have a campaign treasurer appointment on file with your filing authority even if you do not plan to raise or spend any money.</b></li>
+		        <li>Fill out <a href="https://www.ethics.state.tx.us/e-forms/e_cta.pdf">this form</a> and send it form to the TEC electronically at <b>treasappoint@ethics.state.tx.us</b> or fax it to <b>(512) 463-8808</b> or mail it to: <b><br>Texas Ethics Commission<br>P.O. Box 12070 <br>Austin, TX 78711-2070</b></li>
+		        <li>For more information regarding the rules and regulations of a campaign treasurer, click <b><a href="https://www.ethics.state.tx.us/forms/CTA_ins.html">here</a></b>.</li>
+	        </ol>
+        <h2>Apply</h2>
+	        <ol type="a">
+		        <li>You'll need to fill out <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-2f.pdf"><b>this application</b></a> and send it to your party's address:<br>
+			        Texas GOP<br>
+			        James Dickey, Chair<br>
+			        211 E. 7th Street, Suite 915<br>
+			        Austin, Texas 78701<br>
+			        (512) 477-9821<br></li>
+		        <li>In addition to your application, you\'ll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
+		        <br> <em>NOTE: For your payment, you may include a check made out to your political party and attach it to your application. For the petition, make sure you receive valid signatures that include either the date of birth or VUID of the signatories. Attach the petition sheets to your application. It is recommended that you receive <b>three times</b> the required amount of signatures on your petition to retain your required amount during the certification process.</em></li></ol></div>
 
     <hr>
 
@@ -115,6 +141,7 @@ get_header();
         var yrsCitizen = "<?= $info_arr['yrsCitizen'] ?>";
         var isFelon = "<?= $info_arr['isFelon'] ?>";
         var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
+        var party = "<?= $info_arr['party'] ?>";
 
 
 
@@ -175,7 +202,13 @@ get_header();
             document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a U.S. Citizen for at least seven years to run for this position.</li>";
         }
         }
+        // Display either Democrat or Republican next steps display
 
+        function whichPartyHTML() {
+        if (party == "democrat") {
+            demHTML.style.display;
+        }
+        }
         // New (and improved) eligible logic
         function whatBoutDis() {
 	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
@@ -198,6 +231,22 @@ get_header();
 
 
         document.getElementById("quals").innerHTML = oldVar + citVar + resVar + yrsVar;
+    </script>
+    <script>
+
+        var dispDemHTML = document.getElementById("dem");
+        var dispRepubHTML = document.getElementById("repub");
+        // var dispLibHTML = document.getElementById("lib");
+
+        dispDemHTML.style.display = 'none';
+        dispRepubHTML.style.display = 'none';
+        // dispLibHTML.style.display = 'none';
+
+        if (party == "democrat") {
+	        dispDemHTML.style.display = 'inline';
+        } else {
+	        dispRepubHTML.style.display = 'inline';
+        }
     </script>
   </body>
 </html>
