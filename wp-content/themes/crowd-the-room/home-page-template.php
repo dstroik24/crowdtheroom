@@ -153,6 +153,9 @@ get_header();
         cursor: pointer;
         text-decoration: underline;
     }
+    #title{
+        overflow:auto;
+    }
     </style>
     </head>
 
