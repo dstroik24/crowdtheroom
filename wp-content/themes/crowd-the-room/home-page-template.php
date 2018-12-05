@@ -178,7 +178,7 @@ get_header();
             <input type="submit" name="start_running" value="Get Running" 
                 onclick="location.href='http://crowdtheroom.org/application/';">
             <input type="submit" name="about_us" value="About Us" 
-                onclick="location.href='https://en.wikipedia.org/wiki/Cambridge_Analytica';">
+                onclick="location.href='http://crowdtheroom.org/about-us/';">
         </div>
         
         <br class="bigBreak">
