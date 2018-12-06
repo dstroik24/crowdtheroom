@@ -243,8 +243,9 @@ get_header();
         function whatBoutDis() {
 	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
             resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
+            txResVar = (yrsTxRes >= 2) ? "&#10003; Texas resident for at least 2 years<br>" : "&#10007; Texas resident for at least 2 years<br>";
             citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
-            yrsVar = (yrsTxRes >= 2) ? "&#10003;Citizen for at least 2 years<br>" : "&#10007; Citizen for at least 2 years<br>";
+            yrsVar = (yrsCitizen >= 7) ? "&#10003;Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
             
             console.log("hi dan");
         }
@@ -261,7 +262,7 @@ get_header();
 
 
 
-        document.getElementById("quals").innerHTML = oldVar + resVar + citVar + yrsVar;
+        document.getElementById("quals").innerHTML = oldVar + resVar + txResVar + citVar + yrsVar;
     </script>
     <script>
 
