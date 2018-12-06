@@ -173,6 +173,7 @@ get_header();
         var isFelon = "<?= $info_arr['isFelon'] ?>";
         var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
         var party = "<?= $info_arr['party'] ?>";
+        var isRegVote = "<?= $info_arr['isRegVote'] ?>";
 
 
 
