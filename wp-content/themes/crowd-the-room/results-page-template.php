@@ -75,6 +75,9 @@ get_header();
     #fullName{
         font-size: 40px;
     }
+    a{
+        target-new: tab;
+    }
     </style>
   </head>
 
