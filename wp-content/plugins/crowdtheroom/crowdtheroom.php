@@ -154,8 +154,8 @@ function add_ctr_user(){
 	$wpdb->insert($table,$data);
 
 	// Looking to make sure input data is good, echos a table
-	arr_as_table($data);
-	get_ctr_users();
+	//arr_as_table($data);
+	//get_ctr_users();
 	
 	// Takes user to next page after filling out form
 	wp_redirect( "http://crowdtheroom.org/results/?id={$id}");
