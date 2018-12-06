@@ -71,6 +71,10 @@ get_header();
     #everything{
         margin: 40px;
     }
+    #readyOrNot,
+    #fullName{
+        font-size: 60px;
+    }
     </style>
   </head>
 
@@ -132,7 +136,7 @@ get_header();
         <ul>
             <li><a class="clickable" href="https://www.emilyslist.org/">Emily's List:</a> A political aid for pro-choice, democrat women.</li>
         
-            <li><a class="clickable" href="https://runforsomething.net/">Run For Something:</a> A political resource for young, progressive candidates</p></li>
+            <li><a class="clickable" href="https://runforsomething.net/">Run For Something:</a> A political resource for young, progressive candidates</li>
         
             <li><a class="clickable" href="https://ourrevolution.com/">Our Revolution:</a>A political organization working to elect progressive Democrats through local efforts.
             </li>
@@ -240,11 +244,12 @@ get_header();
 	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
             citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
             resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
-            yrsVar = (yrsTxRes >= 2) ? "&#10003;Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
+            yrsVar = (yrsTxRes >= 2) ? "&#10003;Citizen for at least 2 years<br>" : "&#10007; Citizen for at least 2 years<br>";
+            
             console.log("hi dan");
         }
         // Fill in key info
-        document.getElementById("fullName").innerHTML = fullName;
+        document.getElementById("fullName").innerHTML = fullName + ",";
 
 
         whatPosCateg(office);
