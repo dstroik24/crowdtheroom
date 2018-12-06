@@ -173,7 +173,6 @@ get_header();
         var isFelon = "<?= $info_arr['isFelon'] ?>";
         var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
         var party = "<?= $info_arr['party'] ?>";
-        var isRegVote = "<?= $info_arr['isRegVote'] ?>";
 
 
 
@@ -214,8 +213,6 @@ get_header();
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else if (yrsCitizen < 7) {
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
-        } else if (isRegVote == 0) {
-            document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else {
             document.getElementById("readyOrNot").innerHTML = "<h4>You're ready to rock for 2020! Here's what's next:</h4>";
         }
@@ -240,10 +237,6 @@ get_header();
             document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a U.S. Citizen for at least seven years to run for this position.</li>";
             trigger = true;
         }
-        if (isRegVote == 0) {
-            document.getElementById("whyOrWhyNot").innerHTML = "<li>You must be registered to vote to run for office.</li>";
-            trigger = true;
-        }
         if (trigger){
             document.getElementById("butt").style.display = "inline";
         }
@@ -261,8 +254,7 @@ get_header();
             resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
             txResVar = (yrsTxRes >= 2) ? "&#10003; Texas resident for at least 2 years<br>" : "&#10007; Texas resident for at least 2 years<br>";
             citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
-            yrsVar = (yrsCitizen >= 7) ? "&#10003; Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
-            regVar = (isRegVote == 1) ? "&#10003; Registered to vote<br>" : "&#10007; Registered to vote<br>";
+            yrsVar = (yrsCitizen >= 7) ? "&#10003;Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
             
             console.log("hi dan");
         }
