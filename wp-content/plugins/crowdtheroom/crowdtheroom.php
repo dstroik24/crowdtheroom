@@ -128,6 +128,9 @@ function add_ctr_user(){
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
 	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county_fixed} {$dob_format} {$zip}");
 	$isRegVote = $voterStatus[1];
+	if (is_null($isRegVote)){
+		$isRegVote = 0;
+	}
 
 	//add info to database
 	$table = $wpdb->prefix.'ctr_users';
