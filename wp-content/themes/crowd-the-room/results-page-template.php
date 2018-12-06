@@ -83,6 +83,7 @@ get_header();
     <h2 id="fullName">Name HERE</h2>
     <div id="readyOrNot">You're ready to run in 2020! Here's what's next:</div>
     <div id="quals"></div>
+    <div id="butt" style="display: none;"><br><b>But why not?</b><br></div>
     <div id="whyOrWhyNotAge"></div>
     <div id="whyOrWhyNotCitizen"></div>
     <div id="whyOrWhyNotTx"></div>
@@ -219,18 +220,25 @@ get_header();
 
         // Print, if necessary, why user is not eligible
         function whyOrWhyNotFunc() {
-            document.getElementById("whyOrWhyNotAge").innerHTML = "<br><b>But why not?</b><br>";
+        trigger = false;
         if (isOldEnough == 0) {
             document.getElementById("whyOrWhyNotAge").innerHTML = "<li>You're not old enough.</li>";
+            trigger = true;
         }
         if (isCitizen == 0) {
             document.getElementById("whyOrWhyNotCitizen").innerHTML = "<li>Being a U.S. citizen is a requirement for most elected seats.</li>";
+            trigger = true;
         }
         if (isTxRes == 0) {
             document.getElementById("whyOrWhyNotTx").innerHTML = "<li>Being a Texas resident is a requirement to run for this position</li>";
+            trigger = true;
         }
         if (yrsCitizen < 7) {
             document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a U.S. Citizen for at least seven years to run for this position.</li>";
+            trigger = true;
+        }
+        if (trigger){
+            document.getElementById("butt").style.display = "inline";
         }
         }
         // Display either Democrat or Republican next steps display
