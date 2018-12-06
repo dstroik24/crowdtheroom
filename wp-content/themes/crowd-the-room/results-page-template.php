@@ -73,7 +73,7 @@ get_header();
     }
     #readyOrNot,
     #fullName{
-        font-size: 60px;
+        font-size: 40px;
     }
     </style>
   </head>
@@ -81,8 +81,8 @@ get_header();
   <body>
     <div id="everything">
     <h2 id="fullName">Name HERE</h2>
-    <div id="quals"></div>
     <div id="readyOrNot">You're ready to run in 2020! Here's what's next:</div>
+    <div id="quals"></div>
     <div id="whyOrWhyNotAge"></div>
     <div id="whyOrWhyNotCitizen"></div>
     <div id="whyOrWhyNotTx"></div>
@@ -242,8 +242,8 @@ get_header();
         // New (and improved) eligible logic
         function whatBoutDis() {
 	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
-            citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
             resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
+            citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
             yrsVar = (yrsTxRes >= 2) ? "&#10003;Citizen for at least 2 years<br>" : "&#10007; Citizen for at least 2 years<br>";
             
             console.log("hi dan");
