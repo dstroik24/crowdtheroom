@@ -261,7 +261,7 @@ get_header();
 
 
 
-        document.getElementById("quals").innerHTML = oldVar + citVar + resVar + yrsVar;
+        document.getElementById("quals").innerHTML = oldVar + resVar + citVar + yrsVar;
     </script>
     <script>
 
