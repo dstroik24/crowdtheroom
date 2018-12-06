@@ -214,6 +214,8 @@ get_header();
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else if (yrsCitizen < 7) {
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
+        } else if (isRegVote == 0) {
+            document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else {
             document.getElementById("readyOrNot").innerHTML = "<h4>You're ready to rock for 2020! Here's what's next:</h4>";
         }
@@ -236,6 +238,10 @@ get_header();
         }
         if (yrsCitizen < 7) {
             document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a U.S. Citizen for at least seven years to run for this position.</li>";
+            trigger = true;
+        }
+        if (isRegVote == 0) {
+            document.getElementById("whyOrWhyNot").innerHTML = "<li>You must be registered to vote to run for office.</li>";
             trigger = true;
         }
         if (trigger){
