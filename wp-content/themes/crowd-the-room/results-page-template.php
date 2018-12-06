@@ -219,7 +219,7 @@ get_header();
 
         // Print, if necessary, why user is not eligible
         function whyOrWhyNotFunc() {
-            document.getElementById("whyOrWhyNotAge").innerHTML = "But why not?<br>";
+            document.getElementById("whyOrWhyNotAge").innerHTML = "<br><b>But why not?</b><br>";
         if (isOldEnough == 0) {
             document.getElementById("whyOrWhyNotAge").innerHTML = "<li>You're not old enough.</li>";
         }
