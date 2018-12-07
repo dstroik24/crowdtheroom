@@ -13,10 +13,7 @@
 <!doctype html>
 <link href='http://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
     <style>
-    html, body {
-        margin:0;
-        padding:0;
-    }
+    
     h1 { 
         font-family: Lato; 
         font-size: 23px; 
