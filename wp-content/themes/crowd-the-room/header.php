@@ -113,14 +113,20 @@
         text-decoration: underline;
     }
     </style>
-    <header>
-    <title>Crowd The Room</title>
-    </header>
-    <div class="header">
-            <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;" onclick="location.href='http://crowdtheroom.org/sign-in/';">here</span> to sign in.</p>
-            <h1 id="left_head" onclick="location.href='http://crowdtheroom.org/';">crowdtheroom</h1>
-    </div>
-    </header>
+    <head>
+        <title>Crowd The Room</title>
+    </head>
+    
+    <body <?php body_class(); ?>>
+    <div id="page" class="site">
+        <header>
+            <div class="header">
+                    <p id="right_head">Already running with us? Click <span class="clickable" style="color:blue;" onclick="location.href='http://crowdtheroom.org/sign-in/';">here</span> to sign in.</p>
+                    <h1 id="left_head" onclick="location.href='http://crowdtheroom.org/';">crowdtheroom</h1>
+            </div>
+        </header>
+
+    <div id="content" class="site-content">
 	
 
 	
