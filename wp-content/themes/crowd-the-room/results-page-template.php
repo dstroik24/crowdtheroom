@@ -89,6 +89,9 @@ get_header();
     <div id="whyOrWhyNotTx"></div>
     <div id="whyOrWhyNot"></div>
     <div id="notice" style="display: none;"></div>
+
+    <br>
+    <br>
     
     <div id="dem_txRep" style="display:none;">
         <h2>Appoint a campaign treasurer</h2>
@@ -235,6 +238,7 @@ get_header();
 
         // Print if user is eligible or not
         function readyOrNotFunc() {
+        isReady = false;
         if (isOldEnough == 0) {
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else if (isCitizen == 0) {
@@ -247,6 +251,7 @@ get_header();
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else {
             document.getElementById("readyOrNot").innerHTML = "<h4>You're ready to rock for 2020! Here's what's next:</h4>";
+            isReady = true;
         }
         }
 
@@ -339,7 +344,9 @@ get_header();
         readyOrNotFunc();
         whyOrWhyNotFunc();
         whatBoutDis();
-        fullSteps();
+        if (isReady){
+            fullSteps();
+        }
 
         
     </script>
