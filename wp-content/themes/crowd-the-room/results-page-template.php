@@ -9,7 +9,7 @@ function get_user_info(){
 	$table_name = $wpdb->prefix . 'ctr_users';
     $sql = "SELECT * FROM " . $table_name . " WHERE user_id={$user_id}";
 	$result = $wpdb->get_row($sql, ARRAY_A);
-    arr_as_table($result);
+    //arr_as_table($result);
     return $result;
 }
 
@@ -93,7 +93,6 @@ get_header();
     <div id="whyOrWhyNot"></div>
     <div id="notice" style="display: none;"></div>
 
-    <br>
     <br>
     <div id="whatNext"><h4>Here's what's next:</h4></div>
     
