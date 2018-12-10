@@ -217,6 +217,7 @@ get_header();
         } else if (office == "aisd_d1" || office == "aisd_d2" || office == "aisd_d3" || office == "aisd_d4" || office == "aisd_d5" || office == "aisd_d6" || office == "aisd_d7" || office == "aisd_large") {
             posCateg = "aisdBoard";
         }
+        console.log(posCateg)
         }
 
         //Determine if user is old enough
