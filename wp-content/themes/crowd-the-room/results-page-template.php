@@ -310,6 +310,7 @@ get_header();
         if (trigger){
             document.getElementById("butt").style.display = "inline";
         }
+        console.log("did the why not");
         }
         
         // Display either Democrat or Republican next steps display
