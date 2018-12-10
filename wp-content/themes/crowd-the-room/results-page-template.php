@@ -307,7 +307,7 @@ get_header();
         // Display either Democrat or Republican next steps display
 
         function fullSteps() {
-        if (posCateg = "aisdBoard"){
+        if (posCateg == "aisdBoard"){
             document.getElementById("aisd").style.display = 'initial';
         }
         else if (party == "democrat") {
@@ -319,7 +319,6 @@ get_header();
         else if (party == "independent") {
             document.getElementById("ind_" + posCateg).style.display = 'initial';
             }
-        console.log("hi dan");
         }
 
 
