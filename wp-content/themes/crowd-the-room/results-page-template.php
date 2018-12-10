@@ -309,13 +309,13 @@ get_header();
         if (posCateg = "aisdBoard"){
             document.getElementById("aisd").style.display = 'initial';
         }
-        if (party == "democrat") {
+        else if (party == "democrat") {
             document.getElementById("dem_" + posCateg).style.display = 'initial';
             }
-        if (party == "republican") {
+        else if (party == "republican") {
             document.getElementById("rep_" + posCateg).style.display = 'initial';
             }
-        if (party == "independent") {
+        else if (party == "independent") {
             document.getElementById("ind_" + posCateg).style.display = 'initial';
             }
         console.log("hi dan");
