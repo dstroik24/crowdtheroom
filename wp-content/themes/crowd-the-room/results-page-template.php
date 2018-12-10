@@ -73,7 +73,10 @@ get_header();
     }
     #readyOrNot,
     #fullName{
-        font-size: 40px;
+        font-size: 35px;
+    }
+    h4 {
+        font-size: 35px;
     }
     </style>
   </head>
