@@ -94,7 +94,7 @@ get_header();
     <div id="notice" style="display: none;"></div>
 
     <br>
-    <div id="whatNext"><h4>Here's what's next:</h4></div>
+    <div id="whatNext" style="display: none;"><h4>Here's what's next:</h4></div>
     
     <div id="dem_txRep" style="display:none;">
         <h2>Appoint a campaign treasurer</h2>
