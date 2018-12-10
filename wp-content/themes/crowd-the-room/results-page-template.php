@@ -83,7 +83,7 @@ get_header();
     <h2 id="fullName">Name HERE</h2>
     <div id="readyOrNot">You're ready to run in 2020! Here's what's next:</div>
     <div id="quals"></div>
-    <div id="notice" style="display: none;"><h3>Notice:</h3></div>
+    <div id="notice" style="display: none;"></div>
     <div id="butt" style="display: none;"><h3>But why not?</h3></div>
     <div id="whyOrWhyNotAge"></div>
     <div id="whyOrWhyNotCitizen"></div>
@@ -276,7 +276,7 @@ get_header();
         // Logic for tx rep
         if (posCateg == 'txRep'){
             document.getElementById("notice").style.display = "inline";
-            document.getElementById("notice").innerHTML = "<li>You must a resident of your district for at least 1 year to run for this position. Double check <a class=\"clickable\" href=\"https://fyi.capitol.texas.gov/Address.aspx\">here.</a></li>";
+            document.getElementById("notice").innerHTML = "<h3>Notice:</h3><li>You must a resident of your district for at least 1 year to run for this position. Double check <a class=\"clickable\" href=\"https://fyi.capitol.texas.gov/Address.aspx\">here.</a></li>";
             if (yrsTxRes < 2) {
                 document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a Texas resident for at least 2 years immediatly before running for this position.</li>";
                 trigger = true;
@@ -292,7 +292,7 @@ get_header();
         // Logic for aisd Board
         if (posCateg == 'aisdBoard'){
             document.getElementById("notice").style.display = "inline";
-            document.getElementById("notice").innerHTML = "<li>You must a resident of your district for at least 6 months to run for this position. Double check <a class=\"clickable\" href=\"https://www.austinisd.org/board/boundaries\">here.</a></li>";
+            document.getElementById("notice").innerHTML = "<h3>Notice:</h3><li>You must a resident of your district for at least 6 months to run for this position. Double check <a class=\"clickable\" href=\"https://www.austinisd.org/board/boundaries\">here.</a></li>";
             if (yrsTxRes < 1) {
                 document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a Texas resident for at least 1 year immediatly before running for this position.</li>";
                 trigger = true;
@@ -306,7 +306,7 @@ get_header();
         
         // Display either Democrat or Republican next steps display
 
-        function whichPartyHTML() {
+        function fullSteps() {
         if (posCateg = "aisdBoard"){
             document.getElementById("aisd").style.display = 'initial';
         }
@@ -326,11 +326,10 @@ get_header();
         // New (and improved) eligible logic
         function whatBoutDis() {
 	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
-            resVar = (isTxRes == 1) ? "&#10003; Texas resident<br>" : "&#10007; Texas resident<br>";
-            txResVar = (yrsTxRes >= 2) ? "&#10003; Texas resident for at least 2 years<br>" : "&#10007; Texas resident for at least 2 years<br>";
-            citVar = (isCitizen == 1) ? "&#10003; U.S. citizen<br>" : "&#10007; U.S. citizen<br>";
-            yrsVar = (yrsCitizen >= 7) ? "&#10003;Citizen for at least 7 years<br>" : "&#10007; Citizen for at least 7 years<br>";
-            
+            voteVar = (isRegVote == 1) ? "&#10003; Voter Status<br>" : "&#10007; Voter Status<br>";
+            resVar = (isTxRes == 1) ? "&#10003; Texas resident status<br>" : "&#10007; Texas resident status<br>";
+            citVar = (isCitizen == 1) ? "&#10003; U.S. citizen status<br>" : "&#10007; U.S. citizen status<br>";
+            document.getElementById("quals").innerHTML = oldVar + voteVar + resVar + citVar;
             console.log("hi dan");
         }
         // Fill in key info
@@ -341,9 +340,9 @@ get_header();
         readyOrNotFunc();
         whyOrWhyNotFunc();
         whatBoutDis();
-        whichPartyHTML();
+        fullSteps();
 
-        document.getElementById("quals").innerHTML = oldVar + resVar + txResVar + yrsVar;
+        
     </script>
   </body>
 </html>
