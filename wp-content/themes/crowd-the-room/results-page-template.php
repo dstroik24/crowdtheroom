@@ -83,12 +83,12 @@ get_header();
     <h2 id="fullName">Name HERE</h2>
     <div id="readyOrNot">You're ready to run in 2020! Here's what's next:</div>
     <div id="quals"></div>
-    <div id="notice" style="display: none;"></div>
     <div id="butt" style="display: none;"><h3>But why not?</h3></div>
     <div id="whyOrWhyNotAge"></div>
     <div id="whyOrWhyNotCitizen"></div>
     <div id="whyOrWhyNotTx"></div>
     <div id="whyOrWhyNot"></div>
+    <div id="notice" style="display: none;"></div>
     
     <div id="dem_txRep" style="display:none;">
         <h2>Appoint a campaign treasurer</h2>
