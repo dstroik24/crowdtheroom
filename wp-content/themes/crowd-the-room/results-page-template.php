@@ -92,6 +92,7 @@ get_header();
 
     <br>
     <br>
+    <div id="whatNext"><h4>Here's what's next:</h4></div>
     
     <div id="dem_txRep" style="display:none;">
         <h2>Appoint a campaign treasurer</h2>
@@ -250,7 +251,7 @@ get_header();
         } else if (isRegVote != 1) {
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else {
-            document.getElementById("readyOrNot").innerHTML = "<h4>You're ready to rock for 2020! Here's what's next:</h4>";
+            document.getElementById("readyOrNot").innerHTML = "<h4>You're ready to rock for 2020!</h4>";
             isReady = true;
         }
         }
@@ -312,6 +313,7 @@ get_header();
         // Display either Democrat or Republican next steps display
 
         function fullSteps() {
+        document.getElementById("whatNext").style.display = 'initial';
         if (posCateg == "aisdBoard"){
             document.getElementById("aisd").style.display = 'initial';
         }
