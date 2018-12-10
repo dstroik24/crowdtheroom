@@ -81,7 +81,7 @@ def submit_form(input):
                                     'Timed out waiting for PA creation confirmation popup to appear.')
         alert = driver.switch_to.alert
         alert.accept()
-        print("Invalid input into roter registration website")
+        print("Invalid input into voter registration website")
         return None
     except TimeoutException:
         pass

@@ -83,12 +83,14 @@ get_header();
     <h2 id="fullName">Name HERE</h2>
     <div id="readyOrNot">You're ready to run in 2020! Here's what's next:</div>
     <div id="quals"></div>
-    <div id="butt" style="display: none;"><br><b>But why not?</b><br></div>
+    <div id="notice" style="display: none;"><h3>Notice:</h3></div>
+    <div id="butt" style="display: none;"><h3>But why not?</h3></div>
     <div id="whyOrWhyNotAge"></div>
     <div id="whyOrWhyNotCitizen"></div>
     <div id="whyOrWhyNotTx"></div>
     <div id="whyOrWhyNot"></div>
-    <div id="dem" style="display:none;">
+    
+    <div id="dem_txRep" style="display:none;">
         <h2>Appoint a campaign treasurer</h2>
             <ol type="a">
 		        <li>Texas state law requires all candidates to file a campaign treasurer appointment with the appropriate filing authority. <b>You are required to have a campaign treasurer appointment on file with your filing authority even if you do not plan to raise or spend any money.</b></li>
@@ -105,28 +107,55 @@ get_header();
 			        </b></li>
 
 		        <li>In addition to your application, you'll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
-		        <br> <em>NOTE: For your payment, you may include a check made out to your political party and attach it to your application. For the petition, make sure you receive valid signatures that include either the date of birth or VUID of the signatories. Attach the petition sheets to your application. It is recommended that you receive <b>three times</b> the required amount of signatures on your petition to retain your required amount during the certification process.</em></li></ol></div>
+		        <br> <em>NOTE: For your payment, you may include a check made out to your political party and attach it to your application. For the petition, make sure you receive valid signatures that include either the date of birth or VUID of the signatories. Attach the petition sheets to your application. It is recommended that you receive <b>three times</b> the required amount of signatures on your petition to retain your required amount during the certification process.</em></li></ol>
+    </div>
 
-		
-		
 
-        <div id="repub" style="display:none;">
-        <h2>Appoint a campaign treasurer</h2>
+    <div id="repub_txRep" style="display:none;">
+    <h2>Appoint a campaign treasurer</h2>
+    <ol type="a">
+            <li>Texas state law requires all candidates to file a campaign treasurer appointment with the appropriate filing authority. <b>You are required to have a campaign treasurer appointment on file with your filing authority even if you do not plan to raise or spend any money.</b></li>
+            <li>Fill out <a href="https://www.ethics.state.tx.us/e-forms/e_cta.pdf">this form</a> and send it form to the TEC electronically at <b>treasappoint@ethics.state.tx.us</b> or fax it to <b>(512) 463-8808</b> or mail it to: <b><br>Texas Ethics Commission<br>P.O. Box 12070 <br>Austin, TX 78711-2070</b></li>
+            <li>For more information regarding the rules and regulations of a campaign treasurer, click <b><a href="https://www.ethics.state.tx.us/forms/CTA_ins.html">here</a></b>.</li>
+        </ol>
+    <h2>Apply</h2>
         <ol type="a">
-		        <li>Texas state law requires all candidates to file a campaign treasurer appointment with the appropriate filing authority. <b>You are required to have a campaign treasurer appointment on file with your filing authority even if you do not plan to raise or spend any money.</b></li>
-		        <li>Fill out <a href="https://www.ethics.state.tx.us/e-forms/e_cta.pdf">this form</a> and send it form to the TEC electronically at <b>treasappoint@ethics.state.tx.us</b> or fax it to <b>(512) 463-8808</b> or mail it to: <b><br>Texas Ethics Commission<br>P.O. Box 12070 <br>Austin, TX 78711-2070</b></li>
-		        <li>For more information regarding the rules and regulations of a campaign treasurer, click <b><a href="https://www.ethics.state.tx.us/forms/CTA_ins.html">here</a></b>.</li>
-	        </ol>
-        <h2>Apply</h2>
-	        <ol type="a">
-		        <li>You'll need to fill out <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-2f.pdf"><b>this application</b></a> and send it to your party's address:<br>
-			        <b>Texas GOP<br>
-			        James Dickey, Chair<br>
-			        211 E. 7th Street, Suite 915<br>
-			        Austin, Texas 78701<br>
-			        <br><b></li>
-		        <li>In addition to your application, you'll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
-		        <br> <em>NOTE: For your payment, you may include a check made out to your political party and attach it to your application. For the petition, make sure you receive valid signatures that include either the date of birth or VUID of the signatories. Attach the petition sheets to your application. It is recommended that you receive <b>three times</b> the required amount of signatures on your petition to retain your required amount during the certification process.</em></li></ol></div>
+            <li>You'll need to fill out <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-2f.pdf"><b>this application</b></a> and send it to your party's address:<br>
+                <b>Texas GOP<br>
+                James Dickey, Chair<br>
+                211 E. 7th Street, Suite 915<br>
+                Austin, Texas 78701<br>
+                <br><b></li>
+            <li>In addition to your application, you'll need to either attach a fee of $750, or <a href="https://www.sos.state.tx.us/elections/forms/pol-sub/2-3f.pdf">a petition</a> totalling 500 signatures.
+            <br> <em>NOTE: For your payment, you may include a check made out to your political party and attach it to your application. For the petition, make sure you receive valid signatures that include either the date of birth or VUID of the signatories. Attach the petition sheets to your application. It is recommended that you receive <b>three times</b> the required amount of signatures on your petition to retain your required amount during the certification process.</em></li></ol>
+    </div>
+    <div id="ind_txRep" style="display:none;">
+        <h3>Texas Rep Independent</h3>
+    </div>
+    <div id="dem_usRep" style="display:none;">
+        <h3>US Rep Democrat</h3>
+    </div>
+    <div id="rep_usRep" style="display:none;">
+        <h3>US Rep Republican</h3>
+    </div>
+    <div id="ind_usRep" style="display:none;">
+        <h3>US Rep Indpendent</h3>
+    </div>
+    <div id="dem_travisDA" style="display:none;">
+        <h3>DA Democrat</h3>
+    </div>
+    <div id="dem_travisDA" style="display:none;">
+        <h3>DA Republican</h3>
+    </div>
+    <div id="ind" style="display:none;">
+        <h3>DA Independent</h3>
+    </div>
+    <div id="aisd" style="display:none;">
+        <h3>Aisd Rep</h3>
+    </div>
+    
+    
+
 
     <hr>
 
@@ -173,6 +202,7 @@ get_header();
         var isFelon = "<?= $info_arr['isFelon'] ?>";
         var isMentalIncap = "<?= $info_arr['isMentalIncap'] ?>";
         var party = "<?= $info_arr['party'] ?>";
+        var isRegVote = "<?= $info_arr['isRegVote'] ?>";
 
 
 
@@ -187,7 +217,6 @@ get_header();
         } else if (office == "aisd_d1" || office == "aisd_d2" || office == "aisd_d3" || office == "aisd_d4" || office == "aisd_d5" || office == "aisd_d6" || office == "aisd_d7" || office == "aisd_large") {
             posCateg = "aisdBoard";
         }
-
         }
 
         //Determine if user is old enough
@@ -213,12 +242,15 @@ get_header();
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else if (yrsCitizen < 7) {
             document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
+        } else if (isRegVote != 1) {
+            document.getElementById("readyOrNot").innerHTML = "<h4>Sorry, you're ineligible for the following reasons:</h4>";
         } else {
             document.getElementById("readyOrNot").innerHTML = "<h4>You're ready to rock for 2020! Here's what's next:</h4>";
         }
         }
 
         // Print, if necessary, why user is not eligible
+        // Some requirements for all, some for only certain positions
         function whyOrWhyNotFunc() {
         trigger = false;
         if (isOldEnough == 0) {
@@ -226,28 +258,70 @@ get_header();
             trigger = true;
         }
         if (isCitizen == 0) {
-            document.getElementById("whyOrWhyNotCitizen").innerHTML = "<li>Being a U.S. citizen is a requirement for most elected seats.</li>";
+            document.getElementById("whyOrWhyNotCitizen").innerHTML = "<li>Being a U.S. citizen is a requirement for all elected seats.</li>";
             trigger = true;
         }
         if (isTxRes == 0) {
             document.getElementById("whyOrWhyNotTx").innerHTML = "<li>Being a Texas resident is a requirement to run for this position</li>";
             trigger = true;
         }
-        if (yrsCitizen < 7) {
-            document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a U.S. Citizen for at least seven years to run for this position.</li>";
-            trigger = true;
+        // Logic for us rep
+        if (posCateg == 'usRep'){
+            if (yrsCitizen < 7) {
+                document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a U.S. Citizen for at least 7 years to run for this position.</li>";
+                trigger = true;
+            }
         }
+        // Logic for tx rep
+        if (posCateg == 'txRep'){
+            document.getElementById("notice").style.display = "inline";
+            document.getElementById("notice").innerHTML = "<li>You must a resident of your district for at least 1 year to run for this position. Double check <a class=\"clickable\" href=\"https://fyi.capitol.texas.gov/Address.aspx\">here.</a></li>";
+            if (yrsTxRes < 2) {
+                document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a Texas resident for at least 2 years immediatly before running for this position.</li>";
+                trigger = true;
+            }
+        }
+        // Logic for travis DA
+        if (posCateg == 'travisDA'){
+            if (yrsTxRes < 1) {
+                document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a Texas resident for at least 1 year immediatly before running for this position.</li>";
+                trigger = true;
+            }
+        }
+        // Logic for aisd Board
+        if (posCateg == 'aisdBoard'){
+            document.getElementById("notice").style.display = "inline";
+            document.getElementById("notice").innerHTML = "<li>You must a resident of your district for at least 6 months to run for this position. Double check <a class=\"clickable\" href=\"https://www.austinisd.org/board/boundaries\">here.</a></li>";
+            if (yrsTxRes < 1) {
+                document.getElementById("whyOrWhyNot").innerHTML = "<li>It's a requirement to be a Texas resident for at least 1 year immediatly before running for this position.</li>";
+                trigger = true;
+            }
+        }
+        
         if (trigger){
             document.getElementById("butt").style.display = "inline";
         }
         }
+        
         // Display either Democrat or Republican next steps display
 
         function whichPartyHTML() {
+        if (posCateg = "aisdBoard"){
+            document.getElementById("aisd" + posCateg).style.display = 'initial';
+        }
         if (party == "democrat") {
-            demHTML.style.display;
+            document.getElementById("dem_" + posCateg).style.display = 'initial';
+            }
+        if (party == "republican") {
+            document.getElementById("rep_" + posCateg).style.display = 'initial';
+            }
+        if (party == "independent") {
+            document.getElementById("ind_" + posCateg).style.display = 'initial';
+            }
+        
         }
-        }
+
+
         // New (and improved) eligible logic
         function whatBoutDis() {
 	        oldVar = (isOldEnough == 1) ? "&#10003; Old enough<br>" : "&#10007; Old enough<br>";
@@ -261,33 +335,14 @@ get_header();
         // Fill in key info
         document.getElementById("fullName").innerHTML = fullName + ",";
 
-
         whatPosCateg(office);
         oldEnough();
         readyOrNotFunc();
         whyOrWhyNotFunc();
         whatBoutDis();
-        
-
-
+        whichPartyHTML();
 
         document.getElementById("quals").innerHTML = oldVar + resVar + txResVar + yrsVar;
-    </script>
-    <script>
-
-        var dispDemHTML = document.getElementById("dem");
-        var dispRepubHTML = document.getElementById("repub");
-        // var dispLibHTML = document.getElementById("lib");
-
-        dispDemHTML.style.display = 'none';
-        dispRepubHTML.style.display = 'none';
-        // dispLibHTML.style.display = 'none';
-
-        if (party == "democrat") {
-	        dispDemHTML.style.display = 'inline';
-        } else {
-	        dispRepubHTML.style.display = 'inline';
-        }
     </script>
   </body>
 </html>

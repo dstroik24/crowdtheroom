@@ -152,6 +152,12 @@ get_header();
                     <select name='district' id="district" style="display:none;">
                         <option value="">Select a District</option>
                     </select>
+                    <div id="district_div" style="display:none;">
+                        <p> Not sure what district you live in? <br>Check your voter card or Texas residents can click <a class="clickable" href="https://fyi.capitol.texas.gov/Address.aspx">here</a> to find out.</p>
+                    </div>
+                    <div id="aisd_div" style="display:none;">
+                        <p> Not sure what district you live in? <br>Find your residence on <a class="clickable" href="https://www.austinisd.org/board/boundaries">this map</a>.</p>
+                    </div>
                 </div>
 
                 <div>
@@ -210,7 +216,7 @@ get_header();
                 </div>
 
                 <div id="texas_resident" style="display:none;">
-                    <label for="yrsTxRes">How many years have you lived in Texas?</label>
+                    <label for="yrsTxRes">How many years ago did you move to Texas? <p>(If there were multiple times, choose most recent. If you were born here and never left, put your age.)</p></label>
                     <input type="text" name="yrsTxRes" id="yrsTxRes" value="" required>
                 </div>
 
@@ -314,12 +320,14 @@ get_header();
     </script>
     <script>
         function addOptions(){
+            var distDiv=document.getElementById("district_div");
             var dSelect=document.getElementById("district");
             var dLabel=document.getElementById("districtLabel");
             var officeVal=document.getElementById("office").value;
             var aisdHead=document.getElementById("aisdHead");
             var isMentalIncapQuestion=document.getElementById("isMentalIncapQuestion");
             var txRes=document.getElementById("texas_resident");
+            var aisdDiv=document.getElementById("aisd_div");
 
             while (true){
             
@@ -329,12 +337,13 @@ get_header();
                     break;
                 }
             }
-
+            distDiv.style.display = 'none';
             dSelect.style.display = 'none';
             dLabel.style.display = 'none';
             aisdHead.style.display = 'none';
             isMentalIncapQuestion.style.display = 'none';
             txRes.style.display = 'none';
+            aisdDiv.style.display = 'none';
 
             if (officeVal == "us_rep"){
                 dSelect.add(new Option("Select your desired district", ""), null);
@@ -344,6 +353,7 @@ get_header();
                 dSelect.add(new Option("25", "d25"), null);
                 dSelect.add(new Option("35", "d35"), null);
                 
+                distDiv.style.display = 'inline';
                 dSelect.style.display = 'inline';
                 dLabel.style.display = 'inline';
             }else if (officeVal == "tx_rep"){
@@ -354,7 +364,8 @@ get_header();
                 dSelect.add(new Option("49", "d49"), null);
                 dSelect.add(new Option("50", "d50"), null);
                 dSelect.add(new Option("51", "d51"), null);
-
+                
+                distDiv.style.display = 'inline';
                 dSelect.style.display = 'inline';
                 dLabel.style.display = 'inline';
                 txRes.style.display = 'inline';
@@ -367,10 +378,10 @@ get_header();
                 dSelect.add(new Option("5", "d5"), null);
                 dSelect.add(new Option("6", "d6"), null);
                 dSelect.add(new Option("7", "d7"), null);
-
+                
+                aisdDiv.style.display = 'none';
                 dSelect.style.display = 'inline';
                 dLabel.style.display = 'inline';
-                
                 aisdHead.style.display = 'inline';
                 isMentalIncapQuestion.style.display = 'inline';
 
@@ -380,6 +391,8 @@ get_header();
                 aisdHead.style.display = 'none';
                 isMentalIncapQuestion.style.display = 'none';
                 txRes.style.display = 'none';
+                distDiv.style.display = 'none';
+                aisdDiv.style.display = 'none';
             }
     }
     </script>
