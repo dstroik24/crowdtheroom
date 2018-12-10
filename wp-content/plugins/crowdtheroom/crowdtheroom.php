@@ -128,6 +128,7 @@ function add_ctr_user(){
 	// $voterStatus contains an array with some more info, the second entry is the status 0 or 1
 	$voterStatus = run_python3("/var/www/html/wp-content/plugins/crowdtheroom/check_voter_reg.py {$fname} {$lname} {$county_fixed} {$dob_format} {$zip}");
 	$isRegVote = $voterStatus[1];
+	// Returning none means the input didn't work. most likeyl because they are not registered, but maybe not
 	if (is_null($isRegVote)){
 		$isRegVote = 0;
 	}
@@ -153,7 +154,8 @@ function add_ctr_user(){
 				  'isCitizen' => $isCitizen,
 				  'yrsCitizen' => $yrsCitizen,
 				  'isFelon' => $isFelon,
-				  'isMentalIncap' => $isMentalIncap);
+				  'isMentalIncap' => $isMentalIncap,
+				  'isRegVote' => $isRegVote);
 	$wpdb->insert($table,$data);
 
 	// Looking to make sure input data is good, echos a table
