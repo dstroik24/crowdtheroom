@@ -379,7 +379,7 @@ get_header();
                 dSelect.add(new Option("6", "d6"), null);
                 dSelect.add(new Option("7", "d7"), null);
                 
-                aisdDiv.style.display = 'none';
+                aisdDiv.style.display = 'inline';
                 dSelect.style.display = 'inline';
                 dLabel.style.display = 'inline';
                 aisdHead.style.display = 'inline';
