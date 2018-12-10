@@ -307,7 +307,7 @@ get_header();
 
         function whichPartyHTML() {
         if (posCateg = "aisdBoard"){
-            document.getElementById("aisd" + posCateg).style.display = 'initial';
+            document.getElementById("aisd").style.display = 'initial';
         }
         if (party == "democrat") {
             document.getElementById("dem_" + posCateg).style.display = 'initial';
@@ -318,7 +318,7 @@ get_header();
         if (party == "independent") {
             document.getElementById("ind_" + posCateg).style.display = 'initial';
             }
-        
+        console.log("hi dan");
         }
 
 
