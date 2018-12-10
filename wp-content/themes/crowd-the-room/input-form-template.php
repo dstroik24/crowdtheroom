@@ -215,7 +215,7 @@ get_header();
                     <input type="text" name="yrsAtCurRes" id="yrsAtCurRes" value="" required>
                 </div>
 
-                <div id="texas_resident" style="display:none;">
+                <div id="texas_resident">
                     <label for="yrsTxRes">How many years ago did you move to Texas? <p>(If there were multiple times, choose most recent. If you were born here and never left, put your age.)</p></label>
                     <input type="text" name="yrsTxRes" id="yrsTxRes" value="" required>
                 </div>
@@ -326,7 +326,6 @@ get_header();
             var officeVal=document.getElementById("office").value;
             var aisdHead=document.getElementById("aisdHead");
             var isMentalIncapQuestion=document.getElementById("isMentalIncapQuestion");
-            var txRes=document.getElementById("texas_resident");
             var aisdDiv=document.getElementById("aisd_div");
 
             while (true){
@@ -342,7 +341,6 @@ get_header();
             dLabel.style.display = 'none';
             aisdHead.style.display = 'none';
             isMentalIncapQuestion.style.display = 'none';
-            txRes.style.display = 'none';
             aisdDiv.style.display = 'none';
 
             if (officeVal == "us_rep"){
@@ -368,7 +366,6 @@ get_header();
                 distDiv.style.display = 'inline';
                 dSelect.style.display = 'inline';
                 dLabel.style.display = 'inline';
-                txRes.style.display = 'inline';
             }else if (officeVal == "aisd"){
                 dSelect.add(new Option("Select your desired district", ""), null);
                 dSelect.add(new Option("1", "d1"), null);
@@ -385,12 +382,12 @@ get_header();
                 aisdHead.style.display = 'inline';
                 isMentalIncapQuestion.style.display = 'inline';
 
-            }else{
+            }
+            else{
                 dSelect.style.display = 'none';
                 dLabel.style.display = 'none';
                 aisdHead.style.display = 'none';
                 isMentalIncapQuestion.style.display = 'none';
-                txRes.style.display = 'none';
                 distDiv.style.display = 'none';
                 aisdDiv.style.display = 'none';
             }
