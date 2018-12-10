@@ -281,6 +281,10 @@ get_header();
             document.getElementById("whyOrWhyNotTx").innerHTML = "<li>Being a Texas resident is a requirement to run for this position</li>";
             trigger = true;
         }
+        if (isRegVote == 0) {
+            document.getElementById("whyOrWhyNotTx").innerHTML = "<li>Being registered to vote is a requirement to run for this position</li>";
+            trigger = true;
+        }
         // Logic for us rep
         if (posCateg == 'usRep'){
             if (yrsCitizen < 7) {
