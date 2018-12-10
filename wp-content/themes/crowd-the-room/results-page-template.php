@@ -262,6 +262,13 @@ get_header();
         // Some requirements for all, some for only certain positions
         function whyOrWhyNotFunc() {
         trigger = false;
+        console.log(isOldEnough)
+        console.log(isCitizen)
+        console.log(isTxRes)
+        console.log(posCateg)
+        console.log(yrsCitizen)
+        console.log(yrsTxRes)
+        
         if (isOldEnough == 0) {
             document.getElementById("whyOrWhyNotAge").innerHTML = "<li>You're not old enough.</li>";
             trigger = true;
